@@ -1,0 +1,15 @@
+{
+  "all_forecasts_independently_recomputed": 210,
+  "current_event_excluded_from_every_history": true,
+  "evaluation_forecasts_checked": 84,
+  "every_used_clear_at_or_before_origin": true,
+  "historical_publication_time_proven": false,
+  "long_events_kept": true,
+  "method_unchanged_since_first_opening": true,
+  "original_kyiv_rows_checked": 240,
+  "previous_files_verified": 219,
+  "protocol_locked_before_opening": true,
+  "script_sha256": "d910dbec4ad861d2eedf257a0e1df3dde58b39914620a22d24e85aa852d2d524",
+  "source_sha256_verified": true,
+  "version": "kse-latest-duration-v1"
+}

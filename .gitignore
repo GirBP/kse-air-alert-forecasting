@@ -1,0 +1,31 @@
+# Inputs and detailed event outputs have no established redistribution licence.
+/data/
+/research/
+/submission/
+/ai_logs/
+/work/
+/outputs/
+/.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+# Previous experiments stay locally untouched; only the latest runner is published.
+/src/kse_alerts/
+/tests/
+/scripts/*
+!/scripts/fetch_latest_input.py
+!/scripts/verify_latest.py
+!/scripts/export_ai_conversations.py
+/docs/*
+!/docs/latest-reproduce.md
+!/docs/latest-data-and-limits.md
+!/docs/latest-ai-decisions.md
+!/docs/kse-requirements.md
+/reports/*
+!/reports/latest-duration-results.md
+!/reports/latest-validation.json
+!/reports/latest-clean-copy.json
+!/reports/latest-demo.txt
+!/reports/latest-tests.txt

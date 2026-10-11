@@ -1,0 +1,321 @@
+[
+  {
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Sun, 11 Oct 2026 23:11:49 GMT",
+      "ETag": "W/\"9817f62e83df406963c17b0df744266d73e3d13c833cd7c055de5948ed7b528b\"",
+      "Last-Modified": "Sun, 11 Oct 2026 10:08:04 GMT"
+    },
+    "http_status": 200,
+    "name": "mirror-repository.json",
+    "requested_at_utc": "2026-10-11T23:11:49.247516+00:00",
+    "resolved_url": "https://api.github.com/repos/JustJimer/ukraine-air-alert-stats",
+    "retrieved_at_utc": "2026-10-11T23:11:49.608272+00:00",
+    "sha256": "e4696824684088ef2dbc28687f09dfd0a4477dc30eb31be923e27d9998db4169",
+    "size_bytes": 5850,
+    "url": "https://api.github.com/repos/JustJimer/ukraine-air-alert-stats"
+  },
+  {
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Sun, 11 Oct 2026 23:11:50 GMT",
+      "ETag": "W/\"9eafefa66c34ae32e6ca80b624ce71ec1044a9a489871c690d6f5b5ce9ee2919\"",
+      "Last-Modified": "Sun, 11 Oct 2026 10:07:59 GMT"
+    },
+    "http_status": 200,
+    "name": "mirror-head.json",
+    "requested_at_utc": "2026-10-11T23:11:49.608556+00:00",
+    "resolved_url": "https://api.github.com/repos/JustJimer/ukraine-air-alert-stats/commits/main",
+    "retrieved_at_utc": "2026-10-11T23:11:50.166155+00:00",
+    "sha256": "2a7ebc11e52b87db68f9d390d82eea4eb618754237cec7fa12af9b2ad3a1ed87",
+    "size_bytes": 4501,
+    "url": "https://api.github.com/repos/JustJimer/ukraine-air-alert-stats/commits/main"
+  },
+  {
+    "headers": {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Date": "Sun, 11 Oct 2026 23:11:50 GMT",
+      "ETag": "\"3d33580aa4cccc8ec77e8a77359cb1297c9ec224e1ca4aa0117b3fb49acf39d1\""
+    },
+    "http_status": 200,
+    "name": "mirror-README.md",
+    "requested_at_utc": "2026-10-11T23:11:50.166532+00:00",
+    "resolved_url": "https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8/README.md",
+    "retrieved_at_utc": "2026-10-11T23:11:50.536714+00:00",
+    "sha256": "3edc968cdc9e26fa2a7f6ebfa5d733b4115fde3cba431db9490d48fadd8e521b",
+    "size_bytes": 21882,
+    "url": "https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8/README.md"
+  },
+  {
+    "headers": {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Date": "Sun, 11 Oct 2026 23:11:50 GMT",
+      "ETag": "\"011d3c6f9835b34a352a301cd288c3a950abda52df7480c3ec62fc980bfe95b0\""
+    },
+    "http_status": 200,
+    "name": "mirror-sync_live.py",
+    "requested_at_utc": "2026-10-11T23:11:50.537011+00:00",
+    "resolved_url": "https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8/sync_live.py",
+    "retrieved_at_utc": "2026-10-11T23:11:50.840835+00:00",
+    "sha256": "0da8abb72761dff1f3427f5756b4d93137bc3f0ffe1ff7180ed6057c333c2598",
+    "size_bytes": 5875,
+    "url": "https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8/sync_live.py"
+  },
+  {
+    "headers": {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Date": "Sun, 11 Oct 2026 23:11:51 GMT",
+      "ETag": "\"4cae63526eab48708e086e3985131981084633367865a4ce9c05cf6b78a8184b\""
+    },
+    "http_status": 200,
+    "name": "mirror-airalert__alerts_api.py",
+    "requested_at_utc": "2026-10-11T23:11:50.840994+00:00",
+    "resolved_url": "https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8/airalert/alerts_api.py",
+    "retrieved_at_utc": "2026-10-11T23:11:51.151933+00:00",
+    "sha256": "559c2f2e55323bdf4b6e73955264a222c4df73738798a6c4c96cc736096210f2",
+    "size_bytes": 8539,
+    "url": "https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8/airalert/alerts_api.py"
+  },
+  {
+    "headers": {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Date": "Sun, 11 Oct 2026 23:11:51 GMT",
+      "ETag": "\"5971669435c4adaf34e97a3727776ee1553b9d1bf1b2618174b93b698c1d5966\""
+    },
+    "http_status": 200,
+    "name": "mirror-.github__workflows__live-sync.yml",
+    "requested_at_utc": "2026-10-11T23:11:51.152226+00:00",
+    "resolved_url": "https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8/.github/workflows/live-sync.yml",
+    "retrieved_at_utc": "2026-10-11T23:11:51.464559+00:00",
+    "sha256": "b1dc462b81b858fd58e4d79ed10b3266875e3a15703df994ffcd2d89e2dad99b",
+    "size_bytes": 5084,
+    "url": "https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8/.github/workflows/live-sync.yml"
+  },
+  {
+    "headers": {
+      "Content-Type": "text/plain; charset=utf-8"
+    },
+    "http_status": 404,
+    "name": "mirror-LICENSE",
+    "requested_at_utc": "2026-10-11T23:11:51.464607+00:00",
+    "resolved_url": "https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8/LICENSE",
+    "retrieved_at_utc": "2026-10-11T23:11:51.747977+00:00",
+    "sha256": "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed",
+    "size_bytes": 14,
+    "url": "https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8/LICENSE"
+  },
+  {
+    "headers": {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Date": "Sun, 11 Oct 2026 23:11:52 GMT",
+      "ETag": "\"5806796dc89de180151ddc97262ca81caa3e21ebd88c9de2f944ed5783334727\""
+    },
+    "http_status": 200,
+    "name": "mirror-archive__alerts_in_ua.csv",
+    "requested_at_utc": "2026-10-11T23:11:51.748051+00:00",
+    "resolved_url": "https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8/archive/alerts_in_ua.csv",
+    "retrieved_at_utc": "2026-10-11T23:11:52.361075+00:00",
+    "sha256": "f5110defe3b7661dc350e4d5923668039eaa2f35712313203a3a5f535476e123",
+    "size_bytes": 3043044,
+    "url": "https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8/archive/alerts_in_ua.csv"
+  },
+  {
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Sun, 11 Oct 2026 23:11:52 GMT",
+      "ETag": "W/\"a2978bd3cf3c028c59fadd3849cccd6c61558233f58b4f437574e1ec7cc0eb4e\"",
+      "Last-Modified": "Sun, 11 Oct 2026 04:50:20 GMT"
+    },
+    "http_status": 200,
+    "name": "vadimkin-repository.json",
+    "requested_at_utc": "2026-10-11T23:11:52.367371+00:00",
+    "resolved_url": "https://api.github.com/repos/Vadimkin/ukrainian-air-raid-sirens-dataset",
+    "retrieved_at_utc": "2026-10-11T23:11:52.685818+00:00",
+    "sha256": "d69b0ba0d079a75ae93b8f651f7f73b3b9d18f5df5a0dd52792e252cc78cbe8d",
+    "size_bytes": 6244,
+    "url": "https://api.github.com/repos/Vadimkin/ukrainian-air-raid-sirens-dataset"
+  },
+  {
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Sun, 11 Oct 2026 23:11:53 GMT",
+      "ETag": "W/\"68aeebb61de61e342a236e917eb80cab93dd945c65039ff8b876ddab0cc14e5f\"",
+      "Last-Modified": "Sun, 11 Oct 2026 04:50:14 GMT"
+    },
+    "http_status": 200,
+    "name": "vadimkin-head.json",
+    "requested_at_utc": "2026-10-11T23:11:52.686036+00:00",
+    "resolved_url": "https://api.github.com/repos/Vadimkin/ukrainian-air-raid-sirens-dataset/commits/main",
+    "retrieved_at_utc": "2026-10-11T23:11:53.583985+00:00",
+    "sha256": "24fbd497369ffc9cab956e1b30845090924cdad9cdfb59437627c36b7c530354",
+    "size_bytes": 42541,
+    "url": "https://api.github.com/repos/Vadimkin/ukrainian-air-raid-sirens-dataset/commits/main"
+  },
+  {
+    "headers": {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Date": "Sun, 11 Oct 2026 23:11:53 GMT",
+      "ETag": "\"9890c3a1b31b74418a8fc7cbcdc4c3bf86d896f9d9bc9dc64483a63ec42fee9a\""
+    },
+    "http_status": 200,
+    "name": "vadimkin-datasets__README.md",
+    "requested_at_utc": "2026-10-11T23:11:53.584607+00:00",
+    "resolved_url": "https://raw.githubusercontent.com/Vadimkin/ukrainian-air-raid-sirens-dataset/bf0c323c78e3e4508721458797dcd38c95df13f3/datasets/README.md",
+    "retrieved_at_utc": "2026-10-11T23:11:53.884274+00:00",
+    "sha256": "e1ae2125a5c383bce434fc84913563a24c41ce14a362e8dac815fd3b368a0849",
+    "size_bytes": 1739,
+    "url": "https://raw.githubusercontent.com/Vadimkin/ukrainian-air-raid-sirens-dataset/bf0c323c78e3e4508721458797dcd38c95df13f3/datasets/README.md"
+  },
+  {
+    "headers": {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Date": "Sun, 11 Oct 2026 23:11:54 GMT",
+      "ETag": "\"ae6d28e5620c90164cc89f4203e09d652bd1520c092e025d846361eadbd0da7c\""
+    },
+    "http_status": 200,
+    "name": "vadimkin-LICENSE",
+    "requested_at_utc": "2026-10-11T23:11:53.884411+00:00",
+    "resolved_url": "https://raw.githubusercontent.com/Vadimkin/ukrainian-air-raid-sirens-dataset/bf0c323c78e3e4508721458797dcd38c95df13f3/LICENSE",
+    "retrieved_at_utc": "2026-10-11T23:11:54.179869+00:00",
+    "sha256": "d2f09e2b07899fa8663f32848afce0ecacf3f38f3e656156b6d447aad0c6afed",
+    "size_bytes": 1071,
+    "url": "https://raw.githubusercontent.com/Vadimkin/ukrainian-air-raid-sirens-dataset/bf0c323c78e3e4508721458797dcd38c95df13f3/LICENSE"
+  },
+  {
+    "headers": {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Date": "Sun, 11 Oct 2026 23:11:56 GMT",
+      "ETag": "\"e352da1dd79f0dc87b5219852f3b187004c59548975535bd67736849186d370f\""
+    },
+    "http_status": 200,
+    "name": "vadimkin-datasets__official_data_uk.csv",
+    "requested_at_utc": "2026-10-11T23:11:54.179937+00:00",
+    "resolved_url": "https://raw.githubusercontent.com/Vadimkin/ukrainian-air-raid-sirens-dataset/bf0c323c78e3e4508721458797dcd38c95df13f3/datasets/official_data_uk.csv",
+    "retrieved_at_utc": "2026-10-11T23:11:57.804883+00:00",
+    "sha256": "1f50085481d229f57b624d83b1ce723e884dea409c14afb5b7040c8a2f233e4f",
+    "size_bytes": 41302286,
+    "url": "https://raw.githubusercontent.com/Vadimkin/ukrainian-air-raid-sirens-dataset/bf0c323c78e3e4508721458797dcd38c95df13f3/datasets/official_data_uk.csv"
+  },
+  {
+    "headers": {
+      "Content-Type": "text/html; charset=utf-8",
+      "Date": "Sun, 11 Oct 2026 23:11:58 GMT"
+    },
+    "http_status": 200,
+    "name": "kyiv-resource.html",
+    "requested_at_utc": "2026-10-11T23:11:57.865212+00:00",
+    "resolved_url": "https://data.kyivcity.gov.ua/dataset/statystyka-povitrianykh-tryvoh-u-misti-kyievi-dep-municipal/resource/cbf3758e-031c-42b0-a477-e731cd79b261",
+    "retrieved_at_utc": "2026-10-11T23:11:58.126066+00:00",
+    "sha256": "e60ae2bbe4a5362ae013d0e5e1903a8721d331017b0a7a1270b611e408f9bd3b",
+    "size_bytes": 120593,
+    "url": "https://data.kyivcity.gov.ua/dataset/statystyka-povitrianykh-tryvoh-u-misti-kyievi-dep-municipal/resource/cbf3758e-031c-42b0-a477-e731cd79b261"
+  },
+  {
+    "headers": {
+      "Content-Type": "text/html; charset=utf-8",
+      "Date": "Sun, 11 Oct 2026 23:11:58 GMT",
+      "Last-Modified": "Thu, 08 Oct 2026 15:03:08 GMT"
+    },
+    "http_status": 200,
+    "name": "kyiv-docs.html",
+    "requested_at_utc": "2026-10-11T23:11:58.126521+00:00",
+    "resolved_url": "https://kyiv.digital/open-api/docs/air-alert.html",
+    "retrieved_at_utc": "2026-10-11T23:11:58.276564+00:00",
+    "sha256": "35c782fabd3daa5f4e75957e852c6652eb9562f461c87088bbdf6e083389e9e7",
+    "size_bytes": 2624,
+    "url": "https://kyiv.digital/open-api/docs/air-alert.html"
+  },
+  {
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8",
+      "Date": "Sun, 11 Oct 2026 23:11:58 GMT"
+    },
+    "http_status": 200,
+    "name": "kyiv-resource-show.json",
+    "requested_at_utc": "2026-10-11T23:11:58.276683+00:00",
+    "resolved_url": "https://data.kyivcity.gov.ua/api/3/action/resource_show?id=cbf3758e-031c-42b0-a477-e731cd79b261",
+    "retrieved_at_utc": "2026-10-11T23:11:58.413954+00:00",
+    "sha256": "7fee208b7916b6dbba12d51d01dad9256cad5041d16f552271594cebd072f132",
+    "size_bytes": 2502,
+    "url": "https://data.kyivcity.gov.ua/api/3/action/resource_show?id=cbf3758e-031c-42b0-a477-e731cd79b261"
+  },
+  {
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8",
+      "Date": "Sun, 11 Oct 2026 23:11:58 GMT"
+    },
+    "http_status": 200,
+    "name": "kyiv-datastore.json",
+    "requested_at_utc": "2026-10-11T23:11:58.414207+00:00",
+    "resolved_url": "https://data.kyivcity.gov.ua/api/action/datastore_search?resource_id=cbf3758e-031c-42b0-a477-e731cd79b261&limit=5",
+    "retrieved_at_utc": "2026-10-11T23:11:58.554182+00:00",
+    "sha256": "c279c2a923ad17827ede3c252000f0d8195e4d4222ac112ddfcd6e7043831126",
+    "size_bytes": 872,
+    "url": "https://data.kyivcity.gov.ua/api/action/datastore_search?resource_id=cbf3758e-031c-42b0-a477-e731cd79b261&limit=5"
+  },
+  {
+    "headers": {
+      "Content-Type": "application/xml; charset=utf-8",
+      "Date": "Sun, 11 Oct 2026 23:11:58 GMT",
+      "Last-Modified": "Sun, 11 Oct 2026 23:11:58 GMT"
+    },
+    "http_status": 200,
+    "name": "kyiv-history.xml",
+    "requested_at_utc": "2026-10-11T23:11:58.554315+00:00",
+    "resolved_url": "https://kyiv.digital/open-api/air-alert/history",
+    "retrieved_at_utc": "2026-10-11T23:11:58.906900+00:00",
+    "sha256": "144ef145e20adbd9c3b6089014568664a2a4047dc895f2d91459b571900b5a6b",
+    "size_bytes": 444008,
+    "url": "https://kyiv.digital/open-api/air-alert/history"
+  },
+  {
+    "headers": {
+      "Content-Type": "text/html; charset=utf-8",
+      "Date": "Sun, 11 Oct 2026 23:11:59 GMT"
+    },
+    "http_status": 200,
+    "name": "alerts-api-docs.html",
+    "requested_at_utc": "2026-10-11T23:11:58.907304+00:00",
+    "resolved_url": "https://devs.alerts.in.ua/",
+    "retrieved_at_utc": "2026-10-11T23:11:59.150155+00:00",
+    "sha256": "19cdbcb0af56cd30f5351412f612b39dbec85a1d0fb5f582c2953165be8b09d7",
+    "size_bytes": 103974,
+    "url": "https://devs.alerts.in.ua/"
+  },
+  {
+    "headers": {
+      "Content-Type": "application/json",
+      "Date": "Sun, 11 Oct 2026 23:11:58 GMT"
+    },
+    "http_status": 200,
+    "name": "kaggle-kyiv.json",
+    "requested_at_utc": "2026-10-11T23:11:59.150445+00:00",
+    "resolved_url": "https://www.kaggle.com/api/v1/datasets/view/mikerudine/kyiv-air-raid-alerts",
+    "retrieved_at_utc": "2026-10-11T23:11:59.611405+00:00",
+    "sha256": "2eac8574638f6d5bec5371729233f7345201941e32f3e764d46be4568fda23f2",
+    "size_bytes": 18056,
+    "url": "https://www.kaggle.com/api/v1/datasets/view/mikerudine/kyiv-air-raid-alerts"
+  },
+  {
+    "headers": {
+      "Content-Type": "application/json",
+      "Date": "Sun, 11 Oct 2026 23:11:59 GMT"
+    },
+    "http_status": 200,
+    "name": "kaggle-national.json",
+    "requested_at_utc": "2026-10-11T23:11:59.611745+00:00",
+    "resolved_url": "https://www.kaggle.com/api/v1/datasets/view/piterfm/massive-missile-attacks-on-ukraine",
+    "retrieved_at_utc": "2026-10-11T23:11:59.971729+00:00",
+    "sha256": "5a49ee79fd1bb589dd81f5bd7063a4476c0df49d6b0a4c7b3faa5a098425c3d8",
+    "size_bytes": 24509,
+    "url": "https://www.kaggle.com/api/v1/datasets/view/piterfm/massive-missile-attacks-on-ukraine"
+  },
+  {
+    "http_status": 200,
+    "name": "kyiv-air-alert.yaml",
+    "retrieved_at_utc": "2026-10-11T23:13:17.854544+00:00",
+    "sha256": "4127d7f6c7f9d62b0b77867b8925d683bc68f4798b990003f7edc69941ea1cb3",
+    "size_bytes": 10758,
+    "url": "https://kyiv.digital/open-api/docs/air-alert.yaml"
+  }
+]

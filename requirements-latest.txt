@@ -1,0 +1,4 @@
+# The latest experiment uses only the Python standard library.
+# Verified: CPython 3.14.7, Europe/Kyiv IANA tzfile SHA-256
+# fb0ae91bd8cfb882853f5360055be7c6c3117fd2ff879cf727a4378e3d40c0d3
+# No pip install is needed for the documented PYTHONPATH=src commands.

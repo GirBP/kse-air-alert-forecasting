@@ -1,0 +1,65 @@
+{
+  "KSE_requirements_basis": "User-provided requirements in this conversation; original complete assignment document has not been supplied",
+  "archive_completeness": "not established; all results conditional on registered closed events; missing records never become zero targets; right edge is partial",
+  "demo": "first eligible event on/after 2026-09-20T00:00:00+03:00; September only, selected by timestamp not error",
+  "evaluation_end_utc_exclusive": "2026-10-11T10:07:59Z",
+  "evaluation_start_local_inclusive": "2026-10-01T00:00:00+03:00",
+  "frozen_at_utc": "2026-10-11T23:13:50.045639+00:00",
+  "history_policy": {
+    "method": "median_last_30_completed",
+    "minimum_completed": 30,
+    "order": "actual finished_at UTC then numeric API id",
+    "sources_merged": false,
+    "update": "Only after actual finished_at <= forecast started_at; current event excluded; sequential October outcomes become history only after completion",
+    "window": 30
+  },
+  "history_start_local_inclusive": "2026-09-01T00:00:00+03:00",
+  "metrics": [
+    "n",
+    "MAE_minutes",
+    "RMSE_minutes",
+    "median_absolute_error_minutes",
+    "p90_absolute_error_minutes"
+  ],
+  "previous_experiments": "v1, v2 and prior Vadimkin July–September final remain unchanged historical results",
+  "purpose": "Estimate typical interruption duration after a registered Kyiv air-raid alert begins; retrospective closed-event evaluation",
+  "quantile": "linear interpolation at (n-1)*q",
+  "selection": {
+    "alert_levels": "all registered levels; not predictive features",
+    "alert_type": "air_raid",
+    "closed": "explicit valid start and clear in UTC, positive duration, actual clear strictly before snapshot boundary",
+    "deduplication": "identical repeats of same API id count once; conflicting repeats excluded entirely",
+    "exclusions": [
+      "missing_or_invalid_id",
+      "conflicting_duplicate_id",
+      "wrong_territory",
+      "wrong_alert_type",
+      "unresolved_start",
+      "open_or_invalid_clear",
+      "nonpositive_duration",
+      "clear_at_or_after_snapshot_boundary",
+      "overlap",
+      "outside_period",
+      "insufficient_completed_history"
+    ],
+    "long_events": "No truncation, removal or cap for being long",
+    "overlaps": "exclude every interval in an overlapping pair within this UID",
+    "synthetic_clears": "No imputation. Upstream mirror code copies finished_at; end fidelity cannot be independently certified against authenticated API"
+  },
+  "selection_and_tuning": "Human already selected method; no models, features or parameters selected using October errors",
+  "source": {
+    "github_commit": "7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8",
+    "location_title": "м. Київ",
+    "location_type": "oblast",
+    "location_uid": "31",
+    "name": "alerts.in.ua via JustJimer mirror",
+    "publication_or_correction_times_available": false,
+    "retrieved_at_utc": "2026-10-11T23:11:52.361075+00:00",
+    "snapshot_boundary_utc": "2026-10-11T10:07:59Z",
+    "snapshot_sha256": "f5110defe3b7661dc350e4d5923668039eaa2f35712313203a3a5f535476e123",
+    "territory_interpretation": "Kyiv city special status, not Kyiv oblast (UID 14/other regional keys excluded)",
+    "url": "https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8/archive/alerts_in_ua.csv"
+  },
+  "timezone": "Europe/Kyiv",
+  "version": "kse-latest-duration-v1"
+}

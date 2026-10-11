@@ -1,0 +1,61 @@
+{
+  "checked_sources": [
+    {
+      "Kyiv_records": 240,
+      "commit": "7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8",
+      "last_clear_utc": "2026-10-11T10:01:52.000Z",
+      "last_start_utc": "2026-10-11T09:50:44.784Z",
+      "license_found": false,
+      "monthly_n_local_Europe_Kyiv": {
+        "2026-09": 156,
+        "2026-10": 84
+      },
+      "monthly_n_utc": {
+        "2026-09": 157,
+        "2026-10": 83
+      },
+      "purpose": "selected; explicit UTC and own city UID; not merged",
+      "re_download_matches_saved_snapshot": true,
+      "snapshot_commit_time_utc": "2026-10-11T10:07:59Z",
+      "source": "alerts.in.ua public mirror",
+      "url": "https://github.com/JustJimer/ukraine-air-alert-stats"
+    },
+    {
+      "Kyiv_last_clear_utc": "2026-09-05T23:44:20Z",
+      "commit": "bf0c323c78e3e4508721458797dcd38c95df13f3",
+      "purpose": "historical result retained; no fresher Kyiv intervals",
+      "snapshot_commit_time_utc": "2026-10-11T04:50:14Z",
+      "source": "Vadimkin official",
+      "url": "https://github.com/Vadimkin/ukrainian-air-raid-sirens-dataset"
+    },
+    {
+      "docs_url": "https://kyiv.digital/open-api/docs/air-alert.yaml",
+      "endpoint": "https://kyiv.digital/open-api/air-alert/history",
+      "last_signal_naive": "2026-10-11 22:22:26",
+      "purpose": "reviewed, newer wall-clock signals; not selected due to undocumented timezone and signal pairing; no source merge",
+      "resource_licence_label": "Open Data Licence",
+      "resource_url": "https://data.kyivcity.gov.ua/dataset/statystyka-povitrianykh-tryvoh-u-misti-kyievi-dep-municipal/resource/cbf3758e-031c-42b0-a477-e731cd79b261",
+      "signal_n": 5333,
+      "source": "Kyiv official resource",
+      "timezone_documented": false
+    },
+    {
+      "last_updated_utc": "2026-10-11T08:50:31.68Z",
+      "purpose": "version unchanged; derived mixed material; not merged",
+      "source": "Kaggle Kyiv",
+      "url": "https://www.kaggle.com/datasets/mikerudine/kyiv-air-raid-alerts",
+      "version": 42
+    },
+    {
+      "last_updated_utc": "2026-10-10T15:30:22.52Z",
+      "purpose": "not an event-duration source; no optional media features used",
+      "source": "Kaggle national attacks",
+      "url": "https://www.kaggle.com/datasets/piterfm/massive-missile-attacks-on-ukraine",
+      "version": 214
+    }
+  ],
+  "freshness_claim": "Newest usable snapshot found among the checked known sources at the recorded retrieval times, not a universal claim about all data on the Internet",
+  "historical_publication_or_revision_times": "unknown; current snapshot can contain later corrections; event-clock causality only",
+  "mirror_origin": "API alerts.in.ua -> authenticated month_ago history per region -> upsert on API id -> verbatim start/clear CSV fields in JustJimer sync_live.py; no API updated_at in CSV",
+  "missing_records_or_right_edge": "unknown, never zero-filled"
+}
