@@ -1,0 +1,28 @@
+{
+  "anonymous_github_clone": true,
+  "byte_identical_result_files": 9,
+  "checked_at_utc": "2026-10-11T23:30:02.357212+00:00",
+  "demo_passed": true,
+  "dependencies_installed": [],
+  "evaluation_events": 84,
+  "github_actions_passed_url": "https://github.com/GirBP/kse-air-alert-forecasting/actions/runs/38184368571",
+  "independent_verification": {
+    "all_forecasts_independently_recomputed": 210,
+    "current_event_excluded_from_every_history": true,
+    "evaluation_forecasts_checked": 84,
+    "every_used_clear_at_or_before_origin": true,
+    "historical_publication_time_proven": false,
+    "long_events_kept": true,
+    "method_unchanged_since_first_opening": true,
+    "original_kyiv_rows_checked": 240,
+    "previous_files_verified": 0,
+    "protocol_locked_before_opening": true,
+    "script_sha256": "d910dbec4ad861d2eedf257a0e1df3dde58b39914620a22d24e85aa852d2d524",
+    "source_sha256_verified": true,
+    "version": "kse-latest-duration-v1"
+  },
+  "isolated_venv": true,
+  "repository_url": "https://github.com/GirBP/kse-air-alert-forecasting",
+  "tested_commit": "41fa498f9808b0487d876fa8ca6d6a8ff7799f1b",
+  "tests_passed": 14
+}
