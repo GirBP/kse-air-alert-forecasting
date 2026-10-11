@@ -1,0 +1,31 @@
+{
+  "checked_at_utc": "2026-10-11T23:24:56.468398+00:00",
+  "clean_git_clone": true,
+  "demo_transcript_byte_identical": true,
+  "dependencies_installed": [],
+  "evaluation_events": 84,
+  "independent_verification": {
+    "all_forecasts_independently_recomputed": 210,
+    "current_event_excluded_from_every_history": true,
+    "evaluation_forecasts_checked": 84,
+    "every_used_clear_at_or_before_origin": true,
+    "historical_publication_time_proven": false,
+    "long_events_kept": true,
+    "method_unchanged_since_first_opening": true,
+    "original_kyiv_rows_checked": 240,
+    "previous_files_verified": 0,
+    "protocol_locked_before_opening": true,
+    "script_sha256": "d910dbec4ad861d2eedf257a0e1df3dde58b39914620a22d24e85aa852d2d524",
+    "source_sha256_verified": true,
+    "version": "kse-latest-duration-v1"
+  },
+  "isolated_venv": true,
+  "model_or_rules_changed": false,
+  "network_input_retrieved_and_sha256_verified": true,
+  "prior_archives_used": false,
+  "python_version": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "result_files_byte_identical": 9,
+  "system_site_packages": false,
+  "tested_commit": "0bcf54d92da319fa905aca553473c7335dd54a73",
+  "tests_passed": 14
+}

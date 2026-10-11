@@ -1,0 +1,19 @@
+test_both_overlapping_events_are_excluded (test_duration.DurationTests.test_both_overlapping_events_are_excluded) ... ok
+test_boundary_clear_is_excluded (test_duration.DurationTests.test_boundary_clear_is_excluded) ... ok
+test_clear_at_origin_is_available (test_duration.DurationTests.test_clear_at_origin_is_available) ... ok
+test_closed_actual_positive_only (test_duration.DurationTests.test_closed_actual_positive_only) ... ok
+test_completion_order_and_only_cleared_are_used (test_duration.DurationTests.test_completion_order_and_only_cleared_are_used) ... ok
+test_current_target_cannot_change_its_forecast (test_duration.DurationTests.test_current_target_cannot_change_its_forecast) ... ok
+test_duplicates_and_conflicts_are_audited (test_duration.DurationTests.test_duplicates_and_conflicts_are_audited) ... ok
+test_history_warmup_and_exact_window (test_duration.DurationTests.test_history_warmup_and_exact_window) ... ok
+test_location_and_type_are_not_blended (test_duration.DurationTests.test_location_and_type_are_not_blended) ... ok
+test_metrics_do_not_drop_long_errors (test_duration.DurationTests.test_metrics_do_not_drop_long_errors) ... ok
+test_october_is_defined_in_kyiv_not_utc (test_duration.DurationTests.test_october_is_defined_in_kyiv_not_utc) ... ok
+test_output_cannot_overwrite_old_experiments (test_duration.DurationTests.test_output_cannot_overwrite_old_experiments) ... ok
+test_red_and_yellow_accepted_without_features (test_duration.DurationTests.test_red_and_yellow_accepted_without_features) ... ok
+test_utc_is_required (test_duration.DurationTests.test_utc_is_required) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.002s
+
+OK
