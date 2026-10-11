@@ -23,6 +23,8 @@
 Потрібні Python 3.10+ і IANA Europe/Kyiv; перевірено CPython 3.14.7 у чистому venv. Лише стандартна бібліотека, без pip-залежностей і API-токенів. Мережа потрібна один раз для pinned CSV.
 
 ```sh
+git clone https://github.com/GirBP/kse-air-alert-forecasting.git
+cd kse-air-alert-forecasting
 python3 -m venv .venv
 .venv/bin/python scripts/fetch_latest_input.py --project-root .
 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python -m unittest discover -s tests_latest -v

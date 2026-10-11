@@ -11,10 +11,10 @@
 | Зафіксований метод і незмінні старі експерименти | protocol/latest-opening.json, protocol/preserved-previous-files.json, reports/latest-validation.json | Виконано: rolling30; 219 попередніх файлів незмінні |
 | Метрики, довгі помилки, демо | reports/latest-duration-results.md, reports/latest-demo.txt | Виконано; всі довгі події залишені |
 | Чистий відтворюваний запуск | docs/latest-reproduce.md, reports/latest-clean-copy.json, reports/latest-tests.txt | Виконано: ізольований venv, 14 тестів, 9 однакових файлів |
-| GitHub-репозиторій | Локальний Git main; публікація виконується | Ще не позначено опублікованим |
+| GitHub-репозиторій | [https://github.com/GirBP/kse-air-alert-forecasting](https://github.com/GirBP/kse-air-alert-forecasting), provenance/github-publication.json | Виконано; PUBLIC, main, push підтверджено |
 | Перевірка матеріалів для поширення | docs/latest-data-and-limits.md, .gitignore, scripts/fetch_latest_input.py | Виконано: без чужих raw/детальних таблиць; pinned отримання замість перепоширення невідомої ліцензії |
 | Повний текст усіх AI-розмов | Приватне submission/ai-conversations/, export-manifest.json, AI-EXPORT-GAPS.md | Прогалина: зовнішні ChatGPT/Gemini/Antigravity-експорти; поточний Codex після завершення треба оновити |
 | Reflection ~100 слів англійською | reflection.txt | Виконано, рівно 100 слів |
 | Текстові/медійні ознаки | Не використовуються | Необов’язкові, не потрібні для зафіксованого методу |
 
-Матеріали для форми: GitHub URL (після підтвердженої публікації), повний AI-лог (зовнішні експорти ще відсутні), reflection.txt. Попередня добова задача й широкий збір — окремі незавершені напрями, не приховані за результатом цього пілота.
+Матеріали для форми: GitHub URL (https://github.com/GirBP/kse-air-alert-forecasting), повний AI-лог (зовнішні експорти ще відсутні), reflection.txt. Попередня добова задача й широкий збір — окремі незавершені напрями, не приховані за результатом цього пілота.
