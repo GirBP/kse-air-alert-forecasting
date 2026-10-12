@@ -1,0 +1,56 @@
+{
+  "exported_at_utc": "2026-10-12T20:10:08.591144+00:00",
+  "scope": "User-selected executor, independent auditor and one Antigravity KSE data-collection conversation. Organizer and all other conversations excluded.",
+  "complete_message_text_for_selected_conversations": true,
+  "all_project_AI_conversations_included": false,
+  "tool_trace_in_public_package": false,
+  "attachments_in_public_package": false,
+  "records": [
+    {
+      "file": "01-codex-executor.txt",
+      "title": "Codex — executor",
+      "conversation_id": "01a12c91-fa3f-7472-9de4-a0ba56343030",
+      "message_counts": {
+        "user": 14,
+        "assistant": 108
+      },
+      "first_timestamp": "2026-10-11T20:05:48.293Z",
+      "last_timestamp": "2026-10-12T19:15:53.152Z",
+      "source_export_sha256": "2e57985e787bae9529120651a9a7b22598aa23a5dda31fcc2f5e7bdc1f576b3a",
+      "sha256": "bb48fcccdab763742c671b3025e66bc97f6d205ae4127c10043ef8315a5663d8",
+      "bytes": 146804
+    },
+    {
+      "file": "02-codex-auditor.txt",
+      "title": "Codex — independent auditor",
+      "conversation_id": "01a13118-3cae-79c0-9182-62bf89aba300",
+      "message_counts": {
+        "user": 2,
+        "assistant": 29
+      },
+      "first_timestamp": "2026-10-12T17:10:36.696Z",
+      "last_timestamp": "2026-10-12T19:09:09.718Z",
+      "source_export_sha256": "5783897d92ce4694722a291efebc3b77cf11259bc9ab4127b223233ea3f779c8",
+      "sha256": "8fe8d22b65324faaed5c40d1b5cf8b36817c7e6d739544a3785cff05d78aa83d",
+      "bytes": 21543
+    },
+    {
+      "file": "03-antigravity-kse.txt",
+      "title": "Air Alert Data Collection And Documentation",
+      "conversation_id": "56511a49-c0c8-400e-807a-113f4a1667b7",
+      "message_counts": {
+        "USER": 5,
+        "ASSISTANT": 7,
+        "ERROR": 1
+      },
+      "source_database_sha256": "2ee1bf5bb393d6142f2e95f635be2910c7cc8b83561f0184527a2519d3e1a0de",
+      "sha256": "b9a36923cc443c6e3673688465a9214f07c989583e9f10689079d1e53b04a65f",
+      "bytes": 77788
+    }
+  ],
+  "combined_file": {
+    "file": "full-conversation-log.txt",
+    "sha256": "98bca100d9a61e36a3ef46f0b6708bfb5e254dbf4891e51d50f4e47587f3ab01",
+    "bytes": 247024
+  }
+}
