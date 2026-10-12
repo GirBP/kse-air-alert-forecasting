@@ -1,0 +1,19 @@
+{
+  "calibration_leakage_rule": "a residual enters calibration only after actual clear AND logged record receipt; each previously issued prediction immutable",
+  "evaluation": [
+    "empirical coverage with temporal-block uncertainty when adequate blocks exist",
+    "mean/median width",
+    "interval score",
+    "asymmetric under/over misses",
+    "calendar periods with sample sizes"
+  ],
+  "fresh_test_period_proposal": "[2026-10-13T00:00:00 Europe/Kyiv,2026-11-13T00:00:00 Europe/Kyiv); only if prospectively logged and unseen when approved; do not call existing October 1–11 independent again",
+  "guarantee": "No distribution-free time-series coverage claim; exchangeability/shift/dependence assumptions not established",
+  "input_contract": "same UID/source; append-only received_at, source updated_at if supplied, response hash, exact row version; no overwriting historical input versions or issued forecasts",
+  "interval_recipe_proposal": "single precommitted online absolute-residual conformal-style radius: all available completed past residuals from this fixed point method, rank ceil((n+1)*0.9), [max(0,p-q),p+q]; no interval if rank exceeds n; no interval tuning on the new test",
+  "nominal_coverage_proposal": 0.9,
+  "point_method_unchanged": true,
+  "status": "proposed_not_approved_not_executed",
+  "target": "prediction interval for total registered Kyiv alert duration at start, same point forecast rolling30",
+  "user_acceptance": "user and error costs unvalidated; practical gain, allowed underestimation rate, coverage and width constraints must be agreed before this experiment"
+}

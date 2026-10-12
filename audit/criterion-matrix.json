@@ -1,0 +1,274 @@
+[
+  {
+    "action": "Описати гіпотезу; перед наступним тестом погодити рішення та втрати з користувачем.",
+    "conclusion": "Є практична гіпотеза планування, але немає підтвердженого користувача, ціни помилки або виміряного виграшу.",
+    "criterion": "Користувач і рішення",
+    "evidence": "README до аудиту, відсутність user-study/SLA",
+    "impact": "Обмежує інтерпретацію; метрики незмінні.",
+    "status": "доказів немає"
+  },
+  {
+    "action": "Зберегти формулювання й явну умову відбору.",
+    "conclusion": "Одна зареєстрована закрита міська air_raid подія; повна тривалість у хвилинах при її початку.",
+    "criterion": "Ціль, origin, одиниця",
+    "evidence": "protocol/latest-v1.json; evaluation-predictions.csv",
+    "impact": "Документація.",
+    "status": "підтверджено"
+  },
+  {
+    "action": "README/методологія тепер розрізняють ці задачі; залишкова задача не реалізована.",
+    "conclusion": "Стара задача є повною тривалістю при старті; віднімання elapsed не є перевіреним прогнозом залишку.",
+    "criterion": "Повна та залишкова тривалість",
+    "evidence": "Старе демо; новий forecast.predict_at_start",
+    "impact": "Документація, без зміни цілі.",
+    "status": "підтверджено частково"
+  },
+  {
+    "action": "Не заявляти виміряної тривалості переривання; потрібне user-study.",
+    "conclusion": "Тривалість тривоги — лише можливий proxy; різні правила роботи під red/yellow.",
+    "criterion": "Тривога та переривання діяльності",
+    "evidence": "Дані не містять фактичного припинення/відновлення роботи",
+    "impact": "Обмежує практичний висновок.",
+    "status": "доказів немає"
+  },
+  {
+    "action": "MAE зберегти як дослідницьку метрику; бізнес-критерії погодити до нового тесту.",
+    "conclusion": "MAE узгоджена з медіаною за симетричної абсолютної втрати; реальна ціна завищення/заниження невідома.",
+    "criterion": "MAE та асиметрична ціна",
+    "evidence": "rolling median 30; docs/methodology.md",
+    "impact": "Інтерпретація, не новий вибір метрики.",
+    "status": "підтверджено частково"
+  },
+  {
+    "action": "Явна schema validation у v2; не поширювати висновок на невідомі/незареєстровані події.",
+    "conclusion": "Явний UTC, позитивні закриті інтервали, необхідні поля наявні; відсутніх початків/відбоїв у цих 240 немає.",
+    "criterion": "Схема, UTC, пропуски полів",
+    "evidence": "diagnostic-evidence.json; input SHA; 240 UID31 рядків",
+    "impact": "Числа незмінні.",
+    "status": "підтверджено"
+  },
+  {
+    "action": "У prediction API дублікати рахувати один раз, невідомі конфлікти/перекриття явно відхиляти.",
+    "conclusion": "У конкретному Київському знімку дефектів цих типів не виявлено.",
+    "criterion": "Дублікати, конфлікти, перекриття",
+    "evidence": "240 унікальних API id, 0 перекриттів; frozen exclusions",
+    "impact": "Наявні результати незмінні; поведінка інших входів виправлена.",
+    "status": "підтверджено"
+  },
+  {
+    "action": "Не використовувати stored level як доведену початкову ознаку; групування тільки описове.",
+    "conclusion": "UID31 є м. Київ, API type=oblast; UID14 — Київська область. air_raid усюди. Рівень — фінальне значення архіву, його значення при старті не доведено.",
+    "criterion": "Територія, тип і рівень",
+    "evidence": "mirror client UID31/UID14; group-errors.csv",
+    "impact": "Обмежує інтерпретацію груп.",
+    "status": "підтверджено частково"
+  },
+  {
+    "action": "Порівняння метрик між джерелами не називати виграшем моделі або доказом стаціонарності.",
+    "conclusion": "Vadimkin Telegram-derived та API mirror — різні процеси запису; у нового є red/yellow і API id. Джерела не злиті.",
+    "criterion": "Джерела та зміна процесу",
+    "evidence": "historical-input.json; source-distribution.csv",
+    "impact": "Інтерпретація.",
+    "status": "підтверджено частково"
+  },
+  {
+    "action": "Майбутнє дослідження: проспективно логувати всі початки та відкриті/цензуровані; не викидати їх без обліку.",
+    "conclusion": "Когорта outcome-conditioned: закритість/відбій невідомі при старті. У наявних Kyiv рядках немає відкритих, але їхню відсутність у світі/джерелі не доведено.",
+    "criterion": "Closed-only selection та праве цензурування",
+    "evidence": "select; кінці < snapshot boundary; 0 open Kyiv, 75 open всього",
+    "impact": "Обмежує узагальнення на всі оголошення.",
+    "status": "підтверджено частково"
+  },
+  {
+    "action": "Не zero-fill; добову задачу тримати окремою.",
+    "conclusion": "Немає підстав для повних календарних днів чи нульового навантаження без рядків.",
+    "criterion": "Відсутність подій vs спостереження",
+    "evidence": "Порожній coverage registry; snapshot не має журналу безперервного отримання",
+    "impact": "Інтерпретація, поточні цілі не змінюються.",
+    "status": "доказів немає"
+  },
+  {
+    "action": "Використовувати термін event-clock retrospective; потрібні version/receipt logs для operational claim.",
+    "conclusion": "Event clocks явні; час отримання знімка записано. 7 archive commits тільки 06–11.10.2026; публікація/виправлення кожного рядка при історичному origin невідомі.",
+    "criterion": "Event/publication/receipt/correction clocks",
+    "evidence": "retrieval-log; mirror-version-history.json; CSV без updated_at",
+    "impact": "Суттєве обмеження ретроспективності.",
+    "status": "підтверджено частково"
+  },
+  {
+    "action": "Розділено predict_at_start і scoring.",
+    "conclusion": "Поточна ціль входила лише до scoring; числового витоку її тривалості не виявлено.",
+    "criterion": "Поточний відбій у прогнозі",
+    "evidence": "Незалежні 210 прогнозів, новий API без поточного end",
+    "impact": "Числа незмінні, API поліпшено.",
+    "status": "підтверджено"
+  },
+  {
+    "action": "Зберегти as-of фільтр, окремо перевіряти доступність версії.",
+    "conclusion": "У збережених прикладах всі останні 30 закінчилися до прогнозу.",
+    "criterion": "Незавершена історія",
+    "evidence": "verify_implementation_v2; end <= origin; tests",
+    "impact": "Числа незмінні.",
+    "status": "підтверджено"
+  },
+  {
+    "action": "Розрізнити retrospective cohort і as-of features; новий component ігнорує поточні/майбутні початки до end/target.",
+    "conclusion": "Статичний cohort відбирається за відбоєм/якістю після події. Це звужує оцінювану популяцію; checksum не доводить causal selection або publication-time availability.",
+    "criterion": "Фільтрація за майбутнім",
+    "evidence": "select всього closed cohort; новий target-free component",
+    "impact": "Інтерпретація; фактичних перекриттів/конфліктів у 240 немає.",
+    "status": "підтверджено частково"
+  },
+  {
+    "action": "Виправлено default implementation v2: кожний origin має окрему as-of історію, порядок rows не впливає.",
+    "conclusion": "Старий stateful helper не перевіряв порядок; production select був відсортований, тому старі 84 числа цим не зіпсовано.",
+    "criterion": "Невпорядкований прямий виклик forecast helper",
+    "evidence": "Відтворено 16 майбутніх відбоїв у старому стані при зворотному origin",
+    "impact": "Латентний витік на неправильному прямому вході усунуто; старі числа незмінні.",
+    "status": "виявлено дефект"
+  },
+  {
+    "action": "Зберегти регресійні тести; корекції минулого без availability timestamps не можна віднести до часу.",
+    "conclusion": "Тести числового прогнозу та lineage виконані без file-checksum gate.",
+    "criterion": "Незмінність після додавання майбутніх записів",
+    "evidence": "test_forecast_api: future append, reversed rows, current target mutation",
+    "impact": "Доказ алгоритмічної властивості, не якості прогнозу.",
+    "status": "підтверджено"
+  },
+  {
+    "action": "Публікувати агрегати, параметри та replay helper; не перенавчати.",
+    "conclusion": "20 fold scalers заново звірено тільки з past fit rows; 1789-row final scaler та 2555 saved CV predictions відновлено з pinned raw.",
+    "criterion": "Scaling та CV leakage старої моделі",
+    "evidence": "historical-cv-fit-checks.csv; raw frozen-model replay",
+    "impact": "Числа старої моделі підтверджені.",
+    "status": "підтверджено"
+  },
+  {
+    "action": "Не називати це незалежним підтвердженням дизайну; новий untouched період для нових рішень.",
+    "conclusion": "Alpha=.01 за 2025 CV; 2026 validation уже була відома з v1, тому верифікація v2 exploratory. Rolling30 задано до v1 validation.",
+    "criterion": "Параметри та повторне використання валідації",
+    "evidence": "v2 protocol; cv metrics; validation_reuse_limitation",
+    "impact": "Інтерпретація.",
+    "status": "підтверджено частково"
+  },
+  {
+    "action": "Зберегти sequential scenario; не інтерпретувати як багатокроковий прогноз всього місяця в його перший день.",
+    "conclusion": "Завершені попередні test events можуть входити до пізніших прогнозів; формула/параметри не переобираються.",
+    "criterion": "Оновлення історії всередині тесту",
+    "evidence": "Протокол; lineage кожного прогнозу",
+    "impact": "Документація.",
+    "status": "підтверджено"
+  },
+  {
+    "action": "Не робити daily autocorrelation із event lags; користуватися календарними розбиттями.",
+    "conclusion": "30 подій, не 30 днів: новий span 2.73–5.33 дня; old median span 20.13 дня. Origin заданий початком події.",
+    "criterion": "Нерегулярний потік",
+    "evidence": "Rolling30 spans; calendar grouping",
+    "impact": "Документація.",
+    "status": "підтверджено"
+  },
+  {
+    "action": "Залишити зафіксований метод; не називати альтернативи рівноцінними або rolling універсально кращим.",
+    "conclusion": "На старій validation rolling30 менша MAE за historical на 1.094 хв, гірша RMSE на 2.255; модель виграла MAE 0.783 хв, CI включали нуль.",
+    "criterion": "Логіка вибору rolling30",
+    "evidence": "Historical metrics/CV/bootstrap; raw replay",
+    "impact": "Уточнено висновок про силу переваги.",
+    "status": "підтверджено частково"
+  },
+  {
+    "action": "Додано агреговані докази із SHA, 20 frozen CV models і stdlib raw replay, без raw redistribution.",
+    "conclusion": "Раніше читач не міг перевірити історичні цифри/CV/frozen coefficients.",
+    "criterion": "Публічні докази вибору",
+    "evidence": "До аудиту GitHub мав лише новий runner і згадки старих результатів",
+    "impact": "Документація/відтворюваність, числа незмінні.",
+    "status": "виявлено дефект"
+  },
+  {
+    "action": "Не обирати нового фінального переможця; описати переносимість старого вибору як непідтверджену.",
+    "conclusion": "Historical median MAE 37.826 < rolling30 40.894; naive last 53.408. Це post-evaluation evidence, не новий blind test.",
+    "criterion": "Додаткове latest порівняння",
+    "evidence": "Наперед записаний audit plan; 84 paired examples",
+    "impact": "Змінився висновок про перевагу методу, не final method.",
+    "status": "підтверджено"
+  },
+  {
+    "action": "Групи за фактом тільки діагностичні; без trimming і без параметрів за ними.",
+    "conclusion": "±30: 46/84; >60 хв недооцінок: 11/84. Long >=120: 7 подій, усі недооцінені, 70.6% SSE. Red n=3 — замало для сильного висновку.",
+    "criterion": "Помилки, групи й хвіст",
+    "evidence": "diagnostic tables/3 plots",
+    "impact": "Обмежує практичну корисність.",
+    "status": "підтверджено"
+  },
+  {
+    "action": "Описувати часову неоднорідність і tail; ненульовий mean не є спростуванням median forecast.",
+    "conclusion": "Mean error -10.909, median +4.179; дві partial weeks мають mean +14.165 та -35.983. Не вимагали normality/стаціонарності.",
+    "criterion": "Bias, залежність, зміна розподілу",
+    "evidence": "calendar/errors dependence/source distribution",
+    "impact": "Інтерпретація, без формального shift proof.",
+    "status": "підтверджено частково"
+  },
+  {
+    "action": "CI умовні й approximate; bootstrap fraction не p-value; latest 2 partial weeks без нового CI.",
+    "conclusion": "Парність, event weighting та арифметика правильні. Незалежність/обмінність блоків не доведені; 7/14 днів коротші за можливу memory ~20 днів.",
+    "criterion": "Bootstrap CI старих різниць",
+    "evidence": "277 matched IDs; 27/14 clusters; 5000 draws; saved 30000 replicates",
+    "impact": "Статистична впевненість обмежена, не рівноцінність.",
+    "status": "підтверджено частково"
+  },
+  {
+    "action": "Лише proposed-next-interval-study.json; не виконано, не погоджено, новий unseen період.",
+    "conclusion": "Немає каліброваних інтервалів чи незалежної перевірки coverage. Range минулого не є PI.",
+    "criterion": "Прогнозні інтервали",
+    "evidence": "Point API prediction_interval=null",
+    "impact": "Обмежує оцінку невизначеності окремої події.",
+    "status": "доказів немає"
+  },
+  {
+    "action": "V2 має header-only CSV, null metrics при n=0, insufficient-history status та відсутнє демо без crash.",
+    "conclusion": "Старий runner припускав наявність рядків/демо; pinned 240-case run не падав.",
+    "criterion": "Порожні дані/мала історія/відсутнє демо",
+    "evidence": "Old table([]) IndexError; old next() без default",
+    "impact": "Старі числа незмінні; edge-case runtime виправлено.",
+    "status": "виявлено дефект"
+  },
+  {
+    "action": "Контрольовані errors, atomic pinned download, verified cache; жодних fallback/null targets.",
+    "conclusion": "Old downloader не підміняв вхід, але давав traceback; schema/internal API мали неявні припущення.",
+    "criterion": "Некоректні поля й недоступне джерело",
+    "evidence": "schema tests; download failure/cache/checksum tests",
+    "impact": "Runtime виправлено, числові результати незмінні.",
+    "status": "підтверджено частково"
+  },
+  {
+    "action": "README явно називає source mode і gap; не приписувати можливість промисловому сервісу.",
+    "conclusion": "Тепер можна обчислити point forecast із нового start і supplied history. Підключення live source/історичної publication availability не доведено.",
+    "criterion": "Новий початок без майбутнього відбою",
+    "evidence": "New predict command / forecast API",
+    "impact": "Функціональна прогалина закрита в мінімальному API.",
+    "status": "підтверджено частково"
+  },
+  {
+    "action": "Логувати immutable input versions/issued forecasts; конфлікти без clocks — помилка.",
+    "conclusion": "Якщо availability times передано, код їх дотримується; без них ретроспективні версії не можна датувати.",
+    "criterion": "Запізнення, корекції та forecast logs",
+    "evidence": "Availability tests; output input/code SHA, history IDs/clears/durations",
+    "impact": "Інтерпретація; старі snapshots не перезаписані.",
+    "status": "підтверджено частково"
+  },
+  {
+    "action": "Оновити фактичні Codex records, позначити cutoff; власнику додати зовнішні full exports; без вигаданого closing transcript.",
+    "conclusion": "Є справжні Codex excerpts through cutoff; повних зовнішніх ChatGPT/Gemini/Antigravity експортів немає. Попередній closing watcher завершився timeout.",
+    "criterion": "AI-log і reflection",
+    "evidence": "submission files; export manifest; 100-word reflection",
+    "impact": "Прогалина подання, не ML-метрик.",
+    "status": "підтверджено частково"
+  },
+  {
+    "action": "Не витрачати аудит на широкий пошук або зайву інфраструктуру.",
+    "conclusion": "Ці складності не є обов’язковими; відсутність не є дефектом.",
+    "criterion": "Складні моделі/всі регіони/media/production",
+    "evidence": "Наданий перелік KSE вимог",
+    "impact": "Scope.",
+    "status": "не застосовується"
+  }
+]

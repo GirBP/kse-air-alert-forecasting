@@ -1,0 +1,12 @@
+{
+  "each_history_clear_available_by_event_clock": true,
+  "evaluation_forecasts_checked": 84,
+  "forecast_values_and_history_independently_checked": 210,
+  "historical_publication_availability_proven": false,
+  "method": "median_last_30_completed",
+  "numerical_results_changed": false,
+  "original_data_artifacts_byte_identical": 7,
+  "previous_files_verified": 207,
+  "script_sha256": "126456fb054e0396b399a2cb490dcf2cff4ce14aa19b979b054d5771fd29cbaa",
+  "version": "implementation-v2-audit"
+}

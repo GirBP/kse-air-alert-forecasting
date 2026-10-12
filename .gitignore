@@ -29,3 +29,11 @@ __pycache__/
 !/reports/latest-clean-copy.json
 !/reports/latest-demo.txt
 !/reports/latest-tests.txt
+
+# ML audit: authored code, aggregate evidence and scientific figures.
+!/scripts/ml_diagnostics.py
+!/scripts/replay_historical_selection.py
+!/scripts/verify_implementation_v2.py
+!/docs/ml-audit.md
+!/docs/methodology.md
+!/reports/ml-diagnostics/

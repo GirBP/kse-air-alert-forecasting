@@ -1,0 +1,3 @@
+period,n,duration_mean,duration_median,duration_p90,duration_ge120_n,stored_red_n,stored_yellow_n,interpretation
+September_history,156,77.26464027777777,35.70454166666667,197.77360833333333,32,20,136,same-source descriptive shift; source selection/coverage and levels may change; no stationarity assertion
+October_opened_evaluation,84,52.801626388888884,32.65515,116.64352000000001,7,3,81,same-source descriptive shift; source selection/coverage and levels may change; no stationarity assertion

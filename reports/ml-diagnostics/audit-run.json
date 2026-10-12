@@ -1,0 +1,17 @@
+{
+  "actual_defects": [
+    "unchecked unordered legacy helper state",
+    "empty outputs/demo handling"
+  ],
+  "audited_at_utc": "2026-10-12T00:43:01.960716+00:00",
+  "final_method_changed": false,
+  "functional_gap_resolved": "target-free as-of API",
+  "new_model_search": false,
+  "numerical_results_changed": false,
+  "original_commit": "7b24b5f",
+  "original_data_artifacts_byte_identical": 7,
+  "previous_files_preserved": 207,
+  "remaining_critical_submission_gap": "full external AI exports",
+  "scientific_plots_inspected": 3,
+  "status": "post-evaluation technical audit"
+}

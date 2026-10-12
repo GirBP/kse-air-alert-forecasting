@@ -1,0 +1,51 @@
+{
+  "comparisons": "paired errors on identical events, descriptive only; no final winner selection",
+  "corrections": "versioned implementation; keep old code, protocols, inputs and outputs; demonstrate numerical agreement or document changes",
+  "diagnostic_groups": {
+    "actual_duration_bands_minutes": [
+      0,
+      30,
+      60,
+      120,
+      240
+    ],
+    "local_calendar": "daily and Monday weekly, explicit partial edges",
+    "local_hour_bands": [
+      0,
+      6,
+      12,
+      18,
+      24
+    ],
+    "stored_level": "red/yellow, not proven level at alert start",
+    "tolerances_minutes": [
+      15,
+      30,
+      60
+    ],
+    "underprediction_thresholds_minutes": [
+      30,
+      60,
+      120
+    ]
+  },
+  "evaluation_examples": "exactly frozen 84 evaluation event_ids; no exclusions by errors",
+  "future_invariance": "test forecast component separately from frozen-input checksums",
+  "input_commit": "7b24b5f9dab255af630c302a86a5481c5c6d3ad1",
+  "input_sha256": "f5110defe3b7661dc350e4d5923668039eaa2f35712313203a3a5f535476e123",
+  "main_input": "data/latest/inputs/alerts_in_ua.csv",
+  "methods": [
+    "median_last_30_completed",
+    "historical_median",
+    "last_completed_alert"
+  ],
+  "plots": [
+    "actual_vs_prediction",
+    "signed_errors_over_calendar_time",
+    "absolute_error_ecdf_three_fixed_methods"
+  ],
+  "recorded_at_utc": "2026-10-12T00:13:29.869555+00:00",
+  "status": "diagnostics_of_already_opened_period; no new heldout confirmation",
+  "uncertainty": "audit existing v2 paired 7/14-day bootstrap; no bootstrap CI on only two latest weekly blocks",
+  "version": "ml-audit-posthoc-v1"
+}

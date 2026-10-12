@@ -1,3 +1,3 @@
-from .duration import main
+from .evaluation import main
 
 main()

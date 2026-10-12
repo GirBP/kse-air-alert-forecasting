@@ -1,0 +1,3 @@
+candidate,reference,n_pairs,mean_AE_difference_minutes,median_AE_difference_minutes,candidate_smaller_AE_n,interpretation
+median_last_30_completed,historical_median,84,3.0676700396825396,5.985800000000001,37,post-evaluation descriptive; no new winner or valid independent CI
+median_last_30_completed,last_completed_alert,84,-12.513910813492062,-4.007858333333331,49,post-evaluation descriptive; no new winner or valid independent CI

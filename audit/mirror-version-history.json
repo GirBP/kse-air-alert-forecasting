@@ -1,0 +1,35 @@
+{
+  "archive_commits": [
+    {
+      "committer_date": "2026-10-11T10:07:59Z",
+      "sha": "7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8"
+    },
+    {
+      "committer_date": "2026-10-10T09:56:37Z",
+      "sha": "3b0e7f1dc7e0e04e85db73f8a24b3e587d3e05ee"
+    },
+    {
+      "committer_date": "2026-10-09T10:36:55Z",
+      "sha": "e3736aaa630add1705f663f215ed787b2f02bea9"
+    },
+    {
+      "committer_date": "2026-10-08T11:00:49Z",
+      "sha": "e70f8ba76194fa7b3485f14b80d23de30925d864"
+    },
+    {
+      "committer_date": "2026-10-08T10:34:52Z",
+      "sha": "3558be848046b7354c3b7d8e828e19b4f2ac600a"
+    },
+    {
+      "committer_date": "2026-10-07T10:40:06Z",
+      "sha": "013b9f0843b58e78a4696f720687cb610259f8b4"
+    },
+    {
+      "committer_date": "2026-10-06T12:00:45Z",
+      "sha": "10d1d91e9871e80b38eea5a6a04f23336a391bc7"
+    }
+  ],
+  "checked_at_utc": "2026-10-12T00:37:55.216873+00:00",
+  "interpretation": "commit metadata gives archive versions, not original API publication or correction times; no row-version availability guarantee",
+  "url": "https://api.github.com/repos/JustJimer/ukraine-air-alert-stats/commits?path=archive/alerts_in_ua.csv&per_page=30"
+}

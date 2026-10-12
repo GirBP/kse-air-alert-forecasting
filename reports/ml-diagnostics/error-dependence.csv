@@ -1,0 +1,11 @@
+variable,event_lag,n_pairs,pearson_correlation,interpretation
+error,1,83,0.1354178257051856,"irregular event lag, descriptive, not daily ACF or significance test"
+error,2,82,0.21487596999472913,"irregular event lag, descriptive, not daily ACF or significance test"
+error,3,81,0.1643883170540384,"irregular event lag, descriptive, not daily ACF or significance test"
+error,4,80,0.4179351282626322,"irregular event lag, descriptive, not daily ACF or significance test"
+error,5,79,0.23148168694930712,"irregular event lag, descriptive, not daily ACF or significance test"
+absolute_error,1,83,-0.04089991582522251,"irregular event lag, descriptive, not daily ACF or significance test"
+absolute_error,2,82,0.03848863607146932,"irregular event lag, descriptive, not daily ACF or significance test"
+absolute_error,3,81,0.08959870600708245,"irregular event lag, descriptive, not daily ACF or significance test"
+absolute_error,4,80,0.3657427243608413,"irregular event lag, descriptive, not daily ACF or significance test"
+absolute_error,5,79,0.14431281589495792,"irregular event lag, descriptive, not daily ACF or significance test"

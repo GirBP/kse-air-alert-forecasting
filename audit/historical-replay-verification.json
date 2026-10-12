@@ -1,0 +1,37 @@
+{
+  "historical_raw_sha256_verified": true,
+  "hyperparameters_searched": false,
+  "metrics": [
+    {
+      "MAE": 55.864741275571596,
+      "RMSE": 97.76100991790373,
+      "method": "last_completed_alert",
+      "n": 277
+    },
+    {
+      "MAE": 35.57797833935018,
+      "RMSE": 68.57349999617074,
+      "method": "historical_median",
+      "n": 277
+    },
+    {
+      "MAE": 34.484055354993984,
+      "RMSE": 70.82830613221499,
+      "method": "median_last_30_completed",
+      "n": 277
+    },
+    {
+      "MAE": 33.70081394721185,
+      "RMSE": 67.85307753788621,
+      "method": "quantile_l1",
+      "n": 277
+    }
+  ],
+  "models_refitted": false,
+  "post_June_targets_used": false,
+  "saved_cv_models_verified": 20,
+  "saved_cv_prediction_values_verified": 2555,
+  "source_sha256": "1f50085481d229f57b624d83b1ce723e884dea409c14afb5b7040c8a2f233e4f",
+  "training_only_scaler_recomputed_n": 1789,
+  "validation_events_replayed": 277
+}

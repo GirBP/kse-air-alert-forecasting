@@ -1,0 +1,143 @@
+{
+  "artifact_files_checked": 41,
+  "cv_fit_scalers_checked": 20,
+  "existing_bootstrap_replicates_audited": 30000,
+  "feature_names": [
+    "local_hour_sin",
+    "local_hour_cos",
+    "weekday_sin",
+    "weekday_cos",
+    "log1p_minutes_since_clear",
+    "log1p_completed_lag1",
+    "log1p_completed_lag2",
+    "log1p_completed_lag3",
+    "log1p_median_last5",
+    "log1p_median_last30",
+    "log1p_median_all",
+    "log1p_mean_last30",
+    "log1p_std_last30",
+    "log1p_q25_last30",
+    "log1p_q75_last30"
+  ],
+  "historical_rolling30_calendar_span_days": {
+    "max": 37.10696759259259,
+    "median": 20.12641203703704,
+    "min": 8.522743055555555
+  },
+  "interpretation": "conditional paired calendar-cluster bootstrap, not proof of model equivalence or practical gain",
+  "mode": "retained_artifacts_checked_no_refit_or_new_bootstrap",
+  "paired_support_n": 277,
+  "protocol": {
+    "KSE_requirements_received": false,
+    "additional_metric": "RMSE_minutes",
+    "alpha_grid": [
+      0.01,
+      0.1,
+      1.0,
+      5.0,
+      10.0
+    ],
+    "alpha_selection": "lowest pooled out-of-fold MAE; ties within 1e-10 prefer larger alpha",
+    "bootstrap": {
+      "anchor_local_date": "2025-12-29",
+      "comparisons": [
+        [
+          "median_last_30_completed",
+          "historical_median"
+        ],
+        [
+          "quantile_l1",
+          "median_last_30_completed"
+        ],
+        [
+          "quantile_l1",
+          "historical_median"
+        ]
+      ],
+      "confidence_level": 0.95,
+      "difference_sign": "candidate minus reference; negative favours candidate",
+      "primary_block_days": 7,
+      "random_seed": 20261012,
+      "replicates": 5000,
+      "scheme": "paired calendar block cluster percentile bootstrap; event-weighted metrics; all calendar blocks including empty ones; partial edge blocks retained",
+      "sensitivity_block_days": 14
+    },
+    "cv_fit": "expanding past; origin and actual label finish strictly before fold start; fold outcomes finish strictly before fold end",
+    "duration_band_edges_minutes": [
+      30,
+      60,
+      120,
+      240
+    ],
+    "error_sign": "prediction minus actual; negative is underprediction",
+    "feature_recipe": "cyclic local fractional hour and weekday; log1p minutes since latest completed clear; log1p last 3 completed durations; log1p median last5, last30, all; mean, population std, linear q25 and q75 of last30",
+    "final_fit": "all feature-eligible records with starts and actual finishes strictly before 2026-01-01; no validation refit",
+    "final_test_access": "none; only v1 pretest duration-events used",
+    "final_test_start_inclusive": "2026-07-01",
+    "history_availability": "actual finish <= current recorded start; completion order, same source and territory",
+    "history_minimum_completed_events": 30,
+    "interface_or_final_testing": "not started",
+    "long_event_threshold_minutes": 120,
+    "main_metric": "MAE_minutes",
+    "model": "StandardScaler then linear QuantileRegressor(q=0.5, L1, highs); duration target in minutes",
+    "model_retention_rule": "promote only if MAE below both medians, upper 95% paired MAE difference below zero against both for 7d and 14d blocks, and MAE below rolling median in at least 4 of 6 months; otherwise retain median_last_30_completed as conservative pilot reference",
+    "parent_protocol": "duration-pilot-v1",
+    "prediction_domain": "clip prediction below zero only; no upper cap; no outcome trimming",
+    "publication_time_established": false,
+    "sample": "unchanged Kyiv vadimkin_official sample and identical 277 validation events from v1",
+    "scaler_fit": "new StandardScaler fit only on each fold's fit rows",
+    "scope": "retrospective duration of registered closed Kyiv alerts at their recorded start",
+    "train_end_exclusive": "2026-01-01",
+    "train_start_inclusive": "2022-02-24",
+    "training_cv_folds_local": [
+      [
+        "2025-01-01",
+        "2025-04-01"
+      ],
+      [
+        "2025-04-01",
+        "2025-07-01"
+      ],
+      [
+        "2025-07-01",
+        "2025-10-01"
+      ],
+      [
+        "2025-10-01",
+        "2026-01-01"
+      ]
+    ],
+    "validation_end_exclusive": "2026-07-01",
+    "validation_history_updates": "completed validation events may enter later features; fitted scaler and coefficients remain fixed",
+    "validation_reuse_limitation": "v1 validation errors already observed; v2 is exploratory; no feature/alpha revision after v2 validation scoring",
+    "validation_start_inclusive": "2026-01-01",
+    "version": "duration-pilot-v2"
+  },
+  "selected_alpha": 0.01,
+  "sources": [
+    {
+      "path": "data/duration-pilot-v2/validation-metrics.csv",
+      "sha256": "2a1dd649bf292dccee755e41998b8733cc4add8e23602c70643e7532b320f86d"
+    },
+    {
+      "path": "data/duration-pilot-v2/cv-metrics.csv",
+      "sha256": "2f7b29aa6a99355ddb1d9bd0a9d202d5ac5d7f47b854e17525deac6f28936c5f"
+    },
+    {
+      "path": "data/duration-pilot-v2/block-bootstrap-summary.csv",
+      "sha256": "4e2bac8c5675cfce22607aaa7ab95f50447fb1dcaf323567a4aeb2933fbfb897"
+    },
+    {
+      "path": "data/duration-pilot-v2/frozen-model.json",
+      "sha256": "c55b596c5eecdbc549e6d7c159b093f7607708aafaed87a2d06dd314d16a5590"
+    },
+    {
+      "path": "data/duration-pilot-v2/training-features.csv.gz",
+      "sha256": "2973a47da16375df7e7ae7e1283c2c52f1ac2e973a67c833393d64b01eecbb15"
+    },
+    {
+      "path": "data/duration-pilot-v2/validation-predictions.csv.gz",
+      "sha256": "2a7077f20c9f5f761d3b778e33875a70197f83ac508e4439c2742a93451ad4e1"
+    }
+  ]
+}
