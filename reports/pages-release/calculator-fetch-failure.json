@@ -1,0 +1,7 @@
+{
+  "testMode": "isolated private copy; only upstream URL changed to controlled404",
+  "url": "http://127.0.0.1:8765/calculator-failure/",
+  "resultVisible": false,
+  "state": "Історія недоступна: завантаження, CORS або з’єднання не працює. Число не обчислено; синтетична історія не підставляється.",
+  "syntheticFallback": false
+}

@@ -1,0 +1,6 @@
+test_python_reference_and_timezones (test_calculator.CalculatorTests.test_python_reference_and_timezones) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.467s
+
+OK

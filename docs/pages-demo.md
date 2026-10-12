@@ -1,8 +1,22 @@
 # GitHub Pages: історична демонстрація
 
-Основний Python-маршрут — `kse_latest` implementation-v2, медіана останніх 30 завершених зареєстрованих інтервалів Києва. Науковий метод, frozen protocol, джерело primary84 і попередні числові результати незмінні. Сайт — статичний додатковий артефакт у `web/`, без сервера прогнозування, live feed, T1, ймовірностей чи рекомендацій виходу з укриття.
+Основний Python-маршрут — `kse_latest` implementation-v2, медіана останніх 30 завершених зареєстрованих інтервалів Києва. Науковий метод, frozen protocol, джерело primary84 і попередні числові результати незмінні. Сайт — статичний додатковий артефакт у `web/`, без сервера прогнозування, live feed, T1, ймовірностей чи рекомендацій виходу з укриття. Версія pages-v1.1 додала локальний браузерний розрахунок manual START на справжній pinned історії; Python-ядро незмінне.
 
 URL релізу: https://girbp.github.io/kse-air-alert-forecasting/. Фактичне розгортання й незалежне приймання прив'язуються до точного commit у приватному release handoff; посилання саме по собі не підтверджує deployment. Кінець зареєстрованого інтервалу не доведено як остаточний офіційний відбій.
+
+## Інтерактивний калькулятор на справжній історії
+
+Форма приймає тільки Київ UID31, дату і час Europe/Kyiv. Інші міста недоступні: київська історія для них не використовується. Браузер анонімно отримує pinned latest91 CSV безпосередньо з upstream; CORS `Access-Control-Allow-Origin: *`, фактичне завантаження й Web Crypto SHA-256 перевірено в браузері. На Pages не зберігається чужий CSV, API-ключів немає. Введені дата/час залишаються в браузері й не входять до URL/тіла запиту upstream. Помилка мережі/CORS, checksum/schema або конфлікту даних дає недоступність, без synthetic fallback. Справжня історія ніколи не береться з трьох UX-прикладів.
+
+`forecast-core.mjs` переносить контракт `predict_at_start`: UID/type/identity, відкриті події, доступні версії/corrections, exact duplicates, overlap errors; порядок clear UTC потім numeric ID, мінімум30, current/future clear не входить. `calculator.mjs` відокремлює завантаження та UI. Формат source timestamps має явний UTC; субмілісекундні ненульові мітки браузер відхиляє, а не мовчки округлює. У pinned джерелі такої втрати точності немає.
+
+Історичний origin до exclusive snapshot boundary отримує повну оцінку при початку. Справжнє існування/активність введеної події не перевіряється. Origin на/після межі знімка **не має звичайного прогнозу**: показується лише окремий історичний орієнтир за даними до межі, з поясненням невідомих пізніших завершень. Новий browser receipt не є новою версією файла: UI окремо показує receipt, commit/hash, snapshot boundary, останній registered CLEAR і247 source rows. На межі знімка прогнозований орієнтир приблизно54 хв; він не є прогнозом поточної події.
+
+Дата/час перетворюється explicit Intl Europe/Kyiv і UTC arithmetic, не локальною зоною браузера. DST gap29.03.2026 03:30 і fold25.10.2026 03:30 відхиляються без вгадування; порожні/невалідні/future inputs також. Код не рахує залишок шляхом віднімання elapsed: перевищена початкова оцінка означає лише, що залишкова тривалість тут не прогнозується. MAE не показується як персональне ±40 хв.
+
+[Незалежне порівняння JS з Python на справжньому input](../reports/pages-release/calculator-python-parity.json):248 origins (247START+snapshot boundary),218 forecasts/30 insufficient histories, last30IDs/clears exact, maxnumeric difference2.84e−14 хв. Окремий контрактний тест охоплює16 synthetic histories (не UX source для калькулятора), Python-reference, часові середовища JS UTC/New_York/Tokyo, DST, corrections/current-end/future-suffix/last30/otherUID. [Браузерні сценарії](../reports/pages-release/calculator-browser-checks.json), [controlled404 без числа](../reports/pages-release/calculator-fetch-failure.json). У браузері перевірено форму/Enter й320/360/390 px; жодного page overflow. JS timezone independence перевірено в Node process TZ; це окремо від фактично використаної браузерної зони. Спроба додаткового timezone override у native Chrome була перервана користувацькою роботою; actual overridden-browser pass не заявляється.
+
+Калькулятор переносить event-clock реконструкцію; publication/received/correction times історичних версій невідомі. Він не є перевіреним live-сервісом чи доказом повноти archive. Отримана після введення історія могла бути виправлена пізніше.
 
 ## Демонстраційні приклади та права
 
@@ -45,11 +59,11 @@ PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 python3 scripts/recompute_latest91.py -
 
 ### Prospective logger — incomplete, виключений із релізу
 
-`kse_spatial_v4.demo` simulated collector/logger не входить до public Python package чи сайтового маршруту. Відомі дефекти repeated poll/dedup, namespace/version/order, own receipt maturity, issued/outcome linkage і вільного historical helper cutoff з незалежного аудиту F03–F07/F16 **не перебудовували** в цьому спринті. Не називаємо їх виправленими чи operational-ready. Виправлення й реальний prospective stream — наступне окреме завдання. На сайті немає historical inference викликів із model checkpoints: відображаються лише збережені синтетичні прогнози незмінного default та справжні агрегати.
+`kse_spatial_v4.demo` simulated collector/logger не входить до public Python package чи сайтового маршруту. Відомі дефекти repeated poll/dedup, namespace/version/order, own receipt maturity, issued/outcome linkage і вільного historical helper cutoff з незалежного аудиту F03–F07/F16 **не перебудовували** в цьому спринті. Не називаємо їх виправленими чи operational-ready. Виправлення й реальний prospective stream — наступне окреме завдання. На сайті немає historical inference викликів із model checkpoints. Є збережені синтетичні приклади, справжні агрегати та браузерний rolling30 за реально отриманим pinned CSV. Learned model cutoff/source/cohort bypass через вільний v4 helper неможливий: він не викликається.
 
 ## Локальний запуск і перевірки
 
-Сайт не потребує Python dependencies чи сторонніх CDN. Не відкривайте `index.html` через `file://`: JSON завантажується відносним HTTP-шляхом.
+Сайт не потребує встановлення Python/Node у користувача чи сторонніх CDN. Для developer calculator tests потрібен Node22+ (локально перевірено25.9.0, CI22), без npm dependencies. Основний Python stdlib route Node не потребує. Не відкривайте `index.html` через `file://`: JSON завантажується відносним HTTP-шляхом.
 
 ```sh
 PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests_latest -v
@@ -58,6 +72,8 @@ PYTHONDONTWRITEBYTECODE=1 python3 scripts/build_pages_demo.py
 python3 -m http.server 8000 --bind 127.0.0.1 --directory web
 # http://127.0.0.1:8000/
 python3 scripts/check_public_artifact.py
+# Parity on locally obtained pinned CSV; never commit work/
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/verify_pages_calculator.py --input work/latest91-input.csv --output work/calculator-parity.json
 ```
 
 Builder відтворює synthetic forecasts actual default API та копіює перевірені агрегати; не запускає historical helper, search чи retraining. Public data file містить source/evidence/code hashes. Контрактні тести перевіряють prediction/outcome boundary, fixture values, aggregate binding, relative asset paths і відсутність v4 inference. Браузерний release check: desktop1440×900, mobile320/360/390 px, перемикання трьох сценаріїв, Enter/Space/Tab, відсутність page overflow/console errors, project base path `/kse-air-alert-forecasting/`. Горизонтальний scroll лише всередині широкої таблиці.

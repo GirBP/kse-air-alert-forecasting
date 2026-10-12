@@ -9,12 +9,13 @@
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/style.css">
   <script src="assets/app.js" defer></script>
+  <script src="assets/calculator.mjs" type="module"></script>
 </head>
-<body data-release-version="pages-v1.0">
+<body data-release-version="pages-v1.1">
 <a class="skip" href="#demo">Перейти до демонстрації</a>
 <header class="site-header wrap">
   <a class="brand" href="#top" aria-label="Початок сторінки"><img src="assets/mark.svg" width="32" height="32" alt=""><span>Київ <span class="muted">/ дослідницький пілот</span></span></a>
-  <nav aria-label="Головна навігація"><a href="#results">Результати</a><a href="https://github.com/GirBP/kse-air-alert-forecasting">GitHub ↗</a></nav>
+  <nav aria-label="Головна навігація"><a href="#calculator">Калькулятор</a><a href="#results">Результати</a><a href="https://github.com/GirBP/kse-air-alert-forecasting">GitHub ↗</a></nav>
 </header>
 <main id="top">
   <section class="hero wrap" aria-labelledby="hero-title">
@@ -23,6 +24,25 @@
     <p class="lead">Проста оцінка при початку: медіана останніх 30 завершених подій Києва. Вона допомагає дослідити можливість планування пауз, але її практичну користь ще не виміряно.</p>
     <p class="safety">Прогноз не є сигналом відбою. Відповідність завершенню офіційної тривоги не доведена. Дотримуйтеся офіційних повідомлень.</p>
     <div class="hero-meta"><span>Python · rolling median 30</span><span>Без live feed</span><span>Оцінка при початку, не залишковий час</span></div>
+  </section>
+  <section class="wrap calculator-section" id="calculator" aria-labelledby="calculator-title">
+    <p class="eyebrow">Ручний початок / справжня історія</p><h2 id="calculator-title">Оцінити повну тривалість</h2>
+    <p class="section-intro">Оберіть місто й дату з часом початку. Калькулятор використовує справжню завершену історію з окремого знімка джерела. Введення не підтверджує, що подія існує або досі активна.</p>
+    <form id="calculator-form" novalidate aria-busy="false">
+      <div class="calc-fields"><label for="calc-city">Місто<select id="calc-city" name="city"><option value="31">Київ · UID31</option value="lviv" disabled>Львів — метод не перевірено</option><option value="kharkiv" disabled>Харків — метод не перевірено</option></select></label>
+      <label for="calc-date">Дата початку<input id="calc-date" type="date" name="date" required></label>
+      <label for="calc-time">Час початку<input id="calc-time" type="time" name="time" step="60" required></label></div>
+      <p class="calc-clock">Час завжди Europe/Kyiv, незалежно від зони браузера. Неоднозначний чи неіснуючий час переходу літнього часу відхиляється.</p>
+      <button class="reveal" id="calc-submit" type="submit">Оцінити загальну тривалість</button>
+    </form>
+    <p id="calc-state" class="calc-state" role="status" aria-live="polite">Для розрахунку потрібні дата й час. Джерело завантажується тільки після коректного введення.</p>
+    <div id="calc-result" class="calc-result" aria-live="polite" hidden></div>
+    <details id="calc-source" class="calc-source" hidden><summary>Джерело, версія та межа історії</summary><dl>
+      <dt>Джерело</dt><dd><a href="https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/c5b3bd012c7694e63115999a7bbd0b683eaa8d24/archive/alerts_in_ua.csv">alerts.in.ua через JustJimer mirror · окремий pinned CSV</a></dd>
+      <dt>Отримано цим браузером</dt><dd id="calc-receipt"></dd><dt>Версія файла</dt><dd><code id="calc-version"></code></dd><dt>SHA-256</dt><dd><code id="calc-sha"></code></dd>
+      <dt>Межа знімка</dt><dd id="calc-boundary"></dd><dt>Останнє зареєстроване завершення</dt><dd id="calc-last-clear"></dd><dt>Наявні рядки Києва в знімку</dt><dd id="calc-source-n"></dd>
+    </dl><p>Свіже завантаження старого архіву не робить історію актуальною. Безперервність спостереження та історичні часи отримання/виправлення невідомі.</p></details>
+    <p class="calc-method">Оцінка ґрунтується на 30 попередніх завершених інтервалах. Місто обирає перевірену історію, час задає її межу; година доби не є окремою ознакою моделі. Незмінні останні 30 подій дають однакове число. Це оцінка від початку, не залишок часу; MAE нижче не є персональним «±40 хв».</p>
   </section>
   <section class="wrap demo-section" id="demo" aria-labelledby="demo-title">
     <div class="section-head"><div><p class="eyebrow">01 / Як читати прогноз</p><h2 id="demo-title">Три сценарії</h2></div><span class="badge">Синтетичні UX-приклади</span></div>

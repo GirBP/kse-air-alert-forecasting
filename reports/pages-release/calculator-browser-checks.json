@@ -1,0 +1,81 @@
+{
+  "sourceFetchCORSandSHA": "PASS",
+  "historyRows": 247,
+  "example": {
+    "date": "2026-10-01",
+    "time": "02:50",
+    "roundedPrediction": 90,
+    "historyN": 156,
+    "usedN": 30
+  },
+  "cases": [
+    {
+      "case": "insufficient",
+      "state": "Недостатньо завершеної історії. Нуль замість прогнозу не підставляємо.",
+      "resultHidden": false,
+      "result": "Прогноз відсутній: до введеного початку доступно лише 0 придатних завершень; потрібно 30.Завершення зареєстрованого інтервалу не є сигналом офіційного відбою."
+    },
+    {
+      "case": "stale",
+      "state": "Застарілий знімок для введеного моменту; звичайний прогноз відсутній.",
+      "resultHidden": false,
+      "result": "Для введеного початку актуальний прогноз недоступний: історія закінчується раніше.Історичний орієнтир за даними до 12.10.2026, 13:51:36 Europe/Kyiv: приблизно 54 хв.Це медіана на межі знімка, а не прогноз введеної події. Пізніші завершені події могли змінити оцінку.Завершень в історії на цій межі: 247; використано 30.Завершення зареєстрованого інтервалу не є сигналом офіційного відбою."
+    },
+    {
+      "case": "future",
+      "state": "Початок у майбутньому. Вкажіть час, який уже настав.",
+      "resultHidden": true,
+      "result": ""
+    },
+    {
+      "case": "dst-gap",
+      "state": "Цього місцевого часу не існує через перехід літнього часу. Оберіть інший час.",
+      "resultHidden": true,
+      "result": ""
+    },
+    {
+      "case": "dst-fold",
+      "state": "Ця місцева година повторюється при переході літнього часу. Без уточнення початок неоднозначний; розрахунок відхилено.",
+      "resultHidden": true,
+      "result": ""
+    }
+  ],
+  "mobile": [
+    {
+      "requestedWidth": 320,
+      "buttonWidth": 269,
+      "clientWidth": 305,
+      "resultVisible": true,
+      "scrollWidth": 305
+    },
+    {
+      "requestedWidth": 360,
+      "buttonWidth": 309,
+      "clientWidth": 345,
+      "resultVisible": true,
+      "scrollWidth": 345
+    },
+    {
+      "requestedWidth": 390,
+      "buttonWidth": 339,
+      "clientWidth": 375,
+      "resultVisible": true,
+      "scrollWidth": 375
+    }
+  ],
+  "keyboardSubmitEnter": true,
+  "consoleErrors": [],
+  "inputEventExistenceAsserted": false,
+  "remainingForecast": false,
+  "mobileHeaderOverflowCorrected": true,
+  "timezone_independence": {
+    "JS_engine_environments": [
+      "UTC",
+      "America/New_York",
+      "Asia/Tokyo"
+    ],
+    "status": "PASS",
+    "actual_browser_override": "NOT_COMPLETED_USER_BROWSER_INTERACTION",
+    "no_OS_timezone_change": true
+  }
+}

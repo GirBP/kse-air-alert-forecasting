@@ -2,7 +2,7 @@ name: Historical demo Pages
 on:
   push:
     branches: [main]
-    paths: ['web/**', 'tests_web/**', 'scripts/build_pages_demo.py', 'reports/latest91/**', '.github/workflows/pages.yml']
+    paths: ['web/**', 'tests_web/**', 'scripts/build_pages_demo.py', 'scripts/verify_pages_calculator.py', 'reports/latest91/**', '.github/workflows/pages.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -19,6 +19,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.14'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Verify default and public presentation
         env:
           PYTHONPATH: src

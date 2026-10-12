@@ -45,3 +45,4 @@ __pycache__/
 !/docs/pages-demo.md
 !/reports/latest91/
 !/reports/pages-release/
+!/scripts/verify_pages_calculator.py

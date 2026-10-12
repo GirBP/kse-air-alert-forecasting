@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "input_sha256": "fe79c5726a1a9db9f560d6dad1de1b46f16d93b9b44ff54a2078228cf56cbc0d",
+  "origins_checked": 248,
+  "predicted": 218,
+  "insufficient": 30,
+  "last30_ids_and_clears_exact": true,
+  "max_absolute_numeric_difference_minutes": 2.842170943040401e-14,
+  "python_forecast_code_sha256": "2638f40846e25f2dcda52951e82dede45cb45f6ac2c728b42cea42e86f6aa7a5",
+  "js_core_sha256": "e7fce1db75943b0072c7a9200486da00909b5ff0a7cf9d67ce99325eb9ac741b",
+  "no_raw_in_report": true
+}

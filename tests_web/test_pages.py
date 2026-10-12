@@ -48,14 +48,14 @@ class PagesTests(unittest.TestCase):
         for p in (ROOT/'web').rglob('*'):
             if p.is_file():
                 text=p.read_text()
-                for forbidden in ('forecast_once','collect_once','kse_spatial_v4','model.pkl','model.pt','available_at_utc'):
+                for forbidden in ('forecast_once','collect_once','kse_spatial_v4','model.pkl','model.pt'):
                     self.assertNotIn(forbidden,text)
         self.assertNotIn('used_history_ids',json.dumps(self.data))
         self.assertNotIn('finished_at',json.dumps(self.data))
     def test_release_manifest_binds_served_files(self):
         release=json.loads((ROOT/'web/release.json').read_text())
-        self.assertEqual(release['version'],'pages-v1.0')
-        self.assertIn('data-release-version="pages-v1.0"',(ROOT/'web/index.html').read_text())
+        self.assertEqual(release['version'],'pages-v1.1')
+        self.assertIn('data-release-version="pages-v1.1"',(ROOT/'web/index.html').read_text())
         for item in release['artifact_files']:
             self.assertEqual(item['sha256'],builder.sha(ROOT/'web'/item['path']))
 

@@ -16,7 +16,7 @@ def check():
     web=[]
     for p in sorted((ROOT/'web').rglob('*')):
         if p.is_file():
-            if p.suffix not in ('.html','.css','.js','.json','.svg'):failures.append({'path':str(p.relative_to(ROOT)),'reason':'unplanned artifact type'})
+            if p.suffix not in ('.html','.css','.js','.mjs','.json','.svg'):failures.append({'path':str(p.relative_to(ROOT)),'reason':'unplanned artifact type'})
             body=p.read_bytes()
             if any(re.search(pattern,body) for pattern in patterns):failures.append({'path':str(p.relative_to(ROOT)),'reason':'credential/private-key pattern'})
             web.append(str(p.relative_to(ROOT)))
