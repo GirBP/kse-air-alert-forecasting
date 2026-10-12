@@ -1,7 +1,7 @@
 [
   {
     "path": "README.md",
-    "sha256": "e35fa1655a0a6e2dc3c155076ec46b02fa8beef6bdee88e5fb7b598033eeac83"
+    "sha256": "2e3078a28580e685799ba09efb5c7073a799322625dde6e9bf7d119cff0a8d9e"
   },
   {
     "path": "absolute-error-ecdf.png",
@@ -13,11 +13,19 @@
   },
   {
     "path": "audit-run.json",
-    "sha256": "aa55bb7462ab2e0978f2b62fd9d68a09a59c0e3021829a1666f92d61c07f4dae"
+    "sha256": "7a1c4d834fd6bd4b3bb5126aa26c3d3426a92683e2ac70c2c86dd3d02c057fbc"
   },
   {
     "path": "calendar-errors.csv",
     "sha256": "8ac5d35f63c8cc29dd32d3156b681a8d9f0c59516f1d781bd8cc08c25cf92853"
+  },
+  {
+    "path": "clean-copy-verification.json",
+    "sha256": "7cdf7285ea24671b21a8d90617bc7e70e4995fc7a27cc3d6b36e01fd6905f4eb"
+  },
+  {
+    "path": "corrected-demo.txt",
+    "sha256": "878114542fc35d48f6ffaba020939639ad004b343f12d305c7d62ed1f6af37e7"
   },
   {
     "path": "diagnostic-evidence.json",

@@ -37,7 +37,7 @@ PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python -m kse_latest evaluate
 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python -m kse_latest demo --project-root . --show-actual
 ```
 
-Default evaluation — **implementation v2**, результат у data/latest/implementation-v2/. Старий duration.py, protocol/lock/opening і data/latest/results/ збережені. Виправлено latent unordered-state leak, empty outputs/demo й input errors, додано target-free API. На 84 старих прикладах всі числа незмінні; сім lineage/numerical files побайтово однакові. [Перевірка](reports/ml-diagnostics/implementation-verification.json). Це перевірка виправлення, не новий незалежний тест. Frozen replay: `PYTHONPATH=src python3 -m kse_latest evaluate-frozen-v1 --project-root . --output-dir work/frozen-v1-replay`.
+Default evaluation — **implementation v2**, результат у data/latest/implementation-v2/. Старий duration.py, protocol/lock/opening і data/latest/results/ збережені. Виправлено latent unordered-state leak, empty outputs/demo й input errors, додано target-free API. На 84 старих прикладах всі числа незмінні; сім lineage/numerical files побайтово однакові. [Перевірка](reports/ml-diagnostics/implementation-verification.json), [чистий Git clone із stdlib venv](reports/ml-diagnostics/clean-copy-verification.json). Це перевірка виправлення, не новий незалежний тест. Frozen replay: `PYTHONPATH=src python3 -m kse_latest evaluate-frozen-v1 --project-root . --output-dir work/frozen-v1-replay`.
 
 Новий begin можна передати без майбутнього відбою:
 

@@ -14,3 +14,5 @@
 Відтворюваний код: scripts/ml_diagnostics.py. У повному проєкті він читає retained historical artifacts; у clean clone використовуються опубліковані historical aggregates без удавання нового аудиту відсутніх приватних файлів. Після цього додатковий raw replay: scripts/replay_historical_selection.py; frozen coefficients і pinned source URL/SHA в audit/.
 
 CSV/JSON діагностики — stdlib, графіки — Matplotlib із requirements-ml-audit.txt. Прогнозний проєкт Matplotlib не потребує. Raw і event-level входи не публікуються; ці таблиці/фігури — авторські descriptive aggregates з attribution.
+
+implementation-verification.json перевіряє 210 числових прогнозів та 207 audit-protected files; audit-run.json також фіксує 219 старих preservation checks. clean-copy-verification.json і corrected-demo.txt — фактичний запуск clean Git clone, не незалежна нова оцінка якості. implementation-tests.txt — 40 змістовних runtime tests; їхній count не є прогнозною метрикою.

@@ -95,6 +95,8 @@ Bootstrap перевірено: matched 277 IDs, calendar clusters із partial 
 
 Незалежно перевірено 210 v2 forecasts, зокрема 84 evaluated; сім числових/lineage артефактів збігаються побайтово зі старими. 207 початкових raw/data/protocol/provenance/report файлів незмінні. **Числові фінальні результати не змінилися.** Змінилися можливості/захист API та висновок про силу переваги: вона на новому джерелі не підтверджена; historical median descriptively краща на відкритому жовтні, без нового final winner.
 
+Чиста Git-копія commit 2ab1651 запущена в новому ізольованому CPython 3.14.7 venv (лише pip, без system-site packages). Pinned input отримано мережею, 40 змістовних runtime tests пройшли, default v2 / independent verifier / historical demo / target-free predict / stale-snapshot flag / legacy scratch replay виконані. Вісім posthoc CSV збігаються побайтово. Графіки окремо відтворено та візуально перевірено в documented Matplotlib 3.10.8 середовищі. [Clean-copy evidence](../reports/ml-diagnostics/clean-copy-verification.json). Ці перевірки доводять реалізацію й відтворення, а не прогнозну користь. Додатково нині звірено всі 219 файлів старого preservation protocol: жодної зміни.
+
 ## До подання та наступна ітерація
 
 До KSE: подати робочий corrected runner з README/audit; додати повні зовнішні ChatGPT «Курування аналізу часових рядів» та всі використані Gemini/Antigravity експорти; завершити поточний native Codex export після його реального closing record; reflection має рівно 100 слів і факти роботи. Журнал рішень не замінює full texts. Не заявляти прийнятної практичної точності, live availability, повного календарного спостереження чи універсальної переваги rolling30. Складні моделі, всі регіони, media й industrial deployment не є умовою цього мініпроєкту.

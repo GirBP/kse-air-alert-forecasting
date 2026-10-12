@@ -1,0 +1,116 @@
+{
+  "checked_at_utc": "2026-10-12T01:00:39.988163+00:00",
+  "clean_git_clone": true,
+  "data_and_raw_absent_before_fetch": true,
+  "download_receipt": {
+    "github_commit": "7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8",
+    "resolved_url": "https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8/archive/alerts_in_ua.csv",
+    "retrieved_at_utc": "2026-10-12T01:00:38.676169+00:00",
+    "sha256": "f5110defe3b7661dc350e4d5923668039eaa2f35712313203a3a5f535476e123",
+    "size_bytes": 3043044,
+    "url": "https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8/archive/alerts_in_ua.csv"
+  },
+  "environment": {
+    "packages": [
+      "pip"
+    ],
+    "python_version": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]"
+  },
+  "historical_demo_verified": true,
+  "independent_verification": {
+    "each_history_clear_available_by_event_clock": true,
+    "evaluation_forecasts_checked": 84,
+    "forecast_values_and_history_independently_checked": 210,
+    "historical_publication_availability_proven": false,
+    "method": "median_last_30_completed",
+    "numerical_results_changed": false,
+    "original_data_artifacts_byte_identical": 0,
+    "previous_files_verified": 0,
+    "script_sha256": "126456fb054e0396b399a2cb490dcf2cff4ce14aa19b979b054d5771fd29cbaa",
+    "version": "implementation-v2-audit"
+  },
+  "isolated_venv_no_system_packages": true,
+  "legacy_replay_numbers_unchanged": true,
+  "metrics": {
+    "MAE_minutes": 40.894054662698416,
+    "RMSE_minutes": 62.61987004627811,
+    "median_absolute_error_minutes": 24.00844166666667,
+    "n": 84,
+    "p90_absolute_error_minutes": 76.70757500000003
+  },
+  "posthoc_csv_byte_identical": [
+    "method-comparison-posthoc.csv",
+    "paired-comparison-posthoc.csv",
+    "calendar-errors.csv",
+    "duration-errors.csv",
+    "group-errors.csv",
+    "large-underpredictions.csv",
+    "source-distribution.csv",
+    "error-dependence.csv"
+  ],
+  "publication_availability_proven": false,
+  "scope": "stdlib prediction/evaluation/verification/tests/diagnostics; plots separately rendered and inspected in original audit environment",
+  "source_commit": "2ab165134a88326d2e7256df02b307882291bac1",
+  "stale_pinned_snapshot_flag_verified": true,
+  "steps": [
+    {
+      "exit_code": 0,
+      "step": "git-clone"
+    },
+    {
+      "exit_code": 0,
+      "step": "commit"
+    },
+    {
+      "exit_code": 0,
+      "step": "venv"
+    },
+    {
+      "exit_code": 0,
+      "step": "fetch"
+    },
+    {
+      "exit_code": 0,
+      "step": "tests"
+    },
+    {
+      "exit_code": 0,
+      "step": "evaluate"
+    },
+    {
+      "exit_code": 0,
+      "step": "verify"
+    },
+    {
+      "exit_code": 0,
+      "step": "demo"
+    },
+    {
+      "exit_code": 0,
+      "step": "predict"
+    },
+    {
+      "exit_code": 0,
+      "step": "stale-flag"
+    },
+    {
+      "exit_code": 0,
+      "step": "diagnostics"
+    },
+    {
+      "exit_code": 0,
+      "step": "frozen-replay"
+    },
+    {
+      "exit_code": 0,
+      "step": "verified-cache"
+    },
+    {
+      "exit_code": 0,
+      "step": "environment"
+    }
+  ],
+  "target_free_inference": true,
+  "unit_tests_passed": 40,
+  "version": "ml-audit-clean-git-clone-v1"
+}
