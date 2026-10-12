@@ -1,9 +1,9 @@
 {
-  "version": "pages-v1.2",
+  "version": "pages-v1.2.1",
   "artifact_files": [
     {
       "path": "assets/app.js",
-      "sha256": "4a49753108c00713295accc1b05344f349ecfa4c2d5c732c1a100df7489f34d8"
+      "sha256": "20648c008658e3673e450de3283df35d59878bf465465688b7300e6525afd4ba"
     },
     {
       "path": "assets/calculator.mjs",
@@ -39,15 +39,15 @@
     },
     {
       "path": "assets/style.css",
-      "sha256": "54a02635c1ef8de74908d7be88cbd4533b9df2a7d401b96f63183d71bdf59a0f"
+      "sha256": "67ee72cf8694433b3bf558f703a1af08b44aa08253970b86a9760aaf34c34a8b"
     },
     {
       "path": "assets/translations.json",
-      "sha256": "675d84c3680acc88e58c7cafa8bcc60b2a531dd6491af0b0f0875c0f95a95327"
+      "sha256": "875f749d5cebe1d01d61015549e7ca2264e3081c18870350c46b280bb7d406b6"
     },
     {
       "path": "index.html",
-      "sha256": "170072481c86e0cb54335b28747547f2e0c5fe5f0f3387c55a6e06dec6e9dfb0"
+      "sha256": "7636934348cc64baf731605e96700695424bb496121635c5dec1da7ea6ab147c"
     }
   ],
   "synthetic_ux_examples": true,

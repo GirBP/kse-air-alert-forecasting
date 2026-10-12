@@ -5,7 +5,7 @@ function renderExample(){
  if(!current)return;
  document.querySelectorAll('[data-example]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.example===current.id)));
  $('case-title').textContent=t(current.id);
- $('case-note').textContent=choose('Навчальний приклад з вигаданою історією.','A teaching example with invented history.');
+ $('case-note').textContent=t('note_'+current.id);
  $('origin').textContent=local(current.origin_local);
  $('case-number').textContent=String(data.examples.indexOf(current)+1).padStart(2,'0');
  $('prediction').textContent=fmt(current.prediction_minutes);$('history-n').textContent=current.history_n;$('used-n').textContent=current.used_n;
@@ -14,6 +14,7 @@ function renderExample(){
  $('actual').textContent=fmt(current.actual_minutes);$('error').textContent=fmt(current.absolute_error_minutes);
  const delta=current.actual_minutes-current.prediction_minutes;
  $('error-note').textContent=delta>0?choose(`Оцінка коротша за результат прикладу на ${fmt(delta)} хв.`,`The estimate is ${fmt(delta)} minutes shorter than the example outcome.`):choose(`Оцінка довша за результат прикладу на ${fmt(-delta)} хв.`,`The estimate is ${fmt(-delta)} minutes longer than the example outcome.`);
+ $('example-lesson').textContent=t('lesson_'+current.id);
  const scale=Math.max(current.prediction_minutes,current.actual_minutes);
  $('prediction-bar').style.width=`${current.prediction_minutes/scale*100}%`;$('actual-bar').style.width=`${current.actual_minutes/scale*100}%`;
  $('prediction-bar-value').textContent=`${fmt(current.prediction_minutes)} ${t('min')}`;$('actual-bar-value').textContent=`${fmt(current.actual_minutes)} ${t('min')}`;

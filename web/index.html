@@ -15,7 +15,7 @@
 <script src="assets/experiments.mjs" type="module">
 </script>
 </head>
-<body data-release-version="pages-v1.2">
+<body data-release-version="pages-v1.2.1">
 <a data-i18n="skip" class="skip" href="#calculator">Перейти до калькулятора</a>
 <header class="site-header wrap">
 <a class="brand" href="#top">
@@ -148,7 +148,8 @@
 <span data-i18n="learn" >Як читати оцінку: навчальні приклади</span>
 </summary>
 <h2 data-i18n="demoTitle" id="demo-title">Коли оцінка близька, а коли помиляється</h2>
-<p data-i18n="demoIntro" class="section-intro">Це три вигадані приклади для пояснення, а не реальні тривоги чи варіанти прогнозу для вашого вводу. Натисніть «Показати результат», щоб порівняти оцінку з тривалістю прикладу. Справжні експерименти — нижче.</p>
+<p data-i18n="demoIntro" class="section-intro">Ці кнопки перемикають три вигадані приклади роботи одного методу — медіани останніх 30 завершених записів. Вони не змінюють ваш розрахунок і не є трьома прогнозами поточної тривоги. Мета — показати, чому оцінка іноді близька до результату, а іноді сильно помиляється.</p>
+<p data-i18n="exampleInstructions" class="example-instructions">Оберіть приклад → подивіться оцінку → натисніть «Показати результат». Після цього з’являться тривалість вигаданої події, величина помилки та пояснення.</p>
 <div data-i18n="loading" id="load-state" role="status">Завантажуємо приклади…</div>
 <div id="demo-content" hidden>
 <div class="scenario-buttons" role="group" aria-label="Приклади / Examples">
@@ -214,6 +215,7 @@
 </p>
 <p id="error-note" class="muted">
 </p>
+<p id="example-lesson" class="example-lesson"></p>
 </div>
 <p data-i18n="exampleFoot" class="card-foot">Результат прикладу не використовується для обчислення оцінки. Межі невизначеності цей метод не визначає.</p>
 </article>

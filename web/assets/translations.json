@@ -144,8 +144,8 @@
     "When an estimate is close — and when it misses"
   ],
   "demoIntro": [
-    "Це три вигадані приклади для пояснення, а не реальні тривоги чи варіанти прогнозу для вашого вводу. Натисніть «Показати результат», щоб порівняти оцінку з тривалістю прикладу. Справжні експерименти — нижче.",
-    "These are three invented teaching examples, not actual alerts or possible forecasts for your input. Select “Show outcome” to compare the estimate with the example’s duration. Real experiments appear below."
+    "Ці кнопки перемикають три вигадані приклади роботи одного методу — медіани останніх 30 завершених записів. Вони не змінюють ваш розрахунок і не є трьома прогнозами поточної тривоги. Мета — показати, чому оцінка іноді близька до результату, а іноді сильно помиляється.",
+    "These buttons switch between three invented examples of one method: the median of the last 30 completed records. They do not change your calculation or offer three forecasts for the current alert. They illustrate why an estimate can be close to the outcome or miss it badly."
   ],
   "loading": [
     "Завантажуємо приклади…",
@@ -462,5 +462,33 @@
   "remainingMethod": [
     "Оцінка залишку — окремий дослідницький метод: серед попередніх завершених записів беремо ті, що тривали довше за вже минулий час, і рахуємо медіану їхнього залишку. Потрібно щонайменше 5 таких записів. Історія фіксується на початку введеної події; це новий варіант K0 для сайту, його точність ще не виміряно окремо.",
     "Remaining time uses a separate research method: select previous completed records longer than the elapsed time, then take the median of their remaining durations. At least 5 matching records are required. History is frozen at the entered start; this is a new website variant of K0 whose accuracy has not been separately evaluated."
+  ],
+  "exampleInstructions": [
+    "Оберіть приклад → подивіться оцінку → натисніть «Показати результат». Після цього з’являться тривалість вигаданої події, величина помилки та пояснення.",
+    "Choose an example → read the estimate → select “Show outcome”. You will then see the invented event’s duration, the error and its meaning."
+  ],
+  "note_typical": [
+    "Що показує: нова подія схожа на попередні, тому оцінка близька до її тривалості. У вигаданій історії останні 30 записів тривали від 8 до 37 хв.",
+    "What it shows: the new event resembles the previous ones, so the estimate is close to its duration. In this invented history, the last 30 records lasted 8–37 minutes."
+  ],
+  "note_long": [
+    "Що показує: навіть після довгих попередніх подій наступна може тривати ще довше. Тут останні 30 записів тривали від 81 до 110 хв, тож метод уже очікує тривалу подію.",
+    "What it shows: even after long previous events, the next one can last longer still. The last 30 records here lasted 81–110 minutes, so the method already expects a long event."
+  ],
+  "note_failure": [
+    "Що показує: історія коротких подій може дати надто малу оцінку для незвично довгої наступної події. Тут останні 30 записів тривали лише від 5 до 34 хв.",
+    "What it shows: a history of short events can produce a severe underestimate of an unusually long next event. The last 30 records here lasted only 5–34 minutes."
+  ],
+  "lesson_typical": [
+    "Висновок прикладу: мала помилка можлива, коли наступна подія схожа на попередні. Це не гарантує такої точності для інших подій.",
+    "Lesson: a small error is possible when the next event resembles its predecessors. This does not guarantee similar accuracy for other events."
+  ],
+  "lesson_long": [
+    "Висновок прикладу: навіть велика початкова оцінка не є верхньою межею тривалості. Медіана описує середину минулої історії, а не найдовший можливий випадок.",
+    "Lesson: even a large initial estimate is not an upper limit. The median describes the middle of past durations, not the longest possible event."
+  ],
+  "lesson_failure": [
+    "Висновок прикладу: метод не передбачає різкого переходу від коротких подій до дуже довгої. Завершення розрахованого часу не означає відбою.",
+    "Lesson: this method does not anticipate an abrupt shift from short events to a very long one. Reaching the estimated duration is not an all-clear signal."
   ]
 }
