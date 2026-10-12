@@ -43,6 +43,7 @@ __pycache__/
 !/scripts/recompute_latest91.py
 !/scripts/check_public_artifact.py
 !/docs/pages-demo.md
+!/docs/assets/
 !/reports/latest91/
 !/reports/pages-release/
 !/scripts/verify_pages_calculator.py
