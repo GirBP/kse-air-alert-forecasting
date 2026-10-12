@@ -2,7 +2,7 @@ name: Historical demo Pages
 on:
   push:
     branches: [main]
-    paths: ['web/**', 'tests_web/**', 'scripts/build_pages_demo.py', 'scripts/verify_pages_calculator.py', 'reports/latest91/**', '.github/workflows/pages.yml']
+    paths: ['web/**', 'tests_web/**', 'scripts/build_pages_demo.py', 'scripts/build_pages_experiments.py', 'reports/website-experiments/**', 'scripts/verify_pages_calculator.py', 'reports/latest91/**', '.github/workflows/pages.yml']
   workflow_dispatch:
 permissions:
   contents: read

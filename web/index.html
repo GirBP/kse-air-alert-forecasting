@@ -1,99 +1,382 @@
 <!doctype html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Історична демонстрація простого прогнозу тривалості зареєстрованого інтервалу Києва. Синтетичні приклади, справжні агреговані результати та обмеження.">
-  <meta name="theme-color" content="#102d3a">
-  <title>Тривалість інтервалу · Київ · KSE research</title>
-  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/style.css">
-  <script src="assets/app.js" defer></script>
-  <script src="assets/calculator.mjs" type="module"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Оцінка тривалості тривоги для Києва, результати експериментів і пояснення дослідження.">
+<meta name="theme-color" content="#102d3a">
+<title>Скільки може тривати тривога? · Київ</title>
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/app.js" type="module">
+</script>
+<script src="assets/calculator.mjs" type="module">
+</script>
+<script src="assets/experiments.mjs" type="module">
+</script>
 </head>
-<body data-release-version="pages-v1.1">
-<a class="skip" href="#demo">Перейти до демонстрації</a>
+<body data-release-version="pages-v1.2">
+<a data-i18n="skip" class="skip" href="#calculator">Перейти до калькулятора</a>
 <header class="site-header wrap">
-  <a class="brand" href="#top" aria-label="Початок сторінки"><img src="assets/mark.svg" width="32" height="32" alt=""><span>Київ <span class="muted">/ дослідницький пілот</span></span></a>
-  <nav aria-label="Головна навігація"><a href="#calculator">Калькулятор</a><a href="#results">Результати</a><a href="https://github.com/GirBP/kse-air-alert-forecasting">GitHub ↗</a></nav>
+<a class="brand" href="#top">
+<img src="assets/mark.svg" width="32" height="32" alt="">
+<span data-i18n="brand" >Київ / дослідження тривог</span>
+</a>
+<div class="header-right">
+<nav>
+<a data-i18n="navCalc" href="#calculator">Калькулятор</a>
+<a data-i18n="navExp" href="#experiments">Експерименти</a>
+<a data-i18n="navProcess" href="#process">Як ми досліджували</a>
+</nav>
+<div class="languages" role="group" aria-label="Мова / Language">
+<button type="button" data-language="uk" aria-pressed="true" lang="uk">Українська</button>
+<button type="button" data-language="en" aria-pressed="false" lang="en">English</button>
+</div>
+</div>
 </header>
 <main id="top">
-  <section class="hero wrap" aria-labelledby="hero-title">
-    <p class="eyebrow"><span class="dot"></span> Історична демонстрація</p>
-    <h1 id="hero-title">Скільки може тривати<br><em>зареєстрований інтервал?</em></h1>
-    <p class="lead">Проста оцінка при початку: медіана останніх 30 завершених подій Києва. Вона допомагає дослідити можливість планування пауз, але її практичну користь ще не виміряно.</p>
-    <p class="safety">Прогноз не є сигналом відбою. Відповідність завершенню офіційної тривоги не доведена. Дотримуйтеся офіційних повідомлень.</p>
-    <div class="hero-meta"><span>Python · rolling median 30</span><span>Без live feed</span><span>Оцінка при початку, не залишковий час</span></div>
-  </section>
-  <section class="wrap calculator-section" id="calculator" aria-labelledby="calculator-title">
-    <p class="eyebrow">Ручний початок / справжня історія</p><h2 id="calculator-title">Оцінити повну тривалість</h2>
-    <p class="section-intro">Оберіть місто й дату з часом початку. Калькулятор використовує справжню завершену історію з окремого знімка джерела. Введення не підтверджує, що подія існує або досі активна.</p>
-    <form id="calculator-form" novalidate aria-busy="false">
-      <div class="calc-fields"><label for="calc-city">Місто<select id="calc-city" name="city"><option value="31">Київ · UID31</option value="lviv" disabled>Львів — метод не перевірено</option><option value="kharkiv" disabled>Харків — метод не перевірено</option></select></label>
-      <label for="calc-date">Дата початку<input id="calc-date" type="date" name="date" required></label>
-      <label for="calc-time">Час початку<input id="calc-time" type="time" name="time" step="60" required></label></div>
-      <p class="calc-clock">Час завжди Europe/Kyiv, незалежно від зони браузера. Неоднозначний чи неіснуючий час переходу літнього часу відхиляється.</p>
-      <button class="reveal" id="calc-submit" type="submit">Оцінити загальну тривалість</button>
-    </form>
-    <p id="calc-state" class="calc-state" role="status" aria-live="polite">Для розрахунку потрібні дата й час. Джерело завантажується тільки після коректного введення.</p>
-    <div id="calc-result" class="calc-result" aria-live="polite" hidden></div>
-    <details id="calc-source" class="calc-source" hidden><summary>Джерело, версія та межа історії</summary><dl>
-      <dt>Джерело</dt><dd><a href="https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/c5b3bd012c7694e63115999a7bbd0b683eaa8d24/archive/alerts_in_ua.csv">alerts.in.ua через JustJimer mirror · окремий pinned CSV</a></dd>
-      <dt>Отримано цим браузером</dt><dd id="calc-receipt"></dd><dt>Версія файла</dt><dd><code id="calc-version"></code></dd><dt>SHA-256</dt><dd><code id="calc-sha"></code></dd>
-      <dt>Межа знімка</dt><dd id="calc-boundary"></dd><dt>Останнє зареєстроване завершення</dt><dd id="calc-last-clear"></dd><dt>Наявні рядки Києва в знімку</dt><dd id="calc-source-n"></dd>
-    </dl><p>Свіже завантаження старого архіву не робить історію актуальною. Безперервність спостереження та історичні часи отримання/виправлення невідомі.</p></details>
-    <p class="calc-method">Оцінка ґрунтується на 30 попередніх завершених інтервалах. Місто обирає перевірену історію, час задає її межу; година доби не є окремою ознакою моделі. Незмінні останні 30 подій дають однакове число. Це оцінка від початку, не залишок часу; MAE нижче не є персональним «±40 хв».</p>
-  </section>
-  <section class="wrap demo-section" id="demo" aria-labelledby="demo-title">
-    <div class="section-head"><div><p class="eyebrow">01 / Як читати прогноз</p><h2 id="demo-title">Три сценарії</h2></div><span class="badge">Синтетичні UX-приклади</span></div>
-    <p class="section-intro">Реальні записи не перепубліковуємо: права на їх поширення не встановлено. Нижче — вигадані дати й результати, розраховані справжнім Python-методом. Реальні метрики наведено окремо.</p>
-    <div id="load-state" role="status">Завантажуємо збережені приклади…</div>
-    <div id="demo-content" hidden>
-      <div class="scenario-buttons" role="group" aria-label="Оберіть синтетичний приклад">
-        <button type="button" data-example="typical" aria-pressed="true">01 · Типовий</button>
-        <button type="button" data-example="long" aria-pressed="false">02 · Довгий</button>
-        <button type="button" data-example="failure" aria-pressed="false">03 · Велика помилка</button>
-      </div>
-      <article class="forecast-card" aria-labelledby="case-title">
-        <div class="case-heading"><div><p class="eyebrow">Вигаданий історичний початок · Europe/Kyiv</p><p id="origin" class="origin"></p></div><span class="case-number" id="case-number">01</span></div>
-        <h3 id="case-title"></h3>
-        <p id="case-note" class="muted"></p>
-        <div class="forecast-grid">
-          <div class="estimate"><p class="label">Прогноз повної тривалості</p><p class="big"><span id="prediction">—</span> <span class="unit">хв</span></p><p class="muted">Збережений прогноз при початку</p></div>
-          <div class="history"><p class="label">Доступна завершена історія</p><p><strong id="history-n">30</strong> подій</p><p class="muted">Використано останні <span id="used-n">30</span>. Усі завершилися до цього початку.</p></div>
-        </div>
-        <div class="comparison" id="comparison" hidden>
-          <div class="bar-row"><span>Прогноз</span><div class="bar-track"><div id="prediction-bar" class="bar forecast-bar"></div></div><strong id="prediction-bar-value"></strong></div>
-          <div class="bar-row"><span>Факт</span><div class="bar-track"><div id="actual-bar" class="bar actual-bar"></div></div><strong id="actual-bar-value"></strong></div>
-        </div>
-        <button type="button" class="reveal" id="reveal" aria-expanded="false" aria-controls="outcome">Показати фактичний результат <span aria-hidden="true">↗</span></button>
-        <div id="outcome" class="outcome" hidden tabindex="-1" aria-live="polite"><p class="label">Окремий синтетичний результат після завершення</p><p><strong id="actual"></strong> хв · абсолютна помилка <strong id="error"></strong> хв</p><p id="error-note" class="muted"></p></div>
-        <p class="card-foot">Це не поточна тривога. Факт не входить до розрахунку прогнозу. Інтервал невизначеності не надається.</p>
-      </article>
-      <details class="selection"><summary>Прозоре правило створення прикладів</summary><p id="selection-rule"></p><p>Інтерактивність показує, як порівнювати оцінку з пізнішим фактом. Вона не є доказом якості на вигаданих подіях.</p></details>
-    </div>
-    <noscript><p>Для перемикання прикладів потрібен JavaScript. Справжні результати та обмеження доступні нижче й у GitHub.</p></noscript>
-  </section>
-  <section class="results-section" id="results" aria-labelledby="results-title">
-    <div class="wrap"><p class="eyebrow">02 / Справжні результати</p><h2 id="results-title">Типова оцінка має великі помилки</h2>
-      <p class="section-intro">Київ, UID 31. Ціль — повна тривалість зареєстрованих закритих інтервалів при їхньому початку. Джерело: окреме дзеркало alerts.in.ua. Метод після оцінювання не змінювали.</p>
-      <div class="metric-grid"><div><span class="metric">40,894 <small>хв</small></span><span>MAE · середня абсолютна помилка</span></div><div><span class="metric">84</span><span>оцінені події · primary84</span></div><div><span class="metric">54,8 <small>%</small></span><span>помилка в межах ±30 хв</span></div></div>
-      <div class="table-scroll"><table><caption>Зафіксована ретроспективна оцінка; жовтень уже переглянуто</caption><thead><tr><th scope="col">Період / статус</th><th scope="col">n</th><th scope="col">MAE, хв</th><th scope="col">RMSE, хв</th><th scope="col">Медіана AE, хв</th><th scope="col">p90 AE, хв</th></tr></thead><tbody id="metric-rows"><tr><th scope="row">01–11.10.2026 · неповний край</th><td>84</td><td>40,894</td><td>62,620</td><td>24,008</td><td>76,708</td></tr></tbody></table></div>
-      <p class="period-note">Межі primary84: [01.10.2026 00:00; 11.10.2026 13:07:59), Europe/Kyiv. Версія знімка: <code>7abc556</code>. Наявні записи закінчуються 11.10.2026 о 13:01:52. Пізнішу відсутність записів не перетворено на нулі. Оцінюваних виключень — 0.</p>
-      <div id="latest-note" hidden class="latest-note"></div>
-      <div class="tail-note"><strong>11 із 84</strong><p>інтервалів недооцінено більш ніж на 60 хв. Найбільша абсолютна помилка — <strong>248,829 хв</strong>. Сім подій ≥120 хв дали <strong>70,6%</strong> суми квадратів помилок; жодну не вилучили.</p></div>
-    </div>
-  </section>
-  <section class="wrap limits" aria-labelledby="limits-title"><div><p class="eyebrow">03 / Межі застосування</p><h2 id="limits-title">Що ці числа<br>не доводять</h2></div><div class="limit-list">
-    <article><h3>Це тривалість запису</h3><p>Зміна рівня тривоги може створити окремий запис. Завершення інтервалу не доводить остаточного відбою чи фактичного завершення перерви організації.</p></article>
-    <article><h3>Доступність версій невідома</h3><p>Використано лише попередні фактичні завершення за часом подій. Історичні часи публікації, отримання та виправлення рядків не збережені. Оперативну доступність не доведено.</p></article>
-    <article><h3>Вибірка має межі</h3><p>Оцінюються зареєстровані закриті події; пропущені й незавершені можуть відрізнятися. Добова повнота невідома. 84 події охоплюють лише два неповні тижневі блоки.</p></article>
-    <article><h3>Практична користь не виміряна</h3><p>MAE — симетрична дослідницька метрика. Ціну завищення та заниження не погоджено. Метод не доведено універсально кращим; прогнозних інтервалів немає.</p></article>
-  </div></section>
-  <section class="wrap sources" aria-labelledby="sources-title"><p class="eyebrow">04 / Код і походження</p><h2 id="sources-title">Відтворити, а не повірити</h2><p>Робочий Python-проєкт — основний результат. Сайт — додаткова демонстрація. Нові експерименти v3/v4 залишаються окремими локальними дослідженнями й не входять до основного Python-релізу.</p>
-    <div class="source-links"><a href="https://github.com/GirBP/kse-air-alert-forecasting">Код та інструкція ↗</a><a href="https://github.com/GirBP/kse-air-alert-forecasting/blob/main/docs/pages-demo.md">Походження демонстрації ↗</a><a href="https://github.com/GirBP/kse-air-alert-forecasting/blob/main/docs/latest-data-and-limits.md">Дані та обмеження ↗</a><a href="https://github.com/JustJimer/ukraine-air-alert-stats/tree/7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8">Зафіксоване дзеркало ↗</a></div>
-  </section>
+<section class="hero wrap" aria-labelledby="hero-title">
+<p data-i18n="eyebrow" class="eyebrow">Дослідницький проєкт · Київ</p>
+<h1 data-i18n="hero" id="hero-title">Скільки може тривати тривога?</h1>
+<p data-i18n="lead" class="lead">Введіть час початку й отримайте орієнтир за попередніми тривогами. Нижче — результати перевірок, порівняння методів і шлях від даних до цього калькулятора.</p>
+<p data-i18n="safety" class="safety">Оцінка не є сигналом відбою. Дотримуйтеся офіційних повідомлень. У джерелі одна тривога може складатися з кількох записів, тому розрахунок не завжди охоплює її повну тривалість.</p>
+<div class="hero-actions">
+<a data-i18n="cta" class="reveal" href="#calculator">Оцінити тривалість</a>
+<a data-i18n="researchCta" href="#experiments">Переглянути експерименти ↗</a>
+</div>
+<p data-i18n="heroMeta" class="hero-meta">Лише Київ · історичні дані · без автоматичного оновлення</p>
+</section>
+<section class="wrap calculator-section" id="calculator" aria-labelledby="calculator-title">
+<h2 data-i18n="calcTitle" id="calculator-title">Калькулятор тривалості</h2>
+<p data-i18n="calcIntro" class="section-intro">Оберіть місто, дату й час початку за Києвом, а також потрібний вид оцінки. Для залишку вкажіть, скільки хвилин тривога вже триває. Сайт не перевіряє її поточний стан.</p>
+<form id="calculator-form" novalidate aria-busy="false">
+<fieldset class="estimate-modes">
+<legend data-i18n="modeTitle">Що оцінити?</legend>
+<label>
+<input id="mode-total" type="checkbox" checked>
+<span data-i18n="modeTotal">Тривалість від початку</span>
+</label>
+<label>
+<input id="mode-remaining" type="checkbox">
+<span data-i18n="modeRemaining">Час, що залишився</span>
+</label>
+<p data-i18n="modeHint">Можна обрати один або обидва варіанти.</p>
+</fieldset>
+<div class="calc-fields">
+<label for="calc-city">
+<span data-i18n="city" >Місто</span>
+<select id="calc-city" name="city">
+<option data-i18n="kyiv" value="31">Київ</option>
+<option data-i18n="lviv" value="lviv" disabled>Львів — метод ще не перевірено</option>
+<option data-i18n="kharkiv" value="kharkiv" disabled>Харків — метод ще не перевірено</option>
+</select>
+</label>
+<div>
+<label for="calc-date">
+<span data-i18n="date" >Дата початку</span>
+<input id="calc-date" type="date" name="date" required>
+</label>
+<label class="today-label" for="calc-today">
+<input id="calc-today" type="checkbox">
+<span data-i18n="today" >Використати сьогоднішню дату</span>
+</label>
+</div>
+<label for="calc-time">
+<span data-i18n="time" >Час початку</span>
+<input id="calc-time" type="time" name="time" step="60" required>
+</label>
+</div>
+<p data-i18n="clock" class="calc-clock">Дата «сьогодні» й усі розрахунки використовують часовий пояс Києва.</p>
+<div id="remaining-fields" class="remaining-fields" hidden>
+<label for="calc-elapsed">
+<span data-i18n="elapsedLabel">Скільки хвилин тривога вже триває?</span>
+<input id="calc-elapsed" type="number" min="0" step="1" inputmode="numeric" value="0">
+</label>
+<p data-i18n="remainingHint">Цей режим припускає, що тривога досі триває. Для історичної дати вкажіть, скільки хвилин минуло на момент оцінки.</p>
+</div>
+<button data-i18n="submit" class="reveal" id="calc-submit" type="submit">Оцінити тривалість</button>
+</form>
+<p data-i18n="ready" id="calc-state" class="calc-state" role="status" aria-live="polite">Вкажіть початок. Історія завантажиться після натискання кнопки.</p>
+<div id="calc-result" class="calc-result" aria-live="polite" hidden>
+</div>
+<details id="calc-source" class="calc-source" hidden>
+<summary data-i18n="sourceSummary" >Звідки дані й коли вони закінчуються</summary>
+<dl>
+<dt data-i18n="source" >Джерело</dt>
+<dd>
+<a href="https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/c5b3bd012c7694e63115999a7bbd0b683eaa8d24/archive/alerts_in_ua.csv">alerts.in.ua / JustJimer · CSV</a>
+</dd>
+<dt data-i18n="receipt" >Завантажено браузером</dt>
+<dd>
+<span id="calc-receipt">
+</span>
+</dd>
+<dt data-i18n="version" >Версія файла</dt>
+<dd>
+<code id="calc-version">
+</code>
+</dd>
+<dt data-i18n="sha" >Контрольна сума SHA-256</dt>
+<dd>
+<code id="calc-sha">
+</code>
+</dd>
+<dt data-i18n="boundary" >Межа архіву</dt>
+<dd>
+<span id="calc-boundary">
+</span>
+</dd>
+<dt data-i18n="lastClear" >Останнє завершення в архіві</dt>
+<dd>
+<span id="calc-last-clear">
+</span>
+</dd>
+<dt data-i18n="sourceN" >Записів Києва</dt>
+<dd>
+<span id="calc-source-n">
+</span>
+</dd>
+</dl>
+<p data-i18n="oldArchive" class="section-intro">Повторне завантаження не оновлює архів. Час первинної публікації та подальших виправлень записів невідомий.</p>
+</details>
+<p data-i18n="calcMethod" class="calc-method">Як рахуємо: беремо медіану тривалості останніх 30 записів, які завершилися до введеного початку. Це середнє з двох центральних значень у впорядкованому списку. Година доби й тип загрози в цьому методі не є окремими ознаками.</p>
+<p class="calc-method" data-i18n="remainingMethod">Оцінка залишку — окремий дослідницький метод: серед попередніх завершених записів беремо ті, що тривали довше за вже минулий час, і рахуємо медіану їхнього залишку. Потрібно щонайменше 5 таких записів. Історія фіксується на початку введеної події; це новий варіант K0 для сайту, його точність ще не виміряно окремо.</p>
+</section>
+<section class="wrap demo-section" id="demo">
+<details class="learning">
+<summary>
+<span data-i18n="learn" >Як читати оцінку: навчальні приклади</span>
+</summary>
+<h2 data-i18n="demoTitle" id="demo-title">Коли оцінка близька, а коли помиляється</h2>
+<p data-i18n="demoIntro" class="section-intro">Це три вигадані приклади для пояснення, а не реальні тривоги чи варіанти прогнозу для вашого вводу. Натисніть «Показати результат», щоб порівняти оцінку з тривалістю прикладу. Справжні експерименти — нижче.</p>
+<div data-i18n="loading" id="load-state" role="status">Завантажуємо приклади…</div>
+<div id="demo-content" hidden>
+<div class="scenario-buttons" role="group" aria-label="Приклади / Examples">
+<button data-i18n="typical" type="button" data-example="typical" aria-pressed="true">Близька оцінка</button>
+<button data-i18n="long" type="button" data-example="long" aria-pressed="false">Тривала подія</button>
+<button data-i18n="failure" type="button" data-example="failure" aria-pressed="false">Велика помилка</button>
+</div>
+<article class="forecast-card" aria-labelledby="case-title">
+<div class="case-heading">
+<div>
+<p data-i18n="invented" class="eyebrow">Вигаданий приклад · час Києва</p>
+<p id="origin" class="origin">
+</p>
+</div>
+<span class="case-number" id="case-number">01</span>
+</div>
+<h3 id="case-title">
+</h3>
+<p id="case-note" class="muted">
+</p>
+<div class="forecast-grid">
+<div class="estimate">
+<p data-i18n="estimate" class="label">Оцінка від початку</p>
+<p class="big">
+<span id="prediction">—</span> <span data-i18n="min" class="unit">хв</span>
+</p>
+</div>
+<div class="history">
+<p data-i18n="history" class="label">Попередні завершені записи</p>
+<p>
+<strong id="history-n">30</strong>
+</p>
+<p data-i18n="historyNote" class="muted">Використано останні 30. Їхні завершення відомі до початку прикладу.</p>
+<span id="used-n" hidden>30</span>
+</div>
+</div>
+<div class="comparison" id="comparison" hidden>
+<div class="bar-row">
+<span data-i18n="predLabel" >Оцінка</span>
+<div class="bar-track">
+<div id="prediction-bar" class="bar forecast-bar">
+</div>
+</div>
+<strong id="prediction-bar-value">
+</strong>
+</div>
+<div class="bar-row">
+<span data-i18n="actualLabel" >Результат</span>
+<div class="bar-track">
+<div id="actual-bar" class="bar actual-bar">
+</div>
+</div>
+<strong id="actual-bar-value">
+</strong>
+</div>
+</div>
+<button data-i18n="show" type="button" class="reveal" id="reveal" aria-expanded="false" aria-controls="outcome">Показати результат ↗</button>
+<div id="outcome" class="outcome" hidden tabindex="-1" aria-live="polite">
+<p>
+<strong id="actual">
+</strong> <span data-i18n="min" >хв</span> · <span data-i18n="errorLabel" >помилка</span> <strong id="error">
+</strong> <span data-i18n="min" >хв</span>
+</p>
+<p id="error-note" class="muted">
+</p>
+</div>
+<p data-i18n="exampleFoot" class="card-foot">Результат прикладу не використовується для обчислення оцінки. Межі невизначеності цей метод не визначає.</p>
+</article>
+<details class="selection">
+<summary data-i18n="exampleRule" >Як створено приклади</summary>
+<p id="selection-rule">
+</p>
+</details>
+</div>
+</details>
+</section>
+<section class="results-section" id="results" aria-labelledby="results-title">
+<div class="wrap">
+<p data-i18n="resultsEyebrow" class="eyebrow">Перевірка оцінки від початку · медіана 30</p>
+<h2 data-i18n="resultsTitle" id="results-title">Наскільки точна ця оцінка?</h2>
+<p data-i18n="resultsIntro" class="section-intro">На 84 записах Києва середня помилка становила 40,9 хв. Це середнє за вибіркою, а не обіцянка «±40,9 хв» для окремої тривоги. Великі помилки залишено в розрахунках.</p>
+<div class="metric-grid">
+<div>
+<span class="metric" id="primary-mae">40,9</span>
+<span data-i18n="maeLabel" >хв · середня абсолютна помилка (MAE)</span>
+</div>
+<div>
+<span class="metric">84</span>
+<span data-i18n="eventsLabel" >оцінені записи</span>
+</div>
+<div>
+<span class="metric" id="within30">54,8%</span>
+<span data-i18n="withinLabel" >оцінок із помилкою не більш ніж 30 хв</span>
+</div>
+</div>
+<div class="table-scroll">
+<table>
+<caption data-i18n="metricsCaption" >Дві окремі перевірки; пізніша повторно використовує частину подій</caption>
+<thead>
+<tr>
+<th data-i18n="period" scope="col">Період і статус</th>
+<th data-i18n="n" scope="col">Записи</th>
+<th data-i18n="mae" scope="col">MAE, хв ↓</th>
+<th data-i18n="rmse" scope="col">RMSE, хв</th>
+<th data-i18n="medAE" scope="col">Медіана помилки, хв</th>
+<th data-i18n="p90" scope="col">90-й процентиль, хв</th>
+</tr>
+</thead>
+<tbody id="metric-rows">
+</tbody>
+</table>
+</div>
+<p id="latest-note" class="latest-note">
+</p>
+<p data-i18n="tails" class="period-note">11 із 84 записів недооцінено більш ніж на годину. Найбільша помилка — 248,8 хв. MAE описує середню абсолютну помилку; RMSE сильніше реагує на великі промахи.</p>
+</div>
+</section>
+<section class="wrap experiments-section" id="experiments" aria-labelledby="experiments-title">
+<p data-i18n="expEyebrow" class="eyebrow">Для тих, хто перевіряє дослідження</p>
+<h2 data-i18n="expTitle" id="experiments-title">Експерименти</h2>
+<p data-i18n="expIntro" class="section-intro">Порівняння збережених результатів: від найменшої середньої помилки до найбільшої. Оберіть задачу й набір даних. Рядки з різних груп не утворюють спільний рейтинг.</p>
+<p data-i18n="expCaution" class="safety">Це ретроспективні досліди на вже переглянутих періодах. Перше місце не доводить перевагу на майбутніх даних. Для оцінки від початку в калькуляторі залишається медіана 30; оцінка залишку — окремий варіант K0 без власної перевірки точності.</p>
+<label class="experiment-picker" for="experiment-group">
+<span data-i18n="chooseGroup" >Що порівнюємо</span>
+<select id="experiment-group">
+</select>
+</label>
+<p id="experiment-context" class="experiment-context">
+</p>
+<p id="experiment-training" class="section-intro">
+</p>
+<p id="experiment-status" role="status" aria-live="polite">
+</p>
+<div class="table-scroll">
+<table class="experiment-table">
+<caption id="experiment-caption">
+</caption>
+<thead>
+<tr>
+<th data-i18n="rank" scope="col">Місце</th>
+<th data-i18n="method" scope="col">Метод і дані для прогнозу</th>
+<th data-i18n="mae" scope="col">MAE, хв ↓</th>
+<th data-i18n="rmse" scope="col">RMSE, хв</th>
+<th data-i18n="runs" scope="col">Запуски</th>
+</tr>
+</thead>
+<tbody id="experiment-rows">
+</tbody>
+</table>
+</div>
+<p data-i18n="expSeeds" class="period-note">Для нейромереж показано середнє метрик трьох запусків з різними початковими значеннями генератора випадкових чисел, а не найкращий запуск. Однакові округлені числа можуть мати різний порядок: сортуємо за повною точністю.</p>
+<details class="selection">
+<summary data-i18n="unavailable" >Що не вдалося коректно перевірити</summary>
+<p data-i18n="blocked" class="section-intro">Добову SARIMA не навчали: безперервність спостереження не підтверджено, тому день без записів не можна вважати днем без тривог. У дослідах об’єднання нових даних після фільтрів залишився лише Київ — це не перевірка перенесення між містами. Окремий неповний результат K0 показано поза повною вибіркою.</p>
+</details>
+<div class="source-links">
+<a data-i18n="downloadResults" href="assets/experiments.json" download>Завантажити всі таблиці сайту (JSON) ↓</a>
+<a data-i18n="evidence" href="https://github.com/GirBP/kse-air-alert-forecasting/tree/main/reports/website-experiments">Агреговані першоджерела й параметри ↗</a>
+</div>
+</section>
+<section class="process-section" id="process">
+<div class="wrap">
+<h2 data-i18n="processTitle" id="process-title">Як ми дійшли до цього рішення</h2>
+<ol class="process-list">
+<li>
+<h3 data-i18n="step0" >Джерела та межі</h3>
+<p data-i18n="stepBody0" class="section-intro">Зібрали архіви Vadimkin та дзеркало alerts.in.ua, зафіксували версії. Виявили непідтверджену повноту добових спостережень; перейшли до прогнозу тривалості окремого запису.</p>
+</li>
+<li>
+<h3 data-i18n="step1" >Прості методи й чесне порівняння</h3>
+<p data-i18n="stepBody1" class="section-intro">Перевірили останню тривалість, історичну медіану й вікна історії. Розділяли навчання та перевірку в часі, використовували лише попередні завершення.</p>
+</li>
+<li>
+<h3 data-i18n="step2" >Ширший набір моделей</h3>
+<p data-i18n="stepBody2" class="section-intro">Додали регресії, ARIMA/SARIMA, бустинг, моделі тривалості, GRU/LSTM/TCN, перенесення навчання, HSMM і процеси Гоукса. Перевірили календарні ознаки й записаний рівень тривоги.</p>
+</li>
+<li>
+<h3 data-i18n="step3" >Сусідні області та залишок часу</h3>
+<p data-i18n="stepBody3" class="section-intro">Окремо перевірили географічні ознаки й оцінку залишку під час події. Сталої переваги просторових моделей і попереднього навчання не встановлено.</p>
+</li>
+<li>
+<h3 data-i18n="step4" >Незалежна перевірка</h3>
+<p data-i18n="stepBody4" class="section-intro">Аудитор перерахував метрики, перевірив часові обмеження та відтворення. Виявлені проблеми журналу надходження даних і допоміжного прогнозування залишено окремими завданнями; ці компоненти не працюють у калькуляторі.</p>
+</li>
+<li>
+<h3 data-i18n="step5" >Результат і наступний крок</h3>
+<p data-i18n="stepBody5" class="section-intro">Працює відтворюваний історичний калькулятор. Для перевірки практичної користі потрібні нові дані з журналом їх отримання та заздалегідь визначений критерій корисної точності.</p>
+</li>
+</ol>
+<p data-i18n="roles" class="section-intro">Ролі ШІ: Gemini — пошук і перевірка джерел; агент-виконавець — код і досліди; незалежний аудитор — перевірка доказів. Зміни інтерфейсу не є новим аудитом моделей.</p>
+</div>
+</section>
+<section class="wrap limits" aria-labelledby="limits-title">
+<div>
+<h2 data-i18n="limitsTitle" id="limits-title">Що варто знати</h2>
+</div>
+<div class="limit-list">
+<article>
+<h3 data-i18n="limit0" >Одна тривога — не завжди один запис</h3>
+<p data-i18n="limitBody0" class="section-intro">Зміна рівня може розділити подію в архіві. Кінець запису не гарантує офіційного відбою.</p>
+</article>
+<article>
+<h3 data-i18n="limit1" >Архів не є поточним станом</h3>
+<p data-i18n="limitBody1" class="section-intro">Дані калькулятора обмежені 12.10.2026, 13:51:36 за Києвом. Пізніший початок дає лише історичний орієнтир.</p>
+</article>
+<article>
+<h3 data-i18n="limit2" >Повнота невідома</h3>
+<p data-i18n="limitBody2" class="section-intro">Пропуски й незавершені записи можуть змінювати картину. Публікацію саме цих версій у минулому не підтверджено.</p>
+</article>
+<article>
+<h3 data-i18n="limit3" >Користь ще треба виміряти</h3>
+<p data-i18n="limitBody3" class="section-intro">Помилка в хвилинах не визначає ціну зірваних планів. Це дослідницький інструмент, а не засіб прийняття рішень про безпеку.</p>
+</article>
+</div>
+</section>
+<section class="wrap sources">
+<h2 data-i18n="sourcesTitle" id="sources-title">Код, дані та перевірки</h2>
+<p data-i18n="sourceNote" class="section-intro">Основний Python-реліз можна відтворити за інструкцією. Тут додано збережені агрегати ширших дослідів v3/v4; їхні великі навчальні файли й моделі не входять до сайту.</p>
+<div class="source-links">
+<a data-i18n="repo" href="https://github.com/GirBP/kse-air-alert-forecasting/">GitHub та запуск ↗</a>
+<a data-i18n="methodDocs" href="https://github.com/GirBP/kse-air-alert-forecasting/blob/main/docs/latest-data-and-limits.md">Метод і межі даних ↗</a>
+<a data-i18n="websiteDocs" href="https://github.com/GirBP/kse-air-alert-forecasting/blob/main/docs/pages-demo.md">Про сайт і таблиці ↗</a>
+</div>
+</section>
 </main>
-<footer class="wrap"><span>Київ · дослідницький пілот, 2026</span><span>Без live API · не рекомендація з безпеки</span></footer>
+<footer class="wrap">
+<span data-i18n="footer" >Київ · дослідницький проєкт, 2026</span>
+<span data-i18n="footer2" >Історичні дані · не сигнал відбою</span>
+</footer>
 </body>
 </html>

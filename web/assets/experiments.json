@@ -1,0 +1,3322 @@
+{
+  "schema_version": 1,
+  "scientific_status": "exploratory_retrospective_previously_exposed",
+  "precision": "source values preserved; UI rounds to one decimal",
+  "new_model_selected": false,
+  "groups": [
+    {
+      "study": "v3",
+      "track": "N-KYIV-S0",
+      "target": "T0",
+      "source": "N",
+      "fold": "N_REPLAY",
+      "events": 84,
+      "predictions": 84,
+      "conditional": false,
+      "id": "v3-N-KYIV-S0",
+      "rows": [
+        {
+          "id": "D02__N__S0__completion_index",
+          "method": "D02",
+          "features": "completion_index",
+          "mae": 37.02644995212103,
+          "rmse": 58.37466003496057,
+          "seeds": 1,
+          "params": {
+            "m": 7,
+            "max_optimizer_iterations": 200,
+            "minimum_fit": "max(30,3*m)",
+            "order": [
+              1,
+              0,
+              0
+            ],
+            "refit_on_new_clears": false,
+            "seasonal_order_base": [
+              1,
+              0,
+              0
+            ],
+            "trend": "c"
+          },
+          "training_n": 156.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "D01__N__S0__completion_index",
+          "method": "D01",
+          "features": "completion_index",
+          "mae": 37.35254945825427,
+          "rmse": 58.31103014056319,
+          "seeds": 1,
+          "params": {
+            "enforce_invertibility": true,
+            "enforce_stationarity": true,
+            "max_optimizer_iterations": 200,
+            "order": [
+              1,
+              0,
+              1
+            ],
+            "refit_on_new_clears": false,
+            "target_transform": "log1p"
+          },
+          "training_n": 156.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "E02__N__S0__F1",
+          "method": "E02",
+          "features": "F1",
+          "mae": 37.39046052120903,
+          "rmse": 59.68076804699644,
+          "seeds": 1,
+          "params": {
+            "fit_intercept": true,
+            "l1_ratio": 0.0,
+            "model_ancillary": false,
+            "penalizer": 10
+          },
+          "training_n": 156.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "B01__N__S0__F1",
+          "method": "B01",
+          "features": "F1",
+          "mae": 37.714074801547184,
+          "rmse": 59.92134358734212,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "alpha": 1,
+            "fit_intercept": true,
+            "solver": "highs",
+            "target": "minutes"
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "B02__N__S0__F1",
+          "method": "B02",
+          "features": "F1",
+          "mae": 37.714074801547184,
+          "rmse": 59.92134358734212,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "alpha": 1,
+            "degree": 3,
+            "extrapolation": "periodic",
+            "fit_intercept": true,
+            "include_bias": false,
+            "knots": [
+              0,
+              4,
+              8,
+              12,
+              16,
+              20,
+              24
+            ],
+            "solver": "highs"
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "A02__N__S0__history",
+          "method": "A02",
+          "features": "history",
+          "mae": 37.826384622852004,
+          "rmse": 60.33869820952552,
+          "seeds": 1,
+          "params": {},
+          "training_n": 0.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "HSMM__N__S0__filtered_sequence",
+          "method": "HSMM",
+          "features": "filtered_sequence",
+          "mae": 38.37082235201432,
+          "rmse": 58.9585332617546,
+          "seeds": 3,
+          "params": {
+            "D": 12,
+            "K": 2,
+            "dtype": "float64",
+            "duration_KL_regularizer": 0.01,
+            "lr": 0.01,
+            "max_steps": 500,
+            "optimizer": "Adam",
+            "patience": 30,
+            "sd_floor": 0.2,
+            "training_relative_improvement": 1e-06
+          },
+          "training_n": 156.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "E01__N__S0__F1",
+          "method": "E01",
+          "features": "F1",
+          "mae": 39.20969412701002,
+          "rmse": 57.4076165409877,
+          "seeds": 1,
+          "params": {
+            "fit_intercept": true,
+            "l1_ratio": 0.0,
+            "model_ancillary": false,
+            "penalizer": 10
+          },
+          "training_n": 156.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "A05__N__S0__history",
+          "method": "A05",
+          "features": "history",
+          "mae": 39.24144761893484,
+          "rmse": 59.988852926366825,
+          "seeds": 1,
+          "params": {
+            "half_life_days": 3
+          },
+          "training_n": 0.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "fixed30-N",
+          "method": "M30",
+          "features": "history",
+          "mae": 40.89405466249538,
+          "rmse": 62.61987004614535,
+          "seeds": 1,
+          "params": {
+            "K": 30
+          },
+          "training_n": 0,
+          "source_file": "v3-controls.csv"
+        },
+        {
+          "id": "A06__N__S0__history",
+          "method": "A06",
+          "features": "history",
+          "mae": 41.532994889938536,
+          "rmse": 59.43963903241146,
+          "seeds": 1,
+          "params": {
+            "alpha": 0.1
+          },
+          "training_n": 0.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "A03__N__S0__history",
+          "method": "A03",
+          "features": "history",
+          "mae": 41.935978968370534,
+          "rmse": 63.212072115604045,
+          "seeds": 1,
+          "params": {
+            "K": 60
+          },
+          "training_n": 0.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "A04__N__S0__history",
+          "method": "A04",
+          "features": "history",
+          "mae": 42.06265585330271,
+          "rmse": 63.72432634756211,
+          "seeds": 1,
+          "params": {
+            "days": 7
+          },
+          "training_n": 0.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "B06__N__S0__F1",
+          "method": "B06",
+          "features": "F1",
+          "mae": 44.20683769824958,
+          "rmse": 63.239103440290634,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "distance": "Euclidean",
+            "k": 30,
+            "tie_break": "stable id",
+            "weights": "1/(distance+0.001), exact matches uniformly"
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "J01__N__S0__ensemble",
+          "method": "J01",
+          "features": "ensemble",
+          "mae": 44.34286655526937,
+          "rmse": 62.55688325667559,
+          "seeds": 1,
+          "params": {
+            "components": [
+              "A03__N__S0__history",
+              "B01__N__S0__F1",
+              "B03__N__S0__F1"
+            ],
+            "weights": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ]
+          },
+          "training_n": 0.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_GRU_G0__N__S0__F1",
+          "method": "G_GRU_G0",
+          "features": "F1",
+          "mae": 47.684383399303634,
+          "rmse": 66.50122218310723,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "GRU",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G0",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "B05__N__S0__F1",
+          "method": "B05",
+          "features": "F1",
+          "mae": 48.201174933743225,
+          "rmse": 62.61436083183836,
+          "seeds": 3,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "aggregate_leaves_first": true,
+            "bootstrap": true,
+            "interpolation": "linear",
+            "max_depth": 6,
+            "max_features": 1.0,
+            "max_samples_leaf": null,
+            "min_samples_leaf": 10,
+            "n_estimators": 300,
+            "n_jobs": 4,
+            "weighted_quantile": true
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_LSTM_G0__N__S0__F1",
+          "method": "G_LSTM_G0",
+          "features": "F1",
+          "mae": 51.84620382606037,
+          "rmse": 69.95054641914028,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "LSTM",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G0",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "A01__N__S0__history",
+          "method": "A01",
+          "features": "history",
+          "mae": 53.407965476550736,
+          "rmse": 79.83060363489327,
+          "seeds": 1,
+          "params": {},
+          "training_n": 0.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "B04__N__S0__F1",
+          "method": "B04",
+          "features": "F1",
+          "mae": 57.01647154052322,
+          "rmse": 71.9673151568174,
+          "seeds": 3,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "allow_writing_files": false,
+            "bootstrap_type": "No",
+            "depth": 4,
+            "early_stopping": false,
+            "iterations": 300,
+            "l2_leaf_reg": 10,
+            "learning_rate": 0.03,
+            "random_strength": 0,
+            "task_type": "CPU",
+            "thread_count": 4
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "B03__N__S0__F1",
+          "method": "B03",
+          "features": "F1",
+          "mae": 61.17083465801683,
+          "rmse": 74.66829901724252,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "early_stopping": false,
+            "l2_regularization": 10,
+            "learning_rate": 0.05,
+            "loss": "quantile",
+            "max_bins": 32,
+            "max_iter": 200,
+            "max_leaf_nodes": 7,
+            "min_samples_leaf": 10,
+            "random_state": 17
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "C_B03__N__S0__F0",
+          "method": "C_B03",
+          "features": "F0",
+          "mae": 63.027774398104256,
+          "rmse": 76.59890887295722,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "early_stopping": false,
+            "l2_regularization": 10,
+            "learning_rate": 0.05,
+            "loss": "quantile",
+            "max_bins": 32,
+            "max_iter": 200,
+            "max_leaf_nodes": 7,
+            "min_samples_leaf": 10,
+            "random_state": 17
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_TCN_G0__N__S0__F1",
+          "method": "G_TCN_G0",
+          "features": "F1",
+          "mae": 73.16650040849808,
+          "rmse": 103.66187424546592,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "TCN",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G0",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        }
+      ]
+    },
+    {
+      "study": "v3",
+      "track": "H-KYIV",
+      "target": "T0",
+      "source": "H",
+      "fold": "H_SHIFT",
+      "events": 277,
+      "predictions": 277,
+      "conditional": false,
+      "id": "v3-H-KYIV",
+      "rows": [
+        {
+          "id": "B03__H__S0__F1",
+          "method": "B03",
+          "features": "F1",
+          "mae": 33.389258140516326,
+          "rmse": 67.23364736963536,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "early_stopping": false,
+            "l2_regularization": 1,
+            "learning_rate": 0.05,
+            "loss": "quantile",
+            "max_bins": 32,
+            "max_iter": 200,
+            "max_leaf_nodes": 7,
+            "min_samples_leaf": 10,
+            "random_state": 17
+          },
+          "training_n": 1789.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "C_B01__H__S0__A4",
+          "method": "C_B01",
+          "features": "A4",
+          "mae": 33.497400808553216,
+          "rmse": 68.03320210185423,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "alpha": 0.01,
+            "fit_intercept": true,
+            "solver": "highs",
+            "target": "minutes"
+          },
+          "training_n": 1789.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "B01__H__S0__F1",
+          "method": "B01",
+          "features": "F1",
+          "mae": 33.64818367477233,
+          "rmse": 68.10349222036112,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "alpha": 0.01,
+            "fit_intercept": true,
+            "solver": "highs",
+            "target": "minutes"
+          },
+          "training_n": 1789.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "C_B01__H__S0__A3",
+          "method": "C_B01",
+          "features": "A3",
+          "mae": 33.64818367477233,
+          "rmse": 68.10349222036112,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "alpha": 0.01,
+            "fit_intercept": true,
+            "solver": "highs",
+            "target": "minutes"
+          },
+          "training_n": 1789.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "C_B01__H__S0__A1",
+          "method": "C_B01",
+          "features": "A1",
+          "mae": 33.65471339959764,
+          "rmse": 67.49451877203025,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "alpha": 0.01,
+            "fit_intercept": true,
+            "solver": "highs",
+            "target": "minutes"
+          },
+          "training_n": 1789.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "C_B01__H__S0__A2",
+          "method": "C_B01",
+          "features": "A2",
+          "mae": 33.65471339959764,
+          "rmse": 67.49451877203025,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "alpha": 0.01,
+            "fit_intercept": true,
+            "solver": "highs",
+            "target": "minutes"
+          },
+          "training_n": 1789.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "E02__H__S0__F1",
+          "method": "E02",
+          "features": "F1",
+          "mae": 33.84322962127313,
+          "rmse": 66.7807156451085,
+          "seeds": 1,
+          "params": {
+            "fit_intercept": true,
+            "l1_ratio": 0.0,
+            "model_ancillary": false,
+            "penalizer": 0.1
+          },
+          "training_n": 1819.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "B05__H__S0__F1",
+          "method": "B05",
+          "features": "F1",
+          "mae": 33.90794223826715,
+          "rmse": 67.6571118471198,
+          "seeds": 3,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "aggregate_leaves_first": true,
+            "bootstrap": true,
+            "interpolation": "linear",
+            "max_depth": 6,
+            "max_features": 1.0,
+            "max_samples_leaf": null,
+            "min_samples_leaf": 5,
+            "n_estimators": 300,
+            "n_jobs": 4,
+            "weighted_quantile": true
+          },
+          "training_n": 1789.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "A05__H__S0__history",
+          "method": "A05",
+          "features": "history",
+          "mae": 34.14765342960289,
+          "rmse": 70.70373482873765,
+          "seeds": 1,
+          "params": {
+            "half_life_days": 30
+          },
+          "training_n": 0.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "B06__H__S0__F1",
+          "method": "B06",
+          "features": "F1",
+          "mae": 34.269735258724424,
+          "rmse": 68.09536154643422,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "distance": "Euclidean",
+            "k": 30,
+            "tie_break": "stable id",
+            "weights": "1/(distance+0.001), exact matches uniformly"
+          },
+          "training_n": 1789.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "A03__H__S0__history",
+          "method": "A03",
+          "features": "history",
+          "mae": 34.484055354993984,
+          "rmse": 70.82830613221499,
+          "seeds": 1,
+          "params": {
+            "K": 30
+          },
+          "training_n": 0.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "fixed30-H",
+          "method": "M30",
+          "features": "history",
+          "mae": 34.484055354993984,
+          "rmse": 70.82830613221499,
+          "seeds": 1,
+          "params": {
+            "K": 30
+          },
+          "training_n": 0,
+          "source_file": "v3-controls.csv"
+        },
+        {
+          "id": "C_B03__H__S0__F0",
+          "method": "C_B03",
+          "features": "F0",
+          "mae": 34.667666124475566,
+          "rmse": 70.15745816065,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "early_stopping": false,
+            "l2_regularization": 1,
+            "learning_rate": 0.05,
+            "loss": "quantile",
+            "max_bins": 32,
+            "max_iter": 200,
+            "max_leaf_nodes": 7,
+            "min_samples_leaf": 10,
+            "random_state": 17
+          },
+          "training_n": 1789.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "A04__H__S0__history",
+          "method": "A04",
+          "features": "history",
+          "mae": 34.93116726835139,
+          "rmse": 71.42521324464998,
+          "seeds": 1,
+          "params": {
+            "days": 14
+          },
+          "training_n": 0.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "B02__H__S0__F1",
+          "method": "B02",
+          "features": "F1",
+          "mae": 35.57351297473769,
+          "rmse": 68.60923921504539,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "alpha": 0.1,
+            "degree": 3,
+            "extrapolation": "periodic",
+            "fit_intercept": true,
+            "include_bias": false,
+            "knots": [
+              0,
+              4,
+              8,
+              12,
+              16,
+              20,
+              24
+            ],
+            "solver": "highs"
+          },
+          "training_n": 1789.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "A02__H__S0__history",
+          "method": "A02",
+          "features": "history",
+          "mae": 35.57797833935018,
+          "rmse": 68.57349999617074,
+          "seeds": 1,
+          "params": {},
+          "training_n": 0.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "D01__H__S0__completion_index",
+          "method": "D01",
+          "features": "completion_index",
+          "mae": 35.87095293047826,
+          "rmse": 69.03577651560451,
+          "seeds": 1,
+          "params": {
+            "enforce_invertibility": true,
+            "enforce_stationarity": true,
+            "max_optimizer_iterations": 200,
+            "order": [
+              1,
+              0,
+              1
+            ],
+            "refit_on_new_clears": false,
+            "target_transform": "log1p"
+          },
+          "training_n": 1819.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "B04__H__S0__F1",
+          "method": "B04",
+          "features": "F1",
+          "mae": 36.6885055292742,
+          "rmse": 64.41436389586836,
+          "seeds": 3,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "allow_writing_files": false,
+            "bootstrap_type": "No",
+            "depth": 4,
+            "early_stopping": false,
+            "iterations": 300,
+            "l2_leaf_reg": 10,
+            "learning_rate": 0.03,
+            "random_strength": 0,
+            "task_type": "CPU",
+            "thread_count": 4
+          },
+          "training_n": 1789.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "E01__H__S0__F1",
+          "method": "E01",
+          "features": "F1",
+          "mae": 36.70857712007908,
+          "rmse": 64.13411112946571,
+          "seeds": 1,
+          "params": {
+            "fit_intercept": true,
+            "l1_ratio": 0.0,
+            "model_ancillary": false,
+            "penalizer": 0.1
+          },
+          "training_n": 1819.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "D02__H__S0__completion_index",
+          "method": "D02",
+          "features": "completion_index",
+          "mae": 38.043337197239914,
+          "rmse": 67.80893913858853,
+          "seeds": 1,
+          "params": {
+            "m": 30,
+            "max_optimizer_iterations": 200,
+            "minimum_fit": "max(30,3*m)",
+            "order": [
+              1,
+              0,
+              0
+            ],
+            "refit_on_new_clears": false,
+            "seasonal_order_base": [
+              1,
+              0,
+              0
+            ],
+            "trend": "c"
+          },
+          "training_n": 1819.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "A06__H__S0__history",
+          "method": "A06",
+          "features": "history",
+          "mae": 44.42789418556324,
+          "rmse": 69.4743135071234,
+          "seeds": 1,
+          "params": {
+            "alpha": 0.1
+          },
+          "training_n": 0.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "A01__H__S0__history",
+          "method": "A01",
+          "features": "history",
+          "mae": 55.864741275571596,
+          "rmse": 97.76100991790372,
+          "seeds": 1,
+          "params": {},
+          "training_n": 0.0,
+          "source_file": "v3-selected.csv"
+        }
+      ]
+    },
+    {
+      "study": "v3",
+      "track": "H-to-N-TRANSFER-S0",
+      "target": "T0",
+      "source": "N",
+      "fold": "N_REPLAY",
+      "events": 84,
+      "predictions": 84,
+      "conditional": false,
+      "id": "v3-H-to-N-TRANSFER-S0",
+      "rows": [
+        {
+          "id": "G_GRU_G2__N__S0__F1",
+          "method": "G_GRU_G2",
+          "features": "F1",
+          "mae": 41.04122933518318,
+          "rmse": 60.79457646644075,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "GRU",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G2",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_GRU_G3__N__S0__F1",
+          "method": "G_GRU_G3",
+          "features": "F1",
+          "mae": 41.4578775982062,
+          "rmse": 61.33651743444553,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "GRU",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G3",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_LSTM_G2__N__S0__F1",
+          "method": "G_LSTM_G2",
+          "features": "F1",
+          "mae": 41.47171237944926,
+          "rmse": 61.2123721576773,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "LSTM",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G2",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_TCN_G2__N__S0__F1",
+          "method": "G_TCN_G2",
+          "features": "F1",
+          "mae": 41.59286609175344,
+          "rmse": 62.29704852444514,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "TCN",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G2",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_LSTM_G3__N__S0__F1",
+          "method": "G_LSTM_G3",
+          "features": "F1",
+          "mae": 41.95399408409835,
+          "rmse": 61.551125790058144,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "LSTM",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G3",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_TCN_G3__N__S0__F1",
+          "method": "G_TCN_G3",
+          "features": "F1",
+          "mae": 42.64550313977967,
+          "rmse": 63.08083683572077,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "TCN",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G3",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_GRU_G1__N__S0__F1",
+          "method": "G_GRU_G1",
+          "features": "F1",
+          "mae": 43.44438944704948,
+          "rmse": 62.32228978774043,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "GRU",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G1",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_LSTM_G1__N__S0__F1",
+          "method": "G_LSTM_G1",
+          "features": "F1",
+          "mae": 43.453902313097444,
+          "rmse": 62.26481499109824,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "LSTM",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G1",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_TCN_G1__N__S0__F1",
+          "method": "G_TCN_G1",
+          "features": "F1",
+          "mae": 44.16401193797903,
+          "rmse": 63.6893985713133,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "TCN",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G1",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_TS2V_RANDOM__N__S0__F1",
+          "method": "G_TS2V_RANDOM",
+          "features": "F1",
+          "mae": 45.358948265055496,
+          "rmse": 65.09733349497952,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "RANDOM",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_TS2V_PRETRAIN__N__S0__F1",
+          "method": "G_TS2V_PRETRAIN",
+          "features": "F1",
+          "mae": 49.882693220982475,
+          "rmse": 70.29048182619682,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "PRETRAIN",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        }
+      ]
+    },
+    {
+      "study": "v3",
+      "track": "H-to-N-TRANSFER-S1",
+      "target": "T0",
+      "source": "N",
+      "fold": "N_REPLAY",
+      "events": 84,
+      "predictions": 84,
+      "conditional": true,
+      "id": "v3-H-to-N-TRANSFER-S1",
+      "rows": [
+        {
+          "id": "G_TCN_G2__N__S1__F3",
+          "method": "G_TCN_G2",
+          "features": "F3",
+          "mae": 43.20494508708595,
+          "rmse": 62.50998162125136,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "TCN",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G2",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_LSTM_G3__N__S1__F3",
+          "method": "G_LSTM_G3",
+          "features": "F3",
+          "mae": 43.45608857043837,
+          "rmse": 62.143574203348,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "LSTM",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G3",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_LSTM_G2__N__S1__F3",
+          "method": "G_LSTM_G2",
+          "features": "F3",
+          "mae": 43.72223245873653,
+          "rmse": 62.47156060377754,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "LSTM",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G2",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_GRU_G2__N__S1__F3",
+          "method": "G_GRU_G2",
+          "features": "F3",
+          "mae": 44.20027200352578,
+          "rmse": 62.62175792115398,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "GRU",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G2",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_TCN_G3__N__S1__F3",
+          "method": "G_TCN_G3",
+          "features": "F3",
+          "mae": 45.146468260931584,
+          "rmse": 63.59854539754411,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "TCN",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G3",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_GRU_G3__N__S1__F3",
+          "method": "G_GRU_G3",
+          "features": "F3",
+          "mae": 45.15223925880023,
+          "rmse": 63.3834024483286,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "GRU",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G3",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_TCN_G1__N__S1__F3",
+          "method": "G_TCN_G1",
+          "features": "F3",
+          "mae": 47.742026408103406,
+          "rmse": 65.34814649967662,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "TCN",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G1",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_LSTM_G1__N__S1__F3",
+          "method": "G_LSTM_G1",
+          "features": "F3",
+          "mae": 48.29498868515251,
+          "rmse": 65.71668991883179,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "LSTM",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G1",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_TS2V_RANDOM__N__S1__F3",
+          "method": "G_TS2V_RANDOM",
+          "features": "F3",
+          "mae": 48.51452720048565,
+          "rmse": 67.35795513202962,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "RANDOM",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_GRU_G1__N__S1__F3",
+          "method": "G_GRU_G1",
+          "features": "F3",
+          "mae": 49.06657988113701,
+          "rmse": 66.25330789166672,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "GRU",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G1",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_TS2V_PRETRAIN__N__S1__F3",
+          "method": "G_TS2V_PRETRAIN",
+          "features": "F3",
+          "mae": 55.0423286040624,
+          "rmse": 74.42417221722312,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "PRETRAIN",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        }
+      ]
+    },
+    {
+      "study": "v3",
+      "track": "N-KYIV-S1",
+      "target": "T0",
+      "source": "N",
+      "fold": "N_REPLAY",
+      "events": 84,
+      "predictions": 84,
+      "conditional": true,
+      "id": "v3-N-KYIV-S1",
+      "rows": [
+        {
+          "id": "E02__N__S1__F3",
+          "method": "E02",
+          "features": "F3",
+          "mae": 37.627566172119906,
+          "rmse": 59.58966574492859,
+          "seeds": 1,
+          "params": {
+            "fit_intercept": true,
+            "l1_ratio": 0.0,
+            "model_ancillary": false,
+            "penalizer": 10
+          },
+          "training_n": 156.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "B01__N__S1__F3",
+          "method": "B01",
+          "features": "F3",
+          "mae": 37.714074801547184,
+          "rmse": 59.92134358734212,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "alpha": 1,
+            "fit_intercept": true,
+            "solver": "highs",
+            "target": "minutes"
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "B02__N__S1__F3",
+          "method": "B02",
+          "features": "F3",
+          "mae": 37.714074801547184,
+          "rmse": 59.92134358734212,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "alpha": 1,
+            "degree": 3,
+            "extrapolation": "periodic",
+            "fit_intercept": true,
+            "include_bias": false,
+            "knots": [
+              0,
+              4,
+              8,
+              12,
+              16,
+              20,
+              24
+            ],
+            "solver": "highs"
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "I_CONTROL__N__S1__F2",
+          "method": "I_CONTROL",
+          "features": "F2",
+          "mae": 37.714074801547184,
+          "rmse": 59.92134358734212,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "alpha": 1.0,
+            "fit_intercept": true,
+            "solver": "highs",
+            "target": "minutes"
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "I_HAWKES__N__S1__F2",
+          "method": "I_HAWKES",
+          "features": "F2",
+          "mae": 37.714074801547184,
+          "rmse": 59.92134358734213,
+          "seeds": 3,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "alpha": 1.0,
+            "beta": 0.057762265046662105,
+            "cross": false,
+            "fit_intercept": true,
+            "solver": "highs",
+            "target": "minutes"
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "HSMM__N__S1__filtered_sequence",
+          "method": "HSMM",
+          "features": "filtered_sequence",
+          "mae": 38.40310838796159,
+          "rmse": 58.97204238210319,
+          "seeds": 3,
+          "params": {
+            "D": 12,
+            "K": 2,
+            "dtype": "float64",
+            "duration_KL_regularizer": 0.01,
+            "lr": 0.01,
+            "max_steps": 500,
+            "optimizer": "Adam",
+            "patience": 30,
+            "sd_floor": 0.2,
+            "training_relative_improvement": 1e-06
+          },
+          "training_n": 156.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "A07__N__S1__recorded_level",
+          "method": "A07",
+          "features": "recorded_level",
+          "mae": 39.156198412653005,
+          "rmse": 60.00078974644695,
+          "seeds": 1,
+          "params": {
+            "group": "level_hour6",
+            "kappa": 30
+          },
+          "training_n": 0.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "E01__N__S1__F3",
+          "method": "E01",
+          "features": "F3",
+          "mae": 39.18850022903778,
+          "rmse": 57.33588443310847,
+          "seeds": 1,
+          "params": {
+            "fit_intercept": true,
+            "l1_ratio": 0.0,
+            "model_ancillary": false,
+            "penalizer": 10
+          },
+          "training_n": 156.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "J01__N__S1__ensemble",
+          "method": "J01",
+          "features": "ensemble",
+          "mae": 45.13268922296214,
+          "rmse": 61.13825919151292,
+          "seeds": 1,
+          "params": {
+            "components": [
+              "A03__N__S0__history",
+              "B01__N__S1__F3",
+              "B03__N__S1__F3"
+            ],
+            "weights": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ]
+          },
+          "training_n": 0.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "B06__N__S1__F3",
+          "method": "B06",
+          "features": "F3",
+          "mae": 46.0082059522943,
+          "rmse": 63.674762778054834,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "distance": "Euclidean",
+            "k": 30,
+            "tie_break": "stable id",
+            "weights": "1/(distance+0.001), exact matches uniformly"
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "B05__N__S1__F3",
+          "method": "B05",
+          "features": "F3",
+          "mae": 48.14388981453641,
+          "rmse": 62.28281792489415,
+          "seeds": 3,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "aggregate_leaves_first": true,
+            "bootstrap": true,
+            "interpolation": "linear",
+            "max_depth": 6,
+            "max_features": 1.0,
+            "max_samples_leaf": null,
+            "min_samples_leaf": 10,
+            "n_estimators": 300,
+            "n_jobs": 4,
+            "weighted_quantile": true
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_GRU_G0__N__S1__F3",
+          "method": "G_GRU_G0",
+          "features": "F3",
+          "mae": 51.37448435252306,
+          "rmse": 69.4094178504511,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "GRU",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G0",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "B04__N__S1__F3",
+          "method": "B04",
+          "features": "F3",
+          "mae": 51.88836165785428,
+          "rmse": 66.5556961992483,
+          "seeds": 3,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "allow_writing_files": false,
+            "bootstrap_type": "No",
+            "depth": 4,
+            "early_stopping": false,
+            "iterations": 300,
+            "l2_leaf_reg": 10,
+            "learning_rate": 0.03,
+            "random_strength": 0,
+            "task_type": "CPU",
+            "thread_count": 4
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_LSTM_G0__N__S1__F3",
+          "method": "G_LSTM_G0",
+          "features": "F3",
+          "mae": 54.56664911221575,
+          "rmse": 74.08546762310324,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "LSTM",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G0",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "C_B03__N__S1__F2",
+          "method": "C_B03",
+          "features": "F2",
+          "mae": 63.29493096880469,
+          "rmse": 75.99977360342561,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "early_stopping": false,
+            "l2_regularization": 10,
+            "learning_rate": 0.05,
+            "loss": "quantile",
+            "max_bins": 32,
+            "max_iter": 200,
+            "max_leaf_nodes": 7,
+            "min_samples_leaf": 10,
+            "random_state": 17
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "B03__N__S1__F3",
+          "method": "B03",
+          "features": "F3",
+          "mae": 66.68314556125874,
+          "rmse": 77.66908773409898,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "early_stopping": false,
+            "l2_regularization": 10,
+            "learning_rate": 0.05,
+            "loss": "quantile",
+            "max_bins": 32,
+            "max_iter": 200,
+            "max_leaf_nodes": 7,
+            "min_samples_leaf": 10,
+            "random_state": 17
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "C_B03__N__S1__F3",
+          "method": "C_B03",
+          "features": "F3",
+          "mae": 66.68314556125874,
+          "rmse": 77.66908773409898,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "early_stopping": false,
+            "l2_regularization": 10,
+            "learning_rate": 0.05,
+            "loss": "quantile",
+            "max_bins": 32,
+            "max_iter": 200,
+            "max_leaf_nodes": 7,
+            "min_samples_leaf": 10,
+            "random_state": 17
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "G_TCN_G0__N__S1__F3",
+          "method": "G_TCN_G0",
+          "features": "F3",
+          "mae": 68.83400794220348,
+          "rmse": 98.5617353122309,
+          "seeds": 3,
+          "params": {
+            "L": 32,
+            "architecture": "TCN",
+            "batch_size": 64,
+            "clip_norm": 1.0,
+            "deterministic_algorithms": true,
+            "device": "cpu",
+            "dtype": "float32",
+            "epochs": 60,
+            "head_dropout": 0.1,
+            "head_hidden": 32,
+            "hidden_size": 32,
+            "lr": 0.001,
+            "mode": "G0",
+            "optimizer": "AdamW",
+            "weight_decay": 0.001
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        }
+      ]
+    },
+    {
+      "study": "v3",
+      "track": "N-POOLED-S0",
+      "target": "T0",
+      "source": "N",
+      "fold": "N_REPLAY",
+      "events": 84,
+      "predictions": 84,
+      "conditional": false,
+      "id": "v3-N-POOLED-S0",
+      "rows": [
+        {
+          "id": "F02__N__S0__F1",
+          "method": "F02",
+          "features": "F1",
+          "mae": 61.17083465801683,
+          "rmse": 74.66829901724252,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "early_stopping": false,
+            "l2_regularization": 10,
+            "learning_rate": 0.05,
+            "loss": "quantile",
+            "max_bins": 32,
+            "max_iter": 200,
+            "max_leaf_nodes": 7,
+            "min_samples_leaf": 10,
+            "random_state": 17
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "F01__N__S0__F1",
+          "method": "F01",
+          "features": "F1",
+          "mae": 479.44826500147985,
+          "rmse": 856.0998973708071,
+          "seeds": 1,
+          "params": {
+            "beta_prior_sd": 10.0,
+            "max_iter": 2000,
+            "posterior_sampling": false,
+            "sigma_log_bounds": [
+              -4,
+              4
+            ],
+            "sum_territory_effects": 0.0,
+            "tau": 0.1
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        }
+      ]
+    },
+    {
+      "study": "v3",
+      "track": "N-POOLED-S1",
+      "target": "T0",
+      "source": "N",
+      "fold": "N_REPLAY",
+      "events": 84,
+      "predictions": 84,
+      "conditional": true,
+      "id": "v3-N-POOLED-S1",
+      "rows": [
+        {
+          "id": "F02__N__S1__F3",
+          "method": "F02",
+          "features": "F3",
+          "mae": 66.68314556125874,
+          "rmse": 77.66908773409898,
+          "seeds": 1,
+          "params": {
+            "Q": [
+              0.1,
+              0.5,
+              0.9
+            ],
+            "early_stopping": false,
+            "l2_regularization": 10,
+            "learning_rate": 0.05,
+            "loss": "quantile",
+            "max_bins": 32,
+            "max_iter": 200,
+            "max_leaf_nodes": 7,
+            "min_samples_leaf": 10,
+            "random_state": 17
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        },
+        {
+          "id": "F01__N__S1__F3",
+          "method": "F01",
+          "features": "F3",
+          "mae": 510.1411040263951,
+          "rmse": 989.0203438983292,
+          "seeds": 1,
+          "params": {
+            "beta_prior_sd": 10.0,
+            "max_iter": 2000,
+            "posterior_sampling": false,
+            "sigma_log_bounds": [
+              -4,
+              4
+            ],
+            "sum_territory_effects": 0.0,
+            "tau": 0.1
+          },
+          "training_n": 126.0,
+          "source_file": "v3-selected.csv"
+        }
+      ]
+    },
+    {
+      "study": "v4",
+      "track": "spatial",
+      "source": "H",
+      "target": "T0",
+      "fold": "H_REPLAY",
+      "events": 142,
+      "predictions": 142,
+      "conditional": false,
+      "incomplete": false,
+      "id": "v4-T0-H_REPLAY-142",
+      "rows": [
+        {
+          "id": "T0_GB_C_H_REPLAY_selected_17_scratch_0_0",
+          "method": "GB",
+          "features": "C",
+          "transfer": "scratch",
+          "mae": 58.356761986642496,
+          "rmse": 111.25429013774003,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1536,
+            "train_n_rows": 1536,
+            "n_completed": 1536,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_QR_A_H_REPLAY_selected_17_scratch_0_0",
+          "method": "QR",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 60.03696326998949,
+          "rmse": 126.7065143813516,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1536,
+            "train_n_rows": 1536,
+            "n_completed": 1536,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "mean3-T0-H_REPLAY-NN_C-scratch",
+          "method": "NN",
+          "features": "NN_C",
+          "transfer": "scratch",
+          "mae": 60.6597769971558,
+          "rmse": 108.00903784221477,
+          "seeds": 3,
+          "params": {},
+          "source_file": "v4-neural-means.csv",
+          "training": {
+            "train_n_events": 1536,
+            "train_n_rows": 1536,
+            "n_completed": 1536,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_GB_D_H_REPLAY_selected_17_scratch_0_0",
+          "method": "GB",
+          "features": "D",
+          "transfer": "scratch",
+          "mae": 61.10660816307386,
+          "rmse": 110.46187516965401,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1536,
+            "train_n_rows": 1536,
+            "n_completed": 1536,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "mean3-T0-H_REPLAY-NN_SHUFFLED-scratch",
+          "method": "NN",
+          "features": "NN_SHUFFLED",
+          "transfer": "scratch",
+          "mae": 61.61449681671573,
+          "rmse": 112.5221202581475,
+          "seeds": 3,
+          "params": {},
+          "source_file": "v4-neural-means.csv",
+          "training": {
+            "train_n_events": 1536,
+            "train_n_rows": 1536,
+            "n_completed": 1536,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_M30_A_H_REPLAY_None_17_scratch_0_0",
+          "method": "M30",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 61.80005868544601,
+          "rmse": 129.17425026389824,
+          "seeds": 1,
+          "params": {},
+          "source_file": "v4-primary.csv",
+          "training": {}
+        },
+        {
+          "id": "T0_QR_B_H_REPLAY_selected_17_scratch_0_0",
+          "method": "QR",
+          "features": "B",
+          "transfer": "scratch",
+          "mae": 62.29134224555059,
+          "rmse": 113.92640310200139,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1536,
+            "train_n_rows": 1536,
+            "n_completed": 1536,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_QR_C_H_REPLAY_selected_17_scratch_0_0",
+          "method": "QR",
+          "features": "C",
+          "transfer": "scratch",
+          "mae": 62.361910433679874,
+          "rmse": 111.5769875834987,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1536,
+            "train_n_rows": 1536,
+            "n_completed": 1536,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_GB_A_H_REPLAY_selected_17_scratch_0_0",
+          "method": "GB",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 62.86165688540101,
+          "rmse": 116.6252229933253,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1536,
+            "train_n_rows": 1536,
+            "n_completed": 1536,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_GB_B_H_REPLAY_selected_17_scratch_0_0",
+          "method": "GB",
+          "features": "B",
+          "transfer": "scratch",
+          "mae": 63.13410645074435,
+          "rmse": 110.63754754081008,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1536,
+            "train_n_rows": 1536,
+            "n_completed": 1536,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "mean3-T0-H_REPLAY-NN_B-scratch",
+          "method": "NN",
+          "features": "NN_B",
+          "transfer": "scratch",
+          "mae": 63.183050518453776,
+          "rmse": 105.33282051137536,
+          "seeds": 3,
+          "params": {},
+          "source_file": "v4-neural-means.csv",
+          "training": {
+            "train_n_events": 1536,
+            "train_n_rows": 1536,
+            "n_completed": 1536,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_MED_A_H_REPLAY_None_17_scratch_0_0",
+          "method": "MED",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 63.25129107981221,
+          "rmse": 126.90834253171501,
+          "seeds": 1,
+          "params": {},
+          "source_file": "v4-primary.csv",
+          "training": {}
+        },
+        {
+          "id": "T0_QR_D_H_REPLAY_selected_17_scratch_0_0",
+          "method": "QR",
+          "features": "D",
+          "transfer": "scratch",
+          "mae": 66.64381463902131,
+          "rmse": 109.37638665917962,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1536,
+            "train_n_rows": 1536,
+            "n_completed": 1536,
+            "n_censored": 0
+          }
+        }
+      ],
+      "training_cutoff": "2025-07-01"
+    },
+    {
+      "study": "v4",
+      "track": "spatial",
+      "source": "H",
+      "target": "T0",
+      "fold": "H_SHIFT",
+      "events": 277,
+      "predictions": 277,
+      "conditional": false,
+      "incomplete": false,
+      "id": "v4-T0-H_SHIFT-277",
+      "rows": [
+        {
+          "id": "T0_QR_B_H_SHIFT_selected_17_scratch_0_0",
+          "method": "QR",
+          "features": "B",
+          "transfer": "scratch",
+          "mae": 33.0814779183817,
+          "rmse": 68.13387691210832,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1789,
+            "train_n_rows": 1789,
+            "n_completed": 1789,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_QR_A_H_SHIFT_selected_17_scratch_0_0",
+          "method": "QR",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 33.64818367477233,
+          "rmse": 68.10349222036112,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1789,
+            "train_n_rows": 1789,
+            "n_completed": 1789,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_GB_A_H_SHIFT_selected_17_scratch_0_0",
+          "method": "GB",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 33.87192932656434,
+          "rmse": 66.6697834174545,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1789,
+            "train_n_rows": 1789,
+            "n_completed": 1789,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_M30_A_H_SHIFT_None_17_scratch_0_0",
+          "method": "M30",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 34.48405535499398,
+          "rmse": 70.82830613221499,
+          "seeds": 1,
+          "params": {},
+          "source_file": "v4-primary.csv",
+          "training": {}
+        },
+        {
+          "id": "T0_GB_B_H_SHIFT_selected_17_scratch_0_0",
+          "method": "GB",
+          "features": "B",
+          "transfer": "scratch",
+          "mae": 34.74088278375851,
+          "rmse": 63.345020765711105,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1789,
+            "train_n_rows": 1789,
+            "n_completed": 1789,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_MED_A_H_SHIFT_None_17_scratch_0_0",
+          "method": "MED",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 35.577978339350175,
+          "rmse": 68.57349999617074,
+          "seeds": 1,
+          "params": {},
+          "source_file": "v4-primary.csv",
+          "training": {}
+        },
+        {
+          "id": "T0_GB_C_H_SHIFT_selected_17_scratch_0_0",
+          "method": "GB",
+          "features": "C",
+          "transfer": "scratch",
+          "mae": 36.87987997838412,
+          "rmse": 64.08324603636605,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1789,
+            "train_n_rows": 1789,
+            "n_completed": 1789,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_GB_D_H_SHIFT_selected_17_scratch_0_0",
+          "method": "GB",
+          "features": "D",
+          "transfer": "scratch",
+          "mae": 37.11543168048047,
+          "rmse": 64.77898304618616,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1789,
+            "train_n_rows": 1789,
+            "n_completed": 1789,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_QR_C_H_SHIFT_selected_17_scratch_0_0",
+          "method": "QR",
+          "features": "C",
+          "transfer": "scratch",
+          "mae": 49.375986265555454,
+          "rmse": 96.30564707396502,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1789,
+            "train_n_rows": 1789,
+            "n_completed": 1789,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_QR_D_H_SHIFT_selected_17_scratch_0_0",
+          "method": "QR",
+          "features": "D",
+          "transfer": "scratch",
+          "mae": 49.95585023191428,
+          "rmse": 93.87921232784765,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1789,
+            "train_n_rows": 1789,
+            "n_completed": 1789,
+            "n_censored": 0
+          }
+        }
+      ],
+      "training_cutoff": "2026-01-01"
+    },
+    {
+      "study": "v4",
+      "track": "spatial",
+      "source": "N",
+      "target": "T0",
+      "fold": "N_REPLAY",
+      "events": 84,
+      "predictions": 84,
+      "conditional": false,
+      "incomplete": false,
+      "id": "v4-T0-N_REPLAY-84",
+      "rows": [
+        {
+          "id": "T0_MED_A_N_REPLAY_None_17_scratch_0_0",
+          "method": "MED",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 37.826384622852004,
+          "rmse": 60.33869820952552,
+          "seeds": 1,
+          "params": {},
+          "source_file": "v4-primary.csv",
+          "training": {}
+        },
+        {
+          "id": "mean3-T0-N_REPLAY-NN_C-scratch",
+          "method": "NN",
+          "features": "NN_C",
+          "transfer": "scratch",
+          "mae": 39.08707944747633,
+          "rmse": 59.229294101377626,
+          "seeds": 3,
+          "params": {},
+          "source_file": "v4-neural-means.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 126,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "mean3-T0-N_REPLAY-NN_B-scratch",
+          "method": "NN",
+          "features": "NN_B",
+          "transfer": "scratch",
+          "mae": 39.454337073507766,
+          "rmse": 59.507646221839714,
+          "seeds": 3,
+          "params": {},
+          "source_file": "v4-neural-means.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 126,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "mean3-T0-N_REPLAY-NN_C-kyiv",
+          "method": "NN",
+          "features": "NN_C",
+          "transfer": "kyiv",
+          "mae": 39.51924883836791,
+          "rmse": 59.158544494491366,
+          "seeds": 3,
+          "params": {},
+          "source_file": "v4-neural-means.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 126,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "mean3-T0-N_REPLAY-NN_SHUFFLED-scratch",
+          "method": "NN",
+          "features": "NN_SHUFFLED",
+          "transfer": "scratch",
+          "mae": 39.6069650944894,
+          "rmse": 59.6880815717388,
+          "seeds": 3,
+          "params": {},
+          "source_file": "v4-neural-means.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 126,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_QR_A_N_REPLAY_selected_17_scratch_0_0",
+          "method": "QR",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 39.764023272720635,
+          "rmse": 56.71945089367623,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 126,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_QR_B_N_REPLAY_selected_17_scratch_0_0",
+          "method": "QR",
+          "features": "B",
+          "transfer": "scratch",
+          "mae": 39.764023272720635,
+          "rmse": 56.71945089367623,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 126,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_QR_C_N_REPLAY_selected_17_scratch_0_0",
+          "method": "QR",
+          "features": "C",
+          "transfer": "scratch",
+          "mae": 39.764023272720635,
+          "rmse": 56.71945089367623,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 126,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "mean3-T0-N_REPLAY-NN_C-pooled",
+          "method": "NN",
+          "features": "NN_C",
+          "transfer": "pooled",
+          "mae": 39.91674660053203,
+          "rmse": 59.659747228667875,
+          "seeds": 3,
+          "params": {},
+          "source_file": "v4-neural-means.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 126,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "mean3-T0-N_REPLAY-NN_SHUFFLED-pooled",
+          "method": "NN",
+          "features": "NN_SHUFFLED",
+          "transfer": "pooled",
+          "mae": 40.260334849452214,
+          "rmse": 59.63560718836174,
+          "seeds": 3,
+          "params": {},
+          "source_file": "v4-neural-means.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 126,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_QR_D_N_REPLAY_selected_17_scratch_0_0",
+          "method": "QR",
+          "features": "D",
+          "transfer": "scratch",
+          "mae": 40.28978773809368,
+          "rmse": 56.309020054229464,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 126,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "mean3-T0-N_REPLAY-NN_B-pooled",
+          "method": "NN",
+          "features": "NN_B",
+          "transfer": "pooled",
+          "mae": 40.79023531937094,
+          "rmse": 60.03979822561404,
+          "seeds": 3,
+          "params": {},
+          "source_file": "v4-neural-means.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 126,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_M30_A_N_REPLAY_None_17_scratch_0_0",
+          "method": "M30",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 40.89405466249538,
+          "rmse": 62.61987004614535,
+          "seeds": 1,
+          "params": {},
+          "source_file": "v4-primary.csv",
+          "training": {}
+        },
+        {
+          "id": "T0_GB_D_N_REPLAY_selected_17_scratch_0_0",
+          "method": "GB",
+          "features": "D",
+          "transfer": "scratch",
+          "mae": 46.579446997550185,
+          "rmse": 62.24371452783668,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 126,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_GB_C_N_REPLAY_selected_17_scratch_0_0",
+          "method": "GB",
+          "features": "C",
+          "transfer": "scratch",
+          "mae": 47.123663901059544,
+          "rmse": 62.338973829031026,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 126,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_GB_B_N_REPLAY_selected_17_scratch_0_0",
+          "method": "GB",
+          "features": "B",
+          "transfer": "scratch",
+          "mae": 48.36046618983418,
+          "rmse": 62.3094430970876,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 126,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T0_GB_A_N_REPLAY_selected_17_scratch_0_0",
+          "method": "GB",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 52.28399042783682,
+          "rmse": 66.34737069501686,
+          "seeds": 1,
+          "params": {
+            "parameter": "selected"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 126,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        }
+      ],
+      "training_cutoff": "2026-10-01"
+    },
+    {
+      "study": "v4",
+      "track": "spatial",
+      "source": "H",
+      "target": "T1",
+      "fold": "H_REPLAY",
+      "events": 142,
+      "predictions": 815,
+      "conditional": false,
+      "incomplete": true,
+      "id": "v4-T1-H_REPLAY-815",
+      "rows": [
+        {
+          "id": "T1_K0_A_H_REPLAY_None_17_scratch_0_0",
+          "method": "K0",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 39.169871373306925,
+          "rmse": 70.53898694650354,
+          "seeds": 1,
+          "params": {},
+          "source_file": "v4-primary.csv",
+          "training": {}
+        }
+      ],
+      "training_cutoff": "2025-07-01"
+    },
+    {
+      "study": "v4",
+      "track": "spatial",
+      "source": "H",
+      "target": "T1",
+      "fold": "H_REPLAY",
+      "events": 142,
+      "predictions": 816,
+      "conditional": false,
+      "incomplete": false,
+      "id": "v4-T1-H_REPLAY-816",
+      "rows": [
+        {
+          "id": "mean3-T1-H_REPLAY-NN_C-scratch",
+          "method": "NN",
+          "features": "NN_C",
+          "transfer": "scratch",
+          "mae": 31.880415685960656,
+          "rmse": 69.65962382201087,
+          "seeds": 3,
+          "params": {},
+          "source_file": "v4-neural-means.csv",
+          "training": {
+            "train_n_events": 1536,
+            "train_n_rows": 8202,
+            "n_completed": 1536,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T1_AFT_A_H_REPLAY_1_17_scratch_0_0",
+          "method": "AFT",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 33.65171061547097,
+          "rmse": 76.68670218071928,
+          "seeds": 1,
+          "params": {
+            "parameter": "1"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1536,
+            "train_n_rows": 8202,
+            "n_completed": 1536,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T1_AFT_B_H_REPLAY_1_17_scratch_0_0",
+          "method": "AFT",
+          "features": "B",
+          "transfer": "scratch",
+          "mae": 34.73530803309587,
+          "rmse": 73.850180703153,
+          "seeds": 1,
+          "params": {
+            "parameter": "1"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1536,
+            "train_n_rows": 8202,
+            "n_completed": 1536,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T1_AFT_D_H_REPLAY_1_17_scratch_0_0",
+          "method": "AFT",
+          "features": "D",
+          "transfer": "scratch",
+          "mae": 35.50439422970817,
+          "rmse": 75.44926665701735,
+          "seeds": 1,
+          "params": {
+            "parameter": "1"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1536,
+            "train_n_rows": 8202,
+            "n_completed": 1536,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T1_AFT_C_H_REPLAY_1_17_scratch_0_0",
+          "method": "AFT",
+          "features": "C",
+          "transfer": "scratch",
+          "mae": 35.55018084425364,
+          "rmse": 72.42732185435709,
+          "seeds": 1,
+          "params": {
+            "parameter": "1"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1536,
+            "train_n_rows": 8202,
+            "n_completed": 1536,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T1_K1_A_H_REPLAY_None_17_scratch_0_0",
+          "method": "K1",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 42.76372699030216,
+          "rmse": 72.08179882934553,
+          "seeds": 1,
+          "params": {},
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1536,
+            "train_n_rows": 1536,
+            "n_completed": 1536,
+            "n_censored": 0
+          }
+        }
+      ],
+      "training_cutoff": "2025-07-01"
+    },
+    {
+      "study": "v4",
+      "track": "spatial",
+      "source": "H",
+      "target": "T1",
+      "fold": "H_SHIFT",
+      "events": 277,
+      "predictions": 1119,
+      "conditional": false,
+      "incomplete": false,
+      "id": "v4-T1-H_SHIFT-1119",
+      "rows": [
+        {
+          "id": "T1_AFT_C_H_SHIFT_1_17_scratch_0_0",
+          "method": "AFT",
+          "features": "C",
+          "transfer": "scratch",
+          "mae": 19.53807816023861,
+          "rmse": 39.991128322093026,
+          "seeds": 1,
+          "params": {
+            "parameter": "1"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1789,
+            "train_n_rows": 9635,
+            "n_completed": 1789,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T1_AFT_B_H_SHIFT_1_17_scratch_0_0",
+          "method": "AFT",
+          "features": "B",
+          "transfer": "scratch",
+          "mae": 20.152423010323606,
+          "rmse": 42.688776061054405,
+          "seeds": 1,
+          "params": {
+            "parameter": "1"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1789,
+            "train_n_rows": 9635,
+            "n_completed": 1789,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T1_AFT_D_H_SHIFT_1_17_scratch_0_0",
+          "method": "AFT",
+          "features": "D",
+          "transfer": "scratch",
+          "mae": 20.349273085584464,
+          "rmse": 40.35736777737012,
+          "seeds": 1,
+          "params": {
+            "parameter": "1"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1789,
+            "train_n_rows": 9635,
+            "n_completed": 1789,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T1_AFT_A_H_SHIFT_1_17_scratch_0_0",
+          "method": "AFT",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 20.6926297594486,
+          "rmse": 43.59079399628298,
+          "seeds": 1,
+          "params": {
+            "parameter": "1"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1789,
+            "train_n_rows": 9635,
+            "n_completed": 1789,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T1_K0_A_H_SHIFT_None_17_scratch_0_0",
+          "method": "K0",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 27.24978236575237,
+          "rmse": 41.452368027796446,
+          "seeds": 1,
+          "params": {},
+          "source_file": "v4-primary.csv",
+          "training": {}
+        },
+        {
+          "id": "T1_K1_A_H_SHIFT_None_17_scratch_0_0",
+          "method": "K1",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 31.197762331262492,
+          "rmse": 43.54600980949699,
+          "seeds": 1,
+          "params": {},
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 1789,
+            "train_n_rows": 1789,
+            "n_completed": 1789,
+            "n_censored": 0
+          }
+        }
+      ],
+      "training_cutoff": "2026-01-01"
+    },
+    {
+      "study": "v4",
+      "track": "spatial",
+      "source": "N",
+      "target": "T1",
+      "fold": "N_REPLAY",
+      "events": 84,
+      "predictions": 333,
+      "conditional": false,
+      "incomplete": false,
+      "id": "v4-T1-N_REPLAY-333",
+      "rows": [
+        {
+          "id": "T1_AFT_C_N_REPLAY_1_17_scratch_0_0",
+          "method": "AFT",
+          "features": "C",
+          "transfer": "scratch",
+          "mae": 20.625221262425693,
+          "rmse": 36.59101945396156,
+          "seeds": 1,
+          "params": {
+            "parameter": "1"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 664,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T1_AFT_B_N_REPLAY_1_17_scratch_0_0",
+          "method": "AFT",
+          "features": "B",
+          "transfer": "scratch",
+          "mae": 21.22721270089263,
+          "rmse": 37.7513291147709,
+          "seeds": 1,
+          "params": {
+            "parameter": "1"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 664,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "mean3-T1-N_REPLAY-NN_C-scratch",
+          "method": "NN",
+          "features": "NN_C",
+          "transfer": "scratch",
+          "mae": 21.779797921116145,
+          "rmse": 38.328160083530115,
+          "seeds": 3,
+          "params": {},
+          "source_file": "v4-neural-means.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 664,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "mean3-T1-N_REPLAY-NN_C-pooled",
+          "method": "NN",
+          "features": "NN_C",
+          "transfer": "pooled",
+          "mae": 22.07020783775653,
+          "rmse": 38.002780071337355,
+          "seeds": 3,
+          "params": {},
+          "source_file": "v4-neural-means.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 664,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T1_AFT_A_N_REPLAY_1_17_scratch_0_0",
+          "method": "AFT",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 22.082222457518803,
+          "rmse": 38.33950225498547,
+          "seeds": 1,
+          "params": {
+            "parameter": "1"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 664,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T1_AFT_D_N_REPLAY_1_17_scratch_0_0",
+          "method": "AFT",
+          "features": "D",
+          "transfer": "scratch",
+          "mae": 23.51323501622692,
+          "rmse": 38.30506392929118,
+          "seeds": 1,
+          "params": {
+            "parameter": "1"
+          },
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 664,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T1_K1_A_N_REPLAY_None_17_scratch_0_0",
+          "method": "K1",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 29.75990162962998,
+          "rmse": 39.0561024155007,
+          "seeds": 1,
+          "params": {},
+          "source_file": "v4-primary.csv",
+          "training": {
+            "train_n_events": 126,
+            "train_n_rows": 126,
+            "n_completed": 126,
+            "n_censored": 0
+          }
+        },
+        {
+          "id": "T1_K0_A_N_REPLAY_None_17_scratch_0_0",
+          "method": "K0",
+          "features": "A",
+          "transfer": "scratch",
+          "mae": 29.7812403943219,
+          "rmse": 38.85033970795099,
+          "seeds": 1,
+          "params": {},
+          "source_file": "v4-primary.csv",
+          "training": {}
+        }
+      ],
+      "training_cutoff": "2026-10-01"
+    }
+  ],
+  "blocked": [
+    {
+      "method": "D03",
+      "track": "H-KYIV",
+      "reason": "Current project has no confirmed continuous daily observation; no daily zeros or SARIMA fit made"
+    },
+    {
+      "method": "D03",
+      "track": "N-KYIV-S0",
+      "reason": "Current project has no confirmed continuous daily observation; no daily zeros or SARIMA fit made"
+    }
+  ],
+  "sources": [
+    {
+      "file": "v3-selected.csv",
+      "origin": "reports/experiments-v3/selected-leaderboards.csv",
+      "sha256": "e84343c1f970807b050a648619679702ba6673d37eeaa9683425a22ba3d0da9c"
+    },
+    {
+      "file": "v3-controls.csv",
+      "origin": "reports/experiments-v3/fixed-controls.csv",
+      "sha256": "7c7e9e6a3f9c8054bb1470f7024c8385da043ca39933d043d2ac4697a6555033"
+    },
+    {
+      "file": "v4-primary.csv",
+      "origin": "reports/spatial-v4/primary-replay-metrics.csv",
+      "sha256": "9db759075d5a8d0d5745cfe2c3db05b09615dd87c2f56e28aa2b1d3a99c82525"
+    },
+    {
+      "file": "v4-neural-means.csv",
+      "origin": "reports/spatial-v4/neural-seed-average-metrics.csv",
+      "sha256": "402b0bf80da0d06b6eb3dd4b1c100643b62cd50fe2dd25c9c390939e1781114f"
+    },
+    {
+      "file": "v3-selected-parameters.json",
+      "origin": "experiments/v3/experiment-registry.json (selected parameter objects only)",
+      "sha256": "7779eae6c51ed0ffa5e4902ab7282eed64bc7fc243e015acbda19b926fdb3611"
+    },
+    {
+      "file": "v4-fit-costs.csv",
+      "origin": "reports/spatial-v4/fit-costs.csv",
+      "sha256": "f1700914f5885beb4fef88e94ed01fde2970e4df035a6572adbc3215df41c58c"
+    }
+  ]
+}

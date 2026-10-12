@@ -46,3 +46,7 @@ __pycache__/
 !/reports/latest91/
 !/reports/pages-release/
 !/scripts/verify_pages_calculator.py
+
+# Authored aggregate research comparisons for the bilingual site.
+!/scripts/build_pages_experiments.py
+!/reports/website-experiments/

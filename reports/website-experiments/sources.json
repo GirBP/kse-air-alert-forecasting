@@ -1,0 +1,32 @@
+[
+  {
+    "file": "v3-selected.csv",
+    "origin": "reports/experiments-v3/selected-leaderboards.csv",
+    "sha256": "e84343c1f970807b050a648619679702ba6673d37eeaa9683425a22ba3d0da9c"
+  },
+  {
+    "file": "v3-controls.csv",
+    "origin": "reports/experiments-v3/fixed-controls.csv",
+    "sha256": "7c7e9e6a3f9c8054bb1470f7024c8385da043ca39933d043d2ac4697a6555033"
+  },
+  {
+    "file": "v4-primary.csv",
+    "origin": "reports/spatial-v4/primary-replay-metrics.csv",
+    "sha256": "9db759075d5a8d0d5745cfe2c3db05b09615dd87c2f56e28aa2b1d3a99c82525"
+  },
+  {
+    "file": "v4-neural-means.csv",
+    "origin": "reports/spatial-v4/neural-seed-average-metrics.csv",
+    "sha256": "402b0bf80da0d06b6eb3dd4b1c100643b62cd50fe2dd25c9c390939e1781114f"
+  },
+  {
+    "file": "v3-selected-parameters.json",
+    "origin": "experiments/v3/experiment-registry.json (selected parameter objects only)",
+    "sha256": "7779eae6c51ed0ffa5e4902ab7282eed64bc7fc243e015acbda19b926fdb3611"
+  },
+  {
+    "file": "v4-fit-costs.csv",
+    "origin": "reports/spatial-v4/fit-costs.csv",
+    "sha256": "f1700914f5885beb4fef88e94ed01fde2970e4df035a6572adbc3215df41c58c"
+  }
+]

@@ -1,0 +1,466 @@
+{
+  "navCalc": [
+    "Калькулятор",
+    "Calculator"
+  ],
+  "navExp": [
+    "Експерименти",
+    "Experiments"
+  ],
+  "navProcess": [
+    "Як ми досліджували",
+    "Research process"
+  ],
+  "skip": [
+    "Перейти до калькулятора",
+    "Skip to calculator"
+  ],
+  "brand": [
+    "Київ / дослідження тривог",
+    "Kyiv / alert research"
+  ],
+  "eyebrow": [
+    "Дослідницький проєкт · Київ",
+    "Research project · Kyiv"
+  ],
+  "hero": [
+    "Скільки може тривати тривога?",
+    "How long might an air alert last?"
+  ],
+  "lead": [
+    "Введіть час початку й отримайте орієнтир за попередніми тривогами. Нижче — результати перевірок, порівняння методів і шлях від даних до цього калькулятора.",
+    "Enter a start time to get a reference based on previous alerts. Explore the evaluation, method comparisons and development process below."
+  ],
+  "safety": [
+    "Оцінка не є сигналом відбою. Дотримуйтеся офіційних повідомлень. У джерелі одна тривога може складатися з кількох записів, тому розрахунок не завжди охоплює її повну тривалість.",
+    "This estimate is not an all-clear signal. Follow official announcements. One alert may span several source records, so the estimate may not cover the whole alert."
+  ],
+  "cta": [
+    "Оцінити тривалість",
+    "Estimate duration"
+  ],
+  "researchCta": [
+    "Переглянути експерименти ↗",
+    "Explore experiments ↗"
+  ],
+  "heroMeta": [
+    "Лише Київ · історичні дані · без автоматичного оновлення",
+    "Kyiv only · historical data · no automatic updates"
+  ],
+  "calcTitle": [
+    "Калькулятор тривалості",
+    "Duration calculator"
+  ],
+  "calcIntro": [
+    "Оберіть місто, дату й час початку за Києвом, а також потрібний вид оцінки. Для залишку вкажіть, скільки хвилин тривога вже триває. Сайт не перевіряє її поточний стан.",
+    "Choose the city, start date and time in Kyiv time, and the estimate type. For remaining time, enter how many minutes the alert has lasted so far. The site does not check its current status."
+  ],
+  "city": [
+    "Місто",
+    "City"
+  ],
+  "kyiv": [
+    "Київ",
+    "Kyiv"
+  ],
+  "lviv": [
+    "Львів — метод ще не перевірено",
+    "Lviv — method not yet evaluated"
+  ],
+  "kharkiv": [
+    "Харків — метод ще не перевірено",
+    "Kharkiv — method not yet evaluated"
+  ],
+  "date": [
+    "Дата початку",
+    "Start date"
+  ],
+  "today": [
+    "Використати сьогоднішню дату",
+    "Use today’s date"
+  ],
+  "time": [
+    "Час початку",
+    "Start time"
+  ],
+  "clock": [
+    "Дата «сьогодні» й усі розрахунки використовують часовий пояс Києва.",
+    "“Today” and all calculations use the Kyiv time zone."
+  ],
+  "submit": [
+    "Оцінити тривалість",
+    "Estimate duration"
+  ],
+  "ready": [
+    "Вкажіть початок. Історія завантажиться після натискання кнопки.",
+    "Enter the start time. History will load when you submit."
+  ],
+  "sourceSummary": [
+    "Звідки дані й коли вони закінчуються",
+    "Data source and its time boundary"
+  ],
+  "source": [
+    "Джерело",
+    "Source"
+  ],
+  "receipt": [
+    "Завантажено браузером",
+    "Fetched by this browser"
+  ],
+  "version": [
+    "Версія файла",
+    "File version"
+  ],
+  "sha": [
+    "Контрольна сума SHA-256",
+    "SHA-256 checksum"
+  ],
+  "boundary": [
+    "Межа архіву",
+    "Archive boundary"
+  ],
+  "lastClear": [
+    "Останнє завершення в архіві",
+    "Last recorded ending"
+  ],
+  "sourceN": [
+    "Записів Києва",
+    "Kyiv records"
+  ],
+  "oldArchive": [
+    "Повторне завантаження не оновлює архів. Час первинної публікації та подальших виправлень записів невідомий.",
+    "Downloading the file again does not update the archive. Original publication and revision times are unknown."
+  ],
+  "calcMethod": [
+    "Як рахуємо: беремо медіану тривалості останніх 30 записів, які завершилися до введеного початку. Це середнє з двох центральних значень у впорядкованому списку. Година доби й тип загрози в цьому методі не є окремими ознаками.",
+    "How it works: we take the median duration of the last 30 records that ended before your start time — the average of the two middle values in sorted order. Time of day and threat type are not separate inputs in this method."
+  ],
+  "learn": [
+    "Як читати оцінку: навчальні приклади",
+    "How to read an estimate: illustrative examples"
+  ],
+  "demoTitle": [
+    "Коли оцінка близька, а коли помиляється",
+    "When an estimate is close — and when it misses"
+  ],
+  "demoIntro": [
+    "Це три вигадані приклади для пояснення, а не реальні тривоги чи варіанти прогнозу для вашого вводу. Натисніть «Показати результат», щоб порівняти оцінку з тривалістю прикладу. Справжні експерименти — нижче.",
+    "These are three invented teaching examples, not actual alerts or possible forecasts for your input. Select “Show outcome” to compare the estimate with the example’s duration. Real experiments appear below."
+  ],
+  "loading": [
+    "Завантажуємо приклади…",
+    "Loading examples…"
+  ],
+  "typical": [
+    "Близька оцінка",
+    "Close estimate"
+  ],
+  "long": [
+    "Тривала подія",
+    "Long event"
+  ],
+  "failure": [
+    "Велика помилка",
+    "Large error"
+  ],
+  "invented": [
+    "Вигаданий приклад · час Києва",
+    "Invented example · Kyiv time"
+  ],
+  "estimate": [
+    "Оцінка від початку",
+    "Estimate from the start"
+  ],
+  "min": [
+    "хв",
+    "min"
+  ],
+  "history": [
+    "Попередні завершені записи",
+    "Previous completed records"
+  ],
+  "historyNote": [
+    "Використано останні 30. Їхні завершення відомі до початку прикладу.",
+    "Uses the last 30 records, all ending before the example starts."
+  ],
+  "predLabel": [
+    "Оцінка",
+    "Estimate"
+  ],
+  "actualLabel": [
+    "Результат",
+    "Outcome"
+  ],
+  "show": [
+    "Показати результат ↗",
+    "Show outcome ↗"
+  ],
+  "errorLabel": [
+    "помилка",
+    "absolute error"
+  ],
+  "exampleFoot": [
+    "Результат прикладу не використовується для обчислення оцінки. Межі невизначеності цей метод не визначає.",
+    "The example outcome is not used to compute its estimate. This method does not provide uncertainty bounds."
+  ],
+  "exampleRule": [
+    "Як створено приклади",
+    "How the examples were created"
+  ],
+  "resultsEyebrow": [
+    "Перевірка оцінки від початку · медіана 30",
+    "Evaluation of the onset estimate · median of 30"
+  ],
+  "resultsTitle": [
+    "Наскільки точна ця оцінка?",
+    "How accurate is this estimate?"
+  ],
+  "resultsIntro": [
+    "На 84 записах Києва середня помилка становила 40,9 хв. Це середнє за вибіркою, а не обіцянка «±40,9 хв» для окремої тривоги. Великі помилки залишено в розрахунках.",
+    "Across 84 Kyiv records, the average absolute error was 40.9 minutes. This is a sample average, not a promise of “±40.9 minutes” for an individual alert. Large errors remain in the evaluation."
+  ],
+  "maeLabel": [
+    "хв · середня абсолютна помилка (MAE)",
+    "min · mean absolute error (MAE)"
+  ],
+  "eventsLabel": [
+    "оцінені записи",
+    "evaluated records"
+  ],
+  "withinLabel": [
+    "оцінок із помилкою не більш ніж 30 хв",
+    "estimates within 30 minutes of the outcome"
+  ],
+  "metricsCaption": [
+    "Дві окремі перевірки; пізніша повторно використовує частину подій",
+    "Two evaluations with overlapping events; not independent tests"
+  ],
+  "period": [
+    "Період і статус",
+    "Period and status"
+  ],
+  "n": [
+    "Записи",
+    "Records"
+  ],
+  "mae": [
+    "MAE, хв ↓",
+    "MAE, min ↓"
+  ],
+  "rmse": [
+    "RMSE, хв",
+    "RMSE, min"
+  ],
+  "medAE": [
+    "Медіана помилки, хв",
+    "Median error, min"
+  ],
+  "p90": [
+    "90-й процентиль, хв",
+    "90th percentile, min"
+  ],
+  "tails": [
+    "11 із 84 записів недооцінено більш ніж на годину. Найбільша помилка — 248,8 хв. MAE описує середню абсолютну помилку; RMSE сильніше реагує на великі промахи.",
+    "11 of 84 records were underestimated by more than an hour. The largest absolute error was 248.8 minutes. MAE measures average absolute error; RMSE gives more weight to large misses."
+  ],
+  "expEyebrow": [
+    "Для тих, хто перевіряє дослідження",
+    "For research reviewers"
+  ],
+  "expTitle": [
+    "Експерименти",
+    "Experiments"
+  ],
+  "expIntro": [
+    "Порівняння збережених результатів: від найменшої середньої помилки до найбільшої. Оберіть задачу й набір даних. Рядки з різних груп не утворюють спільний рейтинг.",
+    "Saved results ranked from lowest to highest mean absolute error. Choose a task and dataset. Results from different groups do not form a single ranking."
+  ],
+  "expCaution": [
+    "Це ретроспективні досліди на вже переглянутих періодах. Перше місце не доводить перевагу на майбутніх даних. Для оцінки від початку в калькуляторі залишається медіана 30; оцінка залишку — окремий варіант K0 без власної перевірки точності.",
+    "These retrospective experiments use previously examined periods. First place does not establish superiority on future data. The onset calculator retains median of 30; remaining time uses a separate K0 variant without its own accuracy evaluation."
+  ],
+  "chooseGroup": [
+    "Що порівнюємо",
+    "Comparison group"
+  ],
+  "rank": [
+    "Місце",
+    "Rank"
+  ],
+  "method": [
+    "Метод і дані для прогнозу",
+    "Method and inputs"
+  ],
+  "runs": [
+    "Запуски",
+    "Runs"
+  ],
+  "expSeeds": [
+    "Для нейромереж показано середнє метрик трьох запусків з різними початковими значеннями генератора випадкових чисел, а не найкращий запуск. Однакові округлені числа можуть мати різний порядок: сортуємо за повною точністю.",
+    "Neural results average metrics across three random seeds rather than selecting the best run. Rounded values can appear tied; sorting uses full precision."
+  ],
+  "unavailable": [
+    "Що не вдалося коректно перевірити",
+    "What could not be evaluated reliably"
+  ],
+  "blocked": [
+    "Добову SARIMA не навчали: безперервність спостереження не підтверджено, тому день без записів не можна вважати днем без тривог. У дослідах об’єднання нових даних після фільтрів залишився лише Київ — це не перевірка перенесення між містами. Окремий неповний результат K0 показано поза повною вибіркою.",
+    "Daily SARIMA was not fitted: continuous observation is unconfirmed, so a day without records cannot be treated as a day without alerts. The pooled recent-data experiments retained only Kyiv after filtering, so they do not test transfer between cities. The incomplete K0 result is shown separately from the full cohort."
+  ],
+  "downloadResults": [
+    "Завантажити всі таблиці сайту (JSON) ↓",
+    "Download all website tables (JSON) ↓"
+  ],
+  "evidence": [
+    "Агреговані першоджерела й параметри ↗",
+    "Aggregate source tables and parameters ↗"
+  ],
+  "processTitle": [
+    "Як ми дійшли до цього рішення",
+    "How we reached this solution"
+  ],
+  "step0": [
+    "Джерела та межі",
+    "Sources and limitations"
+  ],
+  "stepBody0": [
+    "Зібрали архіви Vadimkin та дзеркало alerts.in.ua, зафіксували версії. Виявили непідтверджену повноту добових спостережень; перейшли до прогнозу тривалості окремого запису.",
+    "Collected Vadimkin and mirrored alerts.in.ua archives and pinned versions. Unconfirmed daily coverage led us to predict the duration of an individual record."
+  ],
+  "step1": [
+    "Прості методи й чесне порівняння",
+    "Simple methods and fair comparisons"
+  ],
+  "stepBody1": [
+    "Перевірили останню тривалість, історичну медіану й вікна історії. Розділяли навчання та перевірку в часі, використовували лише попередні завершення.",
+    "Compared the previous duration, expanding median and history windows. Training precedes evaluation; forecasts use only earlier completions."
+  ],
+  "step2": [
+    "Ширший набір моделей",
+    "Broader model experiments"
+  ],
+  "stepBody2": [
+    "Додали регресії, ARIMA/SARIMA, бустинг, моделі тривалості, GRU/LSTM/TCN, перенесення навчання, HSMM і процеси Гоукса. Перевірили календарні ознаки й записаний рівень тривоги.",
+    "Tested regressions, ARIMA/SARIMA, boosting, duration models, GRU/LSTM/TCN, transfer learning, HSMM and Hawkes processes, plus calendar features and recorded alert level."
+  ],
+  "step3": [
+    "Сусідні області та залишок часу",
+    "Neighbouring regions and remaining time"
+  ],
+  "stepBody3": [
+    "Окремо перевірили географічні ознаки й оцінку залишку під час події. Сталої переваги просторових моделей і попереднього навчання не встановлено.",
+    "Separately tested spatial features and remaining duration during an event. A stable benefit from spatial modelling and pretraining was not established."
+  ],
+  "step4": [
+    "Незалежна перевірка",
+    "Independent audit"
+  ],
+  "stepBody4": [
+    "Аудитор перерахував метрики, перевірив часові обмеження та відтворення. Виявлені проблеми журналу надходження даних і допоміжного прогнозування залишено окремими завданнями; ці компоненти не працюють у калькуляторі.",
+    "An auditor recomputed metrics and checked timing and reproducibility. Issues in receipt logging and auxiliary prediction remain separate tasks; these components do not run in the calculator."
+  ],
+  "step5": [
+    "Результат і наступний крок",
+    "Result and next step"
+  ],
+  "stepBody5": [
+    "Працює відтворюваний історичний калькулятор. Для перевірки практичної користі потрібні нові дані з журналом їх отримання та заздалегідь визначений критерій корисної точності.",
+    "A reproducible historical calculator works. Practical value needs testing on new data with receipt logs and a predefined criterion for useful accuracy."
+  ],
+  "roles": [
+    "Ролі ШІ: Gemini — пошук і перевірка джерел; агент-виконавець — код і досліди; незалежний аудитор — перевірка доказів. Зміни інтерфейсу не є новим аудитом моделей.",
+    "AI roles: Gemini collected and checked sources; the implementation agent wrote code and ran experiments; an independent auditor checked the evidence. Interface updates are not a new model audit."
+  ],
+  "limitsTitle": [
+    "Що варто знати",
+    "What to keep in mind"
+  ],
+  "limit0": [
+    "Одна тривога — не завжди один запис",
+    "An alert may span several records"
+  ],
+  "limitBody0": [
+    "Зміна рівня може розділити подію в архіві. Кінець запису не гарантує офіційного відбою.",
+    "A level change can split an event into source records. A record ending does not guarantee an official all-clear."
+  ],
+  "limit1": [
+    "Архів не є поточним станом",
+    "An archive is not live status"
+  ],
+  "limitBody1": [
+    "Дані калькулятора обмежені 12.10.2026, 13:51:36 за Києвом. Пізніший початок дає лише історичний орієнтир.",
+    "Calculator data ends at 12 October 2026, 13:51:36 Kyiv time. A later start yields only a historical reference."
+  ],
+  "limit2": [
+    "Повнота невідома",
+    "Coverage is unknown"
+  ],
+  "limitBody2": [
+    "Пропуски й незавершені записи можуть змінювати картину. Публікацію саме цих версій у минулому не підтверджено.",
+    "Missing and unfinished records may affect results. Historical availability of these exact record versions is unconfirmed."
+  ],
+  "limit3": [
+    "Користь ще треба виміряти",
+    "Usefulness needs evaluation"
+  ],
+  "limitBody3": [
+    "Помилка в хвилинах не визначає ціну зірваних планів. Це дослідницький інструмент, а не засіб прийняття рішень про безпеку.",
+    "Error in minutes does not measure the cost of disrupted plans. This is a research tool, not a basis for safety decisions."
+  ],
+  "sourcesTitle": [
+    "Код, дані та перевірки",
+    "Code, data and checks"
+  ],
+  "sourceNote": [
+    "Основний Python-реліз можна відтворити за інструкцією. Тут додано збережені агрегати ширших дослідів v3/v4; їхні великі навчальні файли й моделі не входять до сайту.",
+    "The main Python release can be reproduced using its instructions. This site also includes saved v3/v4 research aggregates; their large training files and models are not part of the website."
+  ],
+  "repo": [
+    "GitHub та запуск ↗",
+    "GitHub and setup ↗"
+  ],
+  "methodDocs": [
+    "Метод і межі даних ↗",
+    "Method and data limitations ↗"
+  ],
+  "websiteDocs": [
+    "Про сайт і таблиці ↗",
+    "About the site and tables ↗"
+  ],
+  "footer": [
+    "Київ · дослідницький проєкт, 2026",
+    "Kyiv · research project, 2026"
+  ],
+  "footer2": [
+    "Історичні дані · не сигнал відбою",
+    "Historical data · not an all-clear signal"
+  ],
+  "modeTitle": [
+    "Що оцінити?",
+    "What would you like to estimate?"
+  ],
+  "modeTotal": [
+    "Тривалість від початку",
+    "Duration from the start"
+  ],
+  "modeRemaining": [
+    "Час, що залишився",
+    "Remaining time"
+  ],
+  "modeHint": [
+    "Можна обрати один або обидва варіанти.",
+    "Select one or both options."
+  ],
+  "elapsedLabel": [
+    "Скільки хвилин тривога вже триває?",
+    "How many minutes has the alert lasted so far?"
+  ],
+  "remainingHint": [
+    "Цей режим припускає, що тривога досі триває. Для історичної дати вкажіть, скільки хвилин минуло на момент оцінки.",
+    "This mode assumes the alert is still ongoing. For a historical date, enter the elapsed minutes at the time of assessment."
+  ],
+  "remainingMethod": [
+    "Оцінка залишку — окремий дослідницький метод: серед попередніх завершених записів беремо ті, що тривали довше за вже минулий час, і рахуємо медіану їхнього залишку. Потрібно щонайменше 5 таких записів. Історія фіксується на початку введеної події; це новий варіант K0 для сайту, його точність ще не виміряно окремо.",
+    "Remaining time uses a separate research method: select previous completed records longer than the elapsed time, then take the median of their remaining durations. At least 5 matching records are required. History is frozen at the entered start; this is a new website variant of K0 whose accuracy has not been separately evaluated."
+  ]
+}

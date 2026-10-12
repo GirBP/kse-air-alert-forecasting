@@ -1,33 +1,53 @@
 {
-  "version": "pages-v1.1",
+  "version": "pages-v1.2",
   "artifact_files": [
     {
       "path": "assets/app.js",
-      "sha256": "b201d023f6bf96b905de60ea7a639990d54f6ef0babd8600f140f259a7919351"
+      "sha256": "4a49753108c00713295accc1b05344f349ecfa4c2d5c732c1a100df7489f34d8"
     },
     {
       "path": "assets/calculator.mjs",
-      "sha256": "46a2eef5906997f6962172fc953bf6d68d452d87a46022be187415fab537f4bb"
+      "sha256": "31427f135d5ee8eeb9db1575865e804b9d4b518ddc3cf79d8cdb8e0af4f29c10"
     },
     {
       "path": "assets/demo-data.json",
       "sha256": "121ded75130f200ae3271d7d8658a2537ecd1b50aabf01be6d98b3cfb7fa78af"
     },
     {
+      "path": "assets/experiments.json",
+      "sha256": "63f000e346d0e7c5d71123140ff5adb0d2687d229ceb5bec76f4e0684c693478"
+    },
+    {
+      "path": "assets/experiments.mjs",
+      "sha256": "6fb86951a39eacaed24e212f24840c7231755798e25a8411fcbdbd5acc9ba428"
+    },
+    {
       "path": "assets/forecast-core.mjs",
-      "sha256": "e7fce1db75943b0072c7a9200486da00909b5ff0a7cf9d67ce99325eb9ac741b"
+      "sha256": "cfb8f1883f699474052c906714935fdd2b584ae171683ca4fd7f4edd294fa95c"
+    },
+    {
+      "path": "assets/i18n.mjs",
+      "sha256": "5b84ca339c5f8b415cd194f5a93eeaba82d2abda5b614c136d64778cf9139443"
     },
     {
       "path": "assets/mark.svg",
       "sha256": "0c96dbc520553b93021544a0f8f1ae0348e8adbcff015d7ae1e3e017c66e4c60"
     },
     {
+      "path": "assets/remaining-core.mjs",
+      "sha256": "8b0f715112b793b5bd3c18f64641e863511c3498fce74d14f8754229b5db36cb"
+    },
+    {
       "path": "assets/style.css",
-      "sha256": "e374855282d6227f14b30de2db182e348100151963298455375e8cb7f2cc2de9"
+      "sha256": "54a02635c1ef8de74908d7be88cbd4533b9df2a7d401b96f63183d71bdf59a0f"
+    },
+    {
+      "path": "assets/translations.json",
+      "sha256": "675d84c3680acc88e58c7cafa8bcc60b2a531dd6491af0b0f0875c0f95a95327"
     },
     {
       "path": "index.html",
-      "sha256": "a0deeda0154bb97bf47749bddc044d962a5d18d04ed771eefec95331e06608cd"
+      "sha256": "170072481c86e0cb54335b28747547f2e0c5fe5f0f3387c55a6e06dec6e9dfb0"
     }
   ],
   "synthetic_ux_examples": true,
@@ -35,5 +55,11 @@
   "source_mode": "browser_anonymous_pinned_upstream_CORS_SHA256",
   "calculator_source_sha256": "fe79c5726a1a9db9f560d6dad1de1b46f16d93b9b44ff54a2078228cf56cbc0d",
   "primary84_unchanged": true,
-  "latest91_independent_test": false
+  "latest91_independent_test": false,
+  "remaining_method": "empirical_K0_onset_frozen_history",
+  "remaining_method_accuracy": "not_separately_evaluated",
+  "languages": [
+    "uk",
+    "en"
+  ]
 }

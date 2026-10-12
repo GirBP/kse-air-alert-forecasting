@@ -43,7 +43,7 @@ class PagesTests(unittest.TestCase):
         html=(ROOT/'web/index.html').read_text()
         self.assertIn('id="outcome" class="outcome" hidden',html)
         self.assertIn('aria-controls="outcome"',html)
-        self.assertIn('Синтетичні UX-приклади',html)
+        self.assertIn('вигадані приклади',html)
     def test_no_research_or_prospective_inference_on_public_route(self):
         for p in (ROOT/'web').rglob('*'):
             if p.is_file():
@@ -54,8 +54,8 @@ class PagesTests(unittest.TestCase):
         self.assertNotIn('finished_at',json.dumps(self.data))
     def test_release_manifest_binds_served_files(self):
         release=json.loads((ROOT/'web/release.json').read_text())
-        self.assertEqual(release['version'],'pages-v1.1')
-        self.assertIn('data-release-version="pages-v1.1"',(ROOT/'web/index.html').read_text())
+        self.assertEqual(release['version'],'pages-v1.2')
+        self.assertIn('data-release-version="pages-v1.2"',(ROOT/'web/index.html').read_text())
         for item in release['artifact_files']:
             self.assertEqual(item['sha256'],builder.sha(ROOT/'web'/item['path']))
 

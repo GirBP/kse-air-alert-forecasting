@@ -55,7 +55,7 @@ export function parseCSV(text) {
 }
 const numericId=id=>typeof id==='string'&&/^[0-9]+$/.test(id);
 const signature=v=>JSON.stringify([v.start,v.end,v.alert_type]);
-export function predictAtStart(rows,origin,city='31') {
+export function completedHistory(rows,origin,city='31') {
   if(String(city)!=='31')fail('unsupported_city','Для цього міста метод ще не перевірено.');
   const originMs=typeof origin==='number'?origin:parseTimestamp(origin);
   if(!Number.isFinite(originMs)||!Array.isArray(rows))fail('input','Некоректна історія чи початок.');
@@ -99,6 +99,10 @@ export function predictAtStart(rows,origin,city='31') {
   const ordered=[...history].sort((a,b)=>a.start-b.start||idOrder(a,b));
   for(let i=1;i<ordered.length;i++)if(ordered[i-1].end>ordered[i].start)fail('overlap','Завершені інтервали Києва перекриваються; розрахунок відхилено.');
   history.sort((a,b)=>a.end-b.end||idOrder(a,b));
+  return {history,counts};
+}
+export function predictAtStart(rows,origin,city='31') {
+  const {history,counts}=completedHistory(rows,origin,city);
   const used=history.length>=30?history.slice(-30):[];
   const durations=used.map(v=>v.duration).sort((a,b)=>a-b);
   return {method:'median_last_30_completed',target:'total_registered_duration_at_new_start',status:used.length?'predicted':'insufficient_completed_history',prediction_minutes:used.length?(durations[14]+durations[15])/2:null,completed_history_n:history.length,used_history_n:used.length,used_history_ids:used.map(v=>v.id),used_history_clears_utc:used.map(v=>new Date(v.end).toISOString()),used_history_durations_minutes:used.map(v=>v.duration),latest_available_clear_utc:used.length?new Date(used.at(-1).end).toISOString():null,ignored_record_counts:counts};

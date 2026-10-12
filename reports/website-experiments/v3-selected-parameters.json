@@ -1,0 +1,1118 @@
+{
+  "A01__N__S0__history__c01": {},
+  "A02__N__S0__history__c01": {},
+  "A03__N__S0__history__c03": {
+    "K": 60
+  },
+  "A04__N__S0__history__c01": {
+    "days": 7
+  },
+  "A05__N__S0__history__c01": {
+    "half_life_days": 3
+  },
+  "A06__N__S0__history__c01": {
+    "alpha": 0.1
+  },
+  "A01__H__S0__history__c01": {},
+  "A02__H__S0__history__c01": {},
+  "A03__H__S0__history__c02": {
+    "K": 30
+  },
+  "A04__H__S0__history__c02": {
+    "days": 14
+  },
+  "A05__H__S0__history__c04": {
+    "half_life_days": 30
+  },
+  "A06__H__S0__history__c01": {
+    "alpha": 0.1
+  },
+  "A07__N__S1__recorded_level__c05": {
+    "group": "level_hour6",
+    "kappa": 30
+  },
+  "B01__H__S0__F1__c01": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "alpha": 0.01,
+    "fit_intercept": true,
+    "solver": "highs",
+    "target": "minutes"
+  },
+  "B02__H__S0__F1__c01": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "alpha": 0.1,
+    "degree": 3,
+    "extrapolation": "periodic",
+    "fit_intercept": true,
+    "include_bias": false,
+    "knots": [
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      24
+    ],
+    "solver": "highs"
+  },
+  "B03__H__S0__F1__c01": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "early_stopping": false,
+    "l2_regularization": 1,
+    "learning_rate": 0.05,
+    "loss": "quantile",
+    "max_bins": 32,
+    "max_iter": 200,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 10,
+    "random_state": 17
+  },
+  "B04__H__S0__F1__c01": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "allow_writing_files": false,
+    "bootstrap_type": "No",
+    "depth": 4,
+    "early_stopping": false,
+    "iterations": 300,
+    "l2_leaf_reg": 10,
+    "learning_rate": 0.03,
+    "random_strength": 0,
+    "task_type": "CPU",
+    "thread_count": 4
+  },
+  "B05__H__S0__F1__c01": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "aggregate_leaves_first": true,
+    "bootstrap": true,
+    "interpolation": "linear",
+    "max_depth": 6,
+    "max_features": 1.0,
+    "max_samples_leaf": null,
+    "min_samples_leaf": 5,
+    "n_estimators": 300,
+    "n_jobs": 4,
+    "weighted_quantile": true
+  },
+  "B06__H__S0__F1__c02": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "distance": "Euclidean",
+    "k": 30,
+    "tie_break": "stable id",
+    "weights": "1/(distance+0.001), exact matches uniformly"
+  },
+  "E01__H__S0__F1__c01": {
+    "fit_intercept": true,
+    "l1_ratio": 0.0,
+    "model_ancillary": false,
+    "penalizer": 0.1
+  },
+  "E02__H__S0__F1__c01": {
+    "fit_intercept": true,
+    "l1_ratio": 0.0,
+    "model_ancillary": false,
+    "penalizer": 0.1
+  },
+  "B01__N__S0__F1__c03": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "alpha": 1,
+    "fit_intercept": true,
+    "solver": "highs",
+    "target": "minutes"
+  },
+  "B02__N__S0__F1__c02": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "alpha": 1,
+    "degree": 3,
+    "extrapolation": "periodic",
+    "fit_intercept": true,
+    "include_bias": false,
+    "knots": [
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      24
+    ],
+    "solver": "highs"
+  },
+  "B03__N__S0__F1__c02": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "early_stopping": false,
+    "l2_regularization": 10,
+    "learning_rate": 0.05,
+    "loss": "quantile",
+    "max_bins": 32,
+    "max_iter": 200,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 10,
+    "random_state": 17
+  },
+  "B04__N__S0__F1__c01": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "allow_writing_files": false,
+    "bootstrap_type": "No",
+    "depth": 4,
+    "early_stopping": false,
+    "iterations": 300,
+    "l2_leaf_reg": 10,
+    "learning_rate": 0.03,
+    "random_strength": 0,
+    "task_type": "CPU",
+    "thread_count": 4
+  },
+  "B05__N__S0__F1__c02": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "aggregate_leaves_first": true,
+    "bootstrap": true,
+    "interpolation": "linear",
+    "max_depth": 6,
+    "max_features": 1.0,
+    "max_samples_leaf": null,
+    "min_samples_leaf": 10,
+    "n_estimators": 300,
+    "n_jobs": 4,
+    "weighted_quantile": true
+  },
+  "B06__N__S0__F1__c02": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "distance": "Euclidean",
+    "k": 30,
+    "tie_break": "stable id",
+    "weights": "1/(distance+0.001), exact matches uniformly"
+  },
+  "E01__N__S0__F1__c03": {
+    "fit_intercept": true,
+    "l1_ratio": 0.0,
+    "model_ancillary": false,
+    "penalizer": 10
+  },
+  "E02__N__S0__F1__c03": {
+    "fit_intercept": true,
+    "l1_ratio": 0.0,
+    "model_ancillary": false,
+    "penalizer": 10
+  },
+  "B01__N__S1__F3__c03": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "alpha": 1,
+    "fit_intercept": true,
+    "solver": "highs",
+    "target": "minutes"
+  },
+  "B02__N__S1__F3__c02": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "alpha": 1,
+    "degree": 3,
+    "extrapolation": "periodic",
+    "fit_intercept": true,
+    "include_bias": false,
+    "knots": [
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      24
+    ],
+    "solver": "highs"
+  },
+  "B03__N__S1__F3__c02": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "early_stopping": false,
+    "l2_regularization": 10,
+    "learning_rate": 0.05,
+    "loss": "quantile",
+    "max_bins": 32,
+    "max_iter": 200,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 10,
+    "random_state": 17
+  },
+  "B04__N__S1__F3__c01": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "allow_writing_files": false,
+    "bootstrap_type": "No",
+    "depth": 4,
+    "early_stopping": false,
+    "iterations": 300,
+    "l2_leaf_reg": 10,
+    "learning_rate": 0.03,
+    "random_strength": 0,
+    "task_type": "CPU",
+    "thread_count": 4
+  },
+  "B05__N__S1__F3__c02": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "aggregate_leaves_first": true,
+    "bootstrap": true,
+    "interpolation": "linear",
+    "max_depth": 6,
+    "max_features": 1.0,
+    "max_samples_leaf": null,
+    "min_samples_leaf": 10,
+    "n_estimators": 300,
+    "n_jobs": 4,
+    "weighted_quantile": true
+  },
+  "B06__N__S1__F3__c02": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "distance": "Euclidean",
+    "k": 30,
+    "tie_break": "stable id",
+    "weights": "1/(distance+0.001), exact matches uniformly"
+  },
+  "E01__N__S1__F3__c03": {
+    "fit_intercept": true,
+    "l1_ratio": 0.0,
+    "model_ancillary": false,
+    "penalizer": 10
+  },
+  "E02__N__S1__F3__c03": {
+    "fit_intercept": true,
+    "l1_ratio": 0.0,
+    "model_ancillary": false,
+    "penalizer": 10
+  },
+  "C_B01__H__S0__A1__c01": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "alpha": 0.01,
+    "fit_intercept": true,
+    "solver": "highs",
+    "target": "minutes"
+  },
+  "C_B01__H__S0__A2__c01": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "alpha": 0.01,
+    "fit_intercept": true,
+    "solver": "highs",
+    "target": "minutes"
+  },
+  "C_B01__H__S0__A3__c01": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "alpha": 0.01,
+    "fit_intercept": true,
+    "solver": "highs",
+    "target": "minutes"
+  },
+  "C_B01__H__S0__A4__c01": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "alpha": 0.01,
+    "fit_intercept": true,
+    "solver": "highs",
+    "target": "minutes"
+  },
+  "C_B03__H__S0__F0__c01": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "early_stopping": false,
+    "l2_regularization": 1,
+    "learning_rate": 0.05,
+    "loss": "quantile",
+    "max_bins": 32,
+    "max_iter": 200,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 10,
+    "random_state": 17
+  },
+  "C_B03__N__S0__F0__c02": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "early_stopping": false,
+    "l2_regularization": 10,
+    "learning_rate": 0.05,
+    "loss": "quantile",
+    "max_bins": 32,
+    "max_iter": 200,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 10,
+    "random_state": 17
+  },
+  "C_B03__N__S1__F2__c02": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "early_stopping": false,
+    "l2_regularization": 10,
+    "learning_rate": 0.05,
+    "loss": "quantile",
+    "max_bins": 32,
+    "max_iter": 200,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 10,
+    "random_state": 17
+  },
+  "C_B03__N__S1__F3__c02": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "early_stopping": false,
+    "l2_regularization": 10,
+    "learning_rate": 0.05,
+    "loss": "quantile",
+    "max_bins": 32,
+    "max_iter": 200,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 10,
+    "random_state": 17
+  },
+  "D01__N__S0__completion_index__c04": {
+    "enforce_invertibility": true,
+    "enforce_stationarity": true,
+    "max_optimizer_iterations": 200,
+    "order": [
+      1,
+      0,
+      1
+    ],
+    "refit_on_new_clears": false,
+    "target_transform": "log1p"
+  },
+  "D02__N__S0__completion_index__c01": {
+    "m": 7,
+    "max_optimizer_iterations": 200,
+    "minimum_fit": "max(30,3*m)",
+    "order": [
+      1,
+      0,
+      0
+    ],
+    "refit_on_new_clears": false,
+    "seasonal_order_base": [
+      1,
+      0,
+      0
+    ],
+    "trend": "c"
+  },
+  "D03__N__S0__daily_coverage__c01": {},
+  "D01__H__S0__completion_index__c04": {
+    "enforce_invertibility": true,
+    "enforce_stationarity": true,
+    "max_optimizer_iterations": 200,
+    "order": [
+      1,
+      0,
+      1
+    ],
+    "refit_on_new_clears": false,
+    "target_transform": "log1p"
+  },
+  "D02__H__S0__completion_index__c02": {
+    "m": 30,
+    "max_optimizer_iterations": 200,
+    "minimum_fit": "max(30,3*m)",
+    "order": [
+      1,
+      0,
+      0
+    ],
+    "refit_on_new_clears": false,
+    "seasonal_order_base": [
+      1,
+      0,
+      0
+    ],
+    "trend": "c"
+  },
+  "D03__H__S0__daily_coverage__c01": {},
+  "F01__N__S0__F1__c01": {
+    "beta_prior_sd": 10.0,
+    "max_iter": 2000,
+    "posterior_sampling": false,
+    "sigma_log_bounds": [
+      -4,
+      4
+    ],
+    "sum_territory_effects": 0.0,
+    "tau": 0.1
+  },
+  "F02__N__S0__F1__c02": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "early_stopping": false,
+    "l2_regularization": 10,
+    "learning_rate": 0.05,
+    "loss": "quantile",
+    "max_bins": 32,
+    "max_iter": 200,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 10,
+    "random_state": 17
+  },
+  "G_GRU_G0__N__S0__F1__c01": {
+    "L": 32,
+    "architecture": "GRU",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G0",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_GRU_G1__N__S0__F1__c01": {
+    "L": 32,
+    "architecture": "GRU",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G1",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_GRU_G2__N__S0__F1__c01": {
+    "L": 32,
+    "architecture": "GRU",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G2",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_GRU_G3__N__S0__F1__c01": {
+    "L": 32,
+    "architecture": "GRU",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G3",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_LSTM_G0__N__S0__F1__c01": {
+    "L": 32,
+    "architecture": "LSTM",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G0",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_LSTM_G1__N__S0__F1__c01": {
+    "L": 32,
+    "architecture": "LSTM",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G1",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_LSTM_G2__N__S0__F1__c01": {
+    "L": 32,
+    "architecture": "LSTM",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G2",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_LSTM_G3__N__S0__F1__c01": {
+    "L": 32,
+    "architecture": "LSTM",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G3",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_TCN_G0__N__S0__F1__c01": {
+    "L": 32,
+    "architecture": "TCN",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G0",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_TCN_G1__N__S0__F1__c01": {
+    "L": 32,
+    "architecture": "TCN",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G1",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_TCN_G2__N__S0__F1__c01": {
+    "L": 32,
+    "architecture": "TCN",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G2",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_TCN_G3__N__S0__F1__c01": {
+    "L": 32,
+    "architecture": "TCN",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G3",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_TS2V_RANDOM__N__S0__F1__c01": {
+    "L": 32,
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "RANDOM",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_TS2V_PRETRAIN__N__S0__F1__c01": {
+    "L": 32,
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "PRETRAIN",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "HSMM__N__S0__filtered_sequence__c01": {
+    "D": 12,
+    "K": 2,
+    "dtype": "float64",
+    "duration_KL_regularizer": 0.01,
+    "lr": 0.01,
+    "max_steps": 500,
+    "optimizer": "Adam",
+    "patience": 30,
+    "sd_floor": 0.2,
+    "training_relative_improvement": 1e-06
+  },
+  "J01__N__S0__ensemble__c01": {
+    "components": [
+      "A03__N__S0__history",
+      "B01__N__S0__F1",
+      "B03__N__S0__F1"
+    ],
+    "weights": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ]
+  },
+  "F01__N__S1__F3__c01": {
+    "beta_prior_sd": 10.0,
+    "max_iter": 2000,
+    "posterior_sampling": false,
+    "sigma_log_bounds": [
+      -4,
+      4
+    ],
+    "sum_territory_effects": 0.0,
+    "tau": 0.1
+  },
+  "F02__N__S1__F3__c02": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "early_stopping": false,
+    "l2_regularization": 10,
+    "learning_rate": 0.05,
+    "loss": "quantile",
+    "max_bins": 32,
+    "max_iter": 200,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 10,
+    "random_state": 17
+  },
+  "G_GRU_G0__N__S1__F3__c01": {
+    "L": 32,
+    "architecture": "GRU",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G0",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_GRU_G1__N__S1__F3__c01": {
+    "L": 32,
+    "architecture": "GRU",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G1",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_GRU_G2__N__S1__F3__c01": {
+    "L": 32,
+    "architecture": "GRU",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G2",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_GRU_G3__N__S1__F3__c01": {
+    "L": 32,
+    "architecture": "GRU",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G3",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_LSTM_G0__N__S1__F3__c01": {
+    "L": 32,
+    "architecture": "LSTM",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G0",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_LSTM_G1__N__S1__F3__c01": {
+    "L": 32,
+    "architecture": "LSTM",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G1",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_LSTM_G2__N__S1__F3__c01": {
+    "L": 32,
+    "architecture": "LSTM",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G2",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_LSTM_G3__N__S1__F3__c01": {
+    "L": 32,
+    "architecture": "LSTM",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G3",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_TCN_G0__N__S1__F3__c01": {
+    "L": 32,
+    "architecture": "TCN",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G0",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_TCN_G1__N__S1__F3__c01": {
+    "L": 32,
+    "architecture": "TCN",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G1",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_TCN_G2__N__S1__F3__c01": {
+    "L": 32,
+    "architecture": "TCN",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G2",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_TCN_G3__N__S1__F3__c01": {
+    "L": 32,
+    "architecture": "TCN",
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "G3",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_TS2V_RANDOM__N__S1__F3__c01": {
+    "L": 32,
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "RANDOM",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "G_TS2V_PRETRAIN__N__S1__F3__c01": {
+    "L": 32,
+    "batch_size": 64,
+    "clip_norm": 1.0,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "dtype": "float32",
+    "epochs": 60,
+    "head_dropout": 0.1,
+    "head_hidden": 32,
+    "hidden_size": 32,
+    "lr": 0.001,
+    "mode": "PRETRAIN",
+    "optimizer": "AdamW",
+    "weight_decay": 0.001
+  },
+  "HSMM__N__S1__filtered_sequence__c01": {
+    "D": 12,
+    "K": 2,
+    "dtype": "float64",
+    "duration_KL_regularizer": 0.01,
+    "lr": 0.01,
+    "max_steps": 500,
+    "optimizer": "Adam",
+    "patience": 30,
+    "sd_floor": 0.2,
+    "training_relative_improvement": 1e-06
+  },
+  "J01__N__S1__ensemble__c01": {
+    "components": [
+      "A03__N__S0__history",
+      "B01__N__S1__F3",
+      "B03__N__S1__F3"
+    ],
+    "weights": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ]
+  },
+  "I_HAWKES__N__S1__F2__c01": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "alpha": 1.0,
+    "beta": 0.057762265046662105,
+    "cross": false,
+    "fit_intercept": true,
+    "solver": "highs",
+    "target": "minutes"
+  },
+  "I_CONTROL__N__S1__F2__c01": {
+    "Q": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "alpha": 1.0,
+    "fit_intercept": true,
+    "solver": "highs",
+    "target": "minutes"
+  }
+}

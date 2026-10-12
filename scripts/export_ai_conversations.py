@@ -21,7 +21,7 @@ def export(source, destination):
         if kind=='message':
             role=item.get('role')
             if role not in ('user','assistant'):continue
-            if role=='assistant' and item.get('phase') not in ('commentary','final'):continue
+            if role=='assistant' and item.get('phase') not in ('commentary','final','final_answer'):continue
             blocks=item.get('content',[]);texts=[]
             for block in blocks:
                 if block.get('type') in ('input_text','output_text','text'):
