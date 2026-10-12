@@ -2,6 +2,7 @@
   "evidence_origin": "unchanged local duration-pilot-v1/v2 artifacts; no new model training",
   "frozen_model_sha256": "c55b596c5eecdbc549e6d7c159b093f7607708aafaed87a2d06dd314d16a5590",
   "github_commit": "bf0c323c78e3e4508721458797dcd38c95df13f3",
+  "semantic_limits": "UTC explicit; no native alert_id or alert_type; air_raid interpreted from archive documentation; city name/level key; stable Kyiv level does not prove unchanged announcement policy",
   "sha256": "1f50085481d229f57b624d83b1ce723e884dea409c14afb5b7040c8a2f233e4f",
   "source": "Vadimkin official city Kyiv, deduplicated intervals, no source merge",
   "url": "https://raw.githubusercontent.com/Vadimkin/ukrainian-air-raid-sirens-dataset/bf0c323c78e3e4508721458797dcd38c95df13f3/datasets/official_data_uk.csv",

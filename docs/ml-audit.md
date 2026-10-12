@@ -46,7 +46,9 @@ Rolling30−historical MAE −1.094 хв: 7d CI [−2.037,−0.255], 14d [−2.2
 
 Bootstrap перевірено: matched 277 IDs, calendar clusters із partial edges, event-weighted numerator/denominator, 27 weekly/14 fortnightly nonempty blocks, 5000 draws; CI відповідають всім 30000 збереженим paired replicas. Блоки resample парно для методів; fraction(delta<0) не p-value. Обмінність і достатня незалежність blocks не доведені. Old rolling30 span median 20.126 дня (8.523–37.107), тому shared history може виходити за 7/14-day block. Такий span не є сам по собі доказом residual dependence, але обмежує гарантії CI. Період і нерівна експозиція partial blocks також важливі. No normality/stationarity requirement нав’язано.
 
-Публічні aggregates із SHA/path provenance, frozen coefficients/scalers, 20 CV parameter sets і `scripts/replay_historical_selection.py` дозволяють повторити selected-model та baseline validation, training-only scaler і saved 2555 CV predictions з pinned original CSV. Моделі не refit, нові параметри не шукали; post-June target values не використано.
+Старий Vadimkin має явний UTC, але не має власних alert_id/alert_type: air_raid походить з опису набору, міський ключ — зі стабільної назви/рівня. Документація архіву описує перехід інших територій до районного рівня; для Києва рівень стабільний у training records, сталість policy/threat composition не доведено. Це інший процес реєстрації, ніж новий API mirror із UID/type/level; джерела не злиті.
+
+Публічні aggregates із SHA/path provenance, frozen coefficients/scalers, 20 CV parameter sets і `scripts/replay_historical_selection.py` дозволяють повторити selected-model та baseline validation, training-only scaler і реконструювати 2555 CV predictions з pinned original CSV. У повному локальному проєкті безпосередньо зіставлено кожне з 1108 збережених validation predictions (277×4 methods) та 2555 quantile CV values. У clean public clone detailed outputs відсутні: там перевіряються відновлені агрегати й параметри, а не вдається, що звірено приватні per-event CSV. Моделі не refit, нові параметри не шукали; post-June target values не використано.
 
 ## Матриця критеріїв
 

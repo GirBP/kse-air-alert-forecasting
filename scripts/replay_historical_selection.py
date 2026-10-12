@@ -5,6 +5,7 @@ The learned-model artifact and aggregate metrics carry their original hashes.
 """
 import argparse
 import csv
+import gzip
 from datetime import datetime,timezone
 import hashlib
 import json
@@ -51,6 +52,19 @@ def replay(root,input_path=None):
             if start<end<END:events.add((start,end,(end-start).total_seconds()/60))
     events=sorted(events)
     for a,b in zip(events,events[1:]):assert a[1]<=b[0]
+    # Private detailed outputs are optional; public replay checks aggregates.
+    def stored(filename,cv=False):
+        p=root/'data/duration-pilot-v2'/filename
+        if not p.exists():return {}
+        with gzip.open(p,'rt',newline='') as stream:rows=list(csv.DictReader(stream))
+        rows=[r for r in rows if not cv or r['method']=='quantile_l1']
+        def key(r):
+            origin=datetime.fromisoformat(r['forecast_origin_utc'].replace('Z','+00:00'))
+            return (r['fold_start_local'],float(r['alpha']),origin) if cv else (r['method'],origin)
+        result={key(r):r for r in rows};assert len(result)==len(rows)
+        return result
+    stored_validation=stored('validation-predictions.csv.gz');validation_seen=set()
+    stored_cv=stored('cv-predictions.csv.gz',True);cv_seen=set()
     train_vectors=[];feature_rows=[];errors={m:[] for m in ('last_completed_alert','historical_median','median_last_30_completed','quantile_l1')}
     n=0
     for start,end,duration in events:
@@ -62,9 +76,17 @@ def replay(root,input_path=None):
         if start<TRAIN_END:continue
         prediction=max(0,math.fsum(c*(x-mu)/scale for x,mu,scale,c in zip(vector,model['scaler_mean'],model['scaler_scale'],model['coef']))+model['intercept'])
         predictions=[history[-1][2],median(r[2] for r in history),median(r[2] for r in history[-30:]),prediction]
-        for method,p in zip(errors,predictions):errors[method].append(p-duration)
+        for method,p in zip(errors,predictions):
+            errors[method].append(p-duration)
+            if stored_validation:
+                key=(method,start);saved=stored_validation[key]
+                assert math.isclose(p,float(saved['prediction_minutes']),abs_tol=1e-7)
+                assert math.isclose(duration,float(saved['actual_duration_minutes']),abs_tol=1e-8)
+                assert end==datetime.fromisoformat(saved['actual_finish_utc'].replace('Z','+00:00'))
+                assert len(history)==int(saved['history_count']);validation_seen.add(key)
         n+=1
     assert len(train_vectors)==model['fit_n']==1789 and n==277
+    assert not stored_validation or validation_seen==set(stored_validation)
     for j in range(15):
         values=[v[j] for v in train_vectors];mean=math.fsum(values)/len(values);var=math.fsum((v-mean)**2 for v in values)/len(values)
         assert math.isclose(mean,model['scaler_mean'][j],rel_tol=1e-9,abs_tol=1e-10)
@@ -94,15 +116,23 @@ def replay(root,input_path=None):
         for start,end,y,x in score:
             p=max(0,math.fsum(c*(v-mu)/scale for v,mu,scale,c in zip(x,m['scaler_mean'],m['scaler_scale'],m['coef']))+m['intercept'])
             errors_cv.append(p-y)
+            if stored_cv:
+                key=(m['fold_start_local'],float(m['alpha']),start);saved=stored_cv[key]
+                assert math.isclose(p,float(saved['prediction_minutes']),abs_tol=1e-7)
+                assert math.isclose(y,float(saved['actual_duration_minutes']),abs_tol=1e-8)
+                assert end==datetime.fromisoformat(saved['actual_finish_utc'].replace('Z','+00:00'));cv_seen.add(key)
         expected=next(r for r in cv_metrics if r['method']=='quantile_l1' and r['period']==m['fold_start_local'] and float(r['alpha'])==m['alpha'])
         assert len(errors_cv)==int(expected['n'])
         assert math.isclose(math.fsum(abs(e) for e in errors_cv)/len(errors_cv),float(expected['mae_minutes']),abs_tol=1e-7)
         assert math.isclose(math.sqrt(math.fsum(e*e for e in errors_cv)/len(errors_cv)),float(expected['rmse_minutes']),abs_tol=1e-7)
         cv_predictions+=len(errors_cv)
+    assert not stored_cv or cv_seen==set(stored_cv)
     return {'historical_raw_sha256_verified':True,'training_only_scaler_recomputed_n':len(train_vectors),
             'validation_events_replayed':n,'metrics':metrics,'models_refitted':False,'hyperparameters_searched':False,
             'post_June_targets_used':False,'source_sha256':source['sha256'],
-            'saved_cv_models_verified':len(cv_models),'saved_cv_prediction_values_verified':cv_predictions}
+            'saved_cv_models_verified':len(cv_models),'cv_prediction_values_reconstructed':cv_predictions,
+            'stored_cv_prediction_values_compared':len(cv_seen),'stored_validation_prediction_values_compared':len(validation_seen),
+            'verification_scope':'raw reconstruction and saved aggregate metrics; individual detailed outputs compared only where available'}
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--project-root',type=Path,default=Path.cwd())

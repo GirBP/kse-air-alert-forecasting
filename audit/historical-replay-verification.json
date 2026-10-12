@@ -1,4 +1,5 @@
 {
+  "cv_prediction_values_reconstructed": 2555,
   "historical_raw_sha256_verified": true,
   "hyperparameters_searched": false,
   "metrics": [
@@ -30,8 +31,10 @@
   "models_refitted": false,
   "post_June_targets_used": false,
   "saved_cv_models_verified": 20,
-  "saved_cv_prediction_values_verified": 2555,
   "source_sha256": "1f50085481d229f57b624d83b1ce723e884dea409c14afb5b7040c8a2f233e4f",
+  "stored_cv_prediction_values_compared": 2555,
+  "stored_validation_prediction_values_compared": 1108,
   "training_only_scaler_recomputed_n": 1789,
-  "validation_events_replayed": 277
+  "validation_events_replayed": 277,
+  "verification_scope": "raw reconstruction and saved aggregate metrics; individual detailed outputs compared only where available"
 }
