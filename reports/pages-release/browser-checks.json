@@ -1,0 +1,48 @@
+{
+  "mode": "local_project_base_path",
+  "url": "http://127.0.0.1:8765/kse-air-alert-forecasting/",
+  "desktop": {
+    "requestedWidth": 1440,
+    "height": 900,
+    "overflow": false,
+    "scenarioSwitchResetsOutcome": true,
+    "keyboardEnter": true
+  },
+  "mobile": [
+    {
+      "requestedWidth": 320,
+      "actual": "180,0",
+      "bodyWidth": 305,
+      "clientWidth": 305,
+      "forecast": "95,5",
+      "latestRows": 2,
+      "outcomeHidden": false,
+      "scrollWidth": 305
+    },
+    {
+      "requestedWidth": 360,
+      "actual": "180,0",
+      "bodyWidth": 345,
+      "clientWidth": 345,
+      "forecast": "95,5",
+      "latestRows": 2,
+      "outcomeHidden": false,
+      "scrollWidth": 345
+    },
+    {
+      "requestedWidth": 390,
+      "actual": "180,0",
+      "bodyWidth": 375,
+      "clientWidth": 375,
+      "forecast": "95,5",
+      "latestRows": 2,
+      "outcomeHidden": false,
+      "scrollWidth": 375
+    }
+  ],
+  "keyboardSpace": true,
+  "keyboardTab": true,
+  "consoleErrors": [],
+  "syntheticExamples": true,
+  "fixedMobileHeadingOverflow": true
+}

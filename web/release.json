@@ -1,0 +1,28 @@
+{
+  "version": "pages-v1.0",
+  "artifact_files": [
+    {
+      "path": "assets/app.js",
+      "sha256": "b201d023f6bf96b905de60ea7a639990d54f6ef0babd8600f140f259a7919351"
+    },
+    {
+      "path": "assets/demo-data.json",
+      "sha256": "121ded75130f200ae3271d7d8658a2537ecd1b50aabf01be6d98b3cfb7fa78af"
+    },
+    {
+      "path": "assets/mark.svg",
+      "sha256": "0c96dbc520553b93021544a0f8f1ae0348e8adbcff015d7ae1e3e017c66e4c60"
+    },
+    {
+      "path": "assets/style.css",
+      "sha256": "e91cdc78b96f2d560beed3f29d54be9a015fd698f144f8923845bc8d5bbf71e2"
+    },
+    {
+      "path": "index.html",
+      "sha256": "626851a17d3d86f9b93c5dcffee24949582d3e8ba6048a6d8963220cad33002a"
+    }
+  ],
+  "synthetic_ux_examples": true,
+  "primary84_unchanged": true,
+  "latest91_independent_test": false
+}

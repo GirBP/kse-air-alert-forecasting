@@ -1,0 +1,15 @@
+{
+  "label": "01–12.10.2026 · latest91 діагностика",
+  "n": 91,
+  "MAE": 40.86885943223443,
+  "RMSE": 61.6403574272576,
+  "median_AE": 24.272233333333332,
+  "p90_AE": 80.35215,
+  "note": "latest91: 91 подія, включно з 7 доданими після primary84. Це додаткова ретроспективна діагностика вже відкритого жовтня, не незалежний тест. Знімок c5b3bd0 до 12.10.2026 13:51:36 Europe/Kyiv; останнє наявне завершення — 12:56:19. Актуальність цього шляху джерела перевірено 12.10 о 21:28:38 Kyiv. Primary84 збережено. Неповний край і невідоме спостереження не заповнювали нулями.",
+  "independent_test": false,
+  "replaces_primary84": false,
+  "source_url": "https://raw.githubusercontent.com/JustJimer/ukraine-air-alert-stats/c5b3bd012c7694e63115999a7bbd0b683eaa8d24/archive/alerts_in_ua.csv",
+  "input_sha256": "fe79c5726a1a9db9f560d6dad1de1b46f16d93b9b44ff54a2078228cf56cbc0d",
+  "evaluation_end_utc_exclusive": "2026-10-12T10:51:36Z",
+  "retrieved_at_utc": "2026-10-12T17:19:36.624689Z"
+}

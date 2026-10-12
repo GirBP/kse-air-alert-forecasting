@@ -1,0 +1,11 @@
+test_aggregate_numbers_and_source_binding (test_pages.PagesTests.test_aggregate_numbers_and_source_binding) ... ok
+test_build_is_deterministic_and_preserves_science (test_pages.PagesTests.test_build_is_deterministic_and_preserves_science) ... ok
+test_no_research_or_prospective_inference_on_public_route (test_pages.PagesTests.test_no_research_or_prospective_inference_on_public_route) ... ok
+test_release_manifest_binds_served_files (test_pages.PagesTests.test_release_manifest_binds_served_files) ... ok
+test_saved_fixtures_match_actual_target_free_default (test_pages.PagesTests.test_saved_fixtures_match_actual_target_free_default) ... ok
+test_static_paths_and_outcome_separation (test_pages.PagesTests.test_static_paths_and_outcome_separation) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+OK

@@ -1,0 +1,51 @@
+{
+  "kind": "independent auditor aggregate handoff; not full public reproduction of local v3/v4",
+  "audit_date": "2026-10-12",
+  "findings_sha256": "fec4170053b9e720ff36f00f2d1ec26a11180b64c95dd740dcf2b2f55772a3f6",
+  "saved_arithmetic_checks": {
+    "v4": {
+      "sets": 375,
+      "forecast_rows": 97104,
+      "max_difference": 3.98e-13
+    },
+    "v3": {
+      "sets": 868,
+      "forecast_rows": 75594,
+      "max_difference": 0
+    }
+  },
+  "scope": "conditional saved-row replay; historical publication availability not proven; source code and large artifacts remain in separate local research packages",
+  "conclusions": [
+    "Default median30 remains fixed; no universal spatial/transfer advantage established",
+    "Previously exposed periods are not new independent tests",
+    "Two weekly blocks in N do not justify stable temporal confidence intervals",
+    "T1 event/landmark weighting is not ordinary fixed-elapsed operational probability"
+  ],
+  "T1_AFT_C_N_REPLAY": {
+    "events": 84,
+    "landmarks": 333,
+    "event_balanced_landmark_MAE": 20.625,
+    "onset_MAE": 38.238,
+    "shown_on_site": false
+  },
+  "GB_C_snapshot_sensitivity": {
+    "fixed_origins": 84,
+    "features_changed_origins": 6,
+    "medians_changed_origins": 5,
+    "maximum_prediction_change_minutes": 25.659974,
+    "MAE_delta_minutes": 0.513394,
+    "does_not_establish_median30_change": true
+  },
+  "prospective_v4_interface": {
+    "incomplete": true,
+    "excluded_from_release": true,
+    "known_defects": [
+      "dedup",
+      "source namespace/version/order",
+      "receipt maturity",
+      "issued clock/outcome linkage",
+      "free historical helper cutoff"
+    ]
+  },
+  "utility_proven": false
+}

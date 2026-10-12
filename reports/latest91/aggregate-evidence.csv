@@ -1,0 +1,4 @@
+dataset,target,n,MAE_minutes,RMSE_minutes,signed_bias_minutes,under60_n,evaluation_end_utc_exclusive,interpretation
+primary84_frozen,T0_total_duration_at_START,84,40.894054662698416,62.61987004627811,-10.909150893040119,11,2026-10-11T10:07:59Z,retrospective event-clock primary; previously exposed
+latest91_diagnostic,T0_total_duration_at_START,91,40.86885943223443,61.6403574272576,-10.699606135531136,12,2026-10-12T10:51:36Z,separate retrospective diagnostic; not independent test; not replacement primary
+additional7_only,T0_total_duration_at_START,7,40.56651666666667,48.36279699860026,-8.185069047619052,1,2026-10-12T10:51:36Z,small exploratory addition; no model selection

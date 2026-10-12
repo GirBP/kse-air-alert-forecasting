@@ -1,0 +1,45 @@
+test_bad_existing_cache_is_not_overwritten (test_download.DownloadTests.test_bad_existing_cache_is_not_overwritten) ... ok
+test_checksum_mismatch_never_creates_input (test_download.DownloadTests.test_checksum_mismatch_never_creates_input) ... ok
+test_unavailable_source_leaves_no_input (test_download.DownloadTests.test_unavailable_source_leaves_no_input) ... ok
+test_verified_cache_is_used_without_network (test_download.DownloadTests.test_verified_cache_is_used_without_network) ... ok
+test_both_overlapping_events_are_excluded (test_duration.DurationTests.test_both_overlapping_events_are_excluded) ... ok
+test_boundary_clear_is_excluded (test_duration.DurationTests.test_boundary_clear_is_excluded) ... ok
+test_clear_at_origin_is_available (test_duration.DurationTests.test_clear_at_origin_is_available) ... ok
+test_closed_actual_positive_only (test_duration.DurationTests.test_closed_actual_positive_only) ... ok
+test_completion_order_and_only_cleared_are_used (test_duration.DurationTests.test_completion_order_and_only_cleared_are_used) ... ok
+test_current_target_cannot_change_its_forecast (test_duration.DurationTests.test_current_target_cannot_change_its_forecast) ... ok
+test_duplicates_and_conflicts_are_audited (test_duration.DurationTests.test_duplicates_and_conflicts_are_audited) ... ok
+test_history_warmup_and_exact_window (test_duration.DurationTests.test_history_warmup_and_exact_window) ... ok
+test_location_and_type_are_not_blended (test_duration.DurationTests.test_location_and_type_are_not_blended) ... ok
+test_metrics_do_not_drop_long_errors (test_duration.DurationTests.test_metrics_do_not_drop_long_errors) ... ok
+test_october_is_defined_in_kyiv_not_utc (test_duration.DurationTests.test_october_is_defined_in_kyiv_not_utc) ... ok
+test_output_cannot_overwrite_old_experiments (test_duration.DurationTests.test_output_cannot_overwrite_old_experiments) ... ok
+test_red_and_yellow_accepted_without_features (test_duration.DurationTests.test_red_and_yellow_accepted_without_features) ... ok
+test_utc_is_required (test_duration.DurationTests.test_utc_is_required) ... ok
+test_append_future_events_cannot_change_past_prediction (test_forecast_api.ForecastApiTests.test_append_future_events_cannot_change_past_prediction) ... ok
+test_available_correction_overrides_old_clear_before_filtering (test_forecast_api.ForecastApiTests.test_available_correction_overrides_old_clear_before_filtering) ... ok
+test_bad_past_history_never_silently_forecasts (test_forecast_api.ForecastApiTests.test_bad_past_history_never_silently_forecasts) ... ok
+test_conflicts_without_availability_are_errors (test_forecast_api.ForecastApiTests.test_conflicts_without_availability_are_errors) ... ok
+test_current_clear_can_be_absent_or_changed_arbitrarily (test_forecast_api.ForecastApiTests.test_current_clear_can_be_absent_or_changed_arbitrarily) ... ok
+test_duplicates_are_one_completion (test_forecast_api.ForecastApiTests.test_duplicates_are_one_completion) ... ok
+test_each_origin_is_independent_of_previous_future_query (test_forecast_api.ForecastApiTests.test_each_origin_is_independent_of_previous_future_query) ... ok
+test_empty_and_29_completed_do_not_fabricate_zero (test_forecast_api.ForecastApiTests.test_empty_and_29_completed_do_not_fabricate_zero) ... ok
+test_empty_evaluation_writes_valid_header_and_unknown_metrics (test_forecast_api.ForecastApiTests.test_empty_evaluation_writes_valid_header_and_unknown_metrics) ... ok
+test_exact_clear_time_is_available (test_forecast_api.ForecastApiTests.test_exact_clear_time_is_available) ... ok
+test_future_correction_cannot_change_historical_prediction (test_forecast_api.ForecastApiTests.test_future_correction_cannot_change_historical_prediction) ... ok
+test_future_invalid_target_is_not_inspected (test_forecast_api.ForecastApiTests.test_future_invalid_target_is_not_inspected) ... ok
+test_known_start_correction_supersedes_old_completed_version (test_forecast_api.ForecastApiTests.test_known_start_correction_supersedes_old_completed_version) ... ok
+test_known_type_correction_supersedes_old_air_raid_version (test_forecast_api.ForecastApiTests.test_known_type_correction_supersedes_old_air_raid_version) ... ok
+test_late_record_availability_is_enforced (test_forecast_api.ForecastApiTests.test_late_record_availability_is_enforced) ... ok
+test_malformed_csv_schema_has_actionable_error (test_forecast_api.ForecastApiTests.test_malformed_csv_schema_has_actionable_error) ... ok
+test_new_start_requires_no_current_target_or_clear (test_forecast_api.ForecastApiTests.test_new_start_requires_no_current_target_or_clear) ... ok
+test_open_and_not_yet_completed_events_are_not_history (test_forecast_api.ForecastApiTests.test_open_and_not_yet_completed_events_are_not_history) ... ok
+test_overlaps_are_an_explicit_history_error (test_forecast_api.ForecastApiTests.test_overlaps_are_an_explicit_history_error) ... ok
+test_saved_results_cannot_be_overwritten (test_forecast_api.ForecastApiTests.test_saved_results_cannot_be_overwritten) ... ok
+test_short_history_is_warmup_not_output_crash (test_forecast_api.ForecastApiTests.test_short_history_is_warmup_not_output_crash) ... ok
+test_unordered_history_cannot_leak_future_values (test_forecast_api.ForecastApiTests.test_unordered_history_cannot_leak_future_values) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 0.021s
+
+OK

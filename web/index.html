@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Історична демонстрація простого прогнозу тривалості зареєстрованого інтервалу Києва. Синтетичні приклади, справжні агреговані результати та обмеження.">
+  <meta name="theme-color" content="#102d3a">
+  <title>Тривалість інтервалу · Київ · KSE research</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body data-release-version="pages-v1.0">
+<a class="skip" href="#demo">Перейти до демонстрації</a>
+<header class="site-header wrap">
+  <a class="brand" href="#top" aria-label="Початок сторінки"><img src="assets/mark.svg" width="32" height="32" alt=""><span>Київ <span class="muted">/ дослідницький пілот</span></span></a>
+  <nav aria-label="Головна навігація"><a href="#results">Результати</a><a href="https://github.com/GirBP/kse-air-alert-forecasting">GitHub ↗</a></nav>
+</header>
+<main id="top">
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <p class="eyebrow"><span class="dot"></span> Історична демонстрація</p>
+    <h1 id="hero-title">Скільки може тривати<br><em>зареєстрований інтервал?</em></h1>
+    <p class="lead">Проста оцінка при початку: медіана останніх 30 завершених подій Києва. Вона допомагає дослідити можливість планування пауз, але її практичну користь ще не виміряно.</p>
+    <p class="safety">Прогноз не є сигналом відбою. Відповідність завершенню офіційної тривоги не доведена. Дотримуйтеся офіційних повідомлень.</p>
+    <div class="hero-meta"><span>Python · rolling median 30</span><span>Без live feed</span><span>Оцінка при початку, не залишковий час</span></div>
+  </section>
+  <section class="wrap demo-section" id="demo" aria-labelledby="demo-title">
+    <div class="section-head"><div><p class="eyebrow">01 / Як читати прогноз</p><h2 id="demo-title">Три сценарії</h2></div><span class="badge">Синтетичні UX-приклади</span></div>
+    <p class="section-intro">Реальні записи не перепубліковуємо: права на їх поширення не встановлено. Нижче — вигадані дати й результати, розраховані справжнім Python-методом. Реальні метрики наведено окремо.</p>
+    <div id="load-state" role="status">Завантажуємо збережені приклади…</div>
+    <div id="demo-content" hidden>
+      <div class="scenario-buttons" role="group" aria-label="Оберіть синтетичний приклад">
+        <button type="button" data-example="typical" aria-pressed="true">01 · Типовий</button>
+        <button type="button" data-example="long" aria-pressed="false">02 · Довгий</button>
+        <button type="button" data-example="failure" aria-pressed="false">03 · Велика помилка</button>
+      </div>
+      <article class="forecast-card" aria-labelledby="case-title">
+        <div class="case-heading"><div><p class="eyebrow">Вигаданий історичний початок · Europe/Kyiv</p><p id="origin" class="origin"></p></div><span class="case-number" id="case-number">01</span></div>
+        <h3 id="case-title"></h3>
+        <p id="case-note" class="muted"></p>
+        <div class="forecast-grid">
+          <div class="estimate"><p class="label">Прогноз повної тривалості</p><p class="big"><span id="prediction">—</span> <span class="unit">хв</span></p><p class="muted">Збережений прогноз при початку</p></div>
+          <div class="history"><p class="label">Доступна завершена історія</p><p><strong id="history-n">30</strong> подій</p><p class="muted">Використано останні <span id="used-n">30</span>. Усі завершилися до цього початку.</p></div>
+        </div>
+        <div class="comparison" id="comparison" hidden>
+          <div class="bar-row"><span>Прогноз</span><div class="bar-track"><div id="prediction-bar" class="bar forecast-bar"></div></div><strong id="prediction-bar-value"></strong></div>
+          <div class="bar-row"><span>Факт</span><div class="bar-track"><div id="actual-bar" class="bar actual-bar"></div></div><strong id="actual-bar-value"></strong></div>
+        </div>
+        <button type="button" class="reveal" id="reveal" aria-expanded="false" aria-controls="outcome">Показати фактичний результат <span aria-hidden="true">↗</span></button>
+        <div id="outcome" class="outcome" hidden tabindex="-1" aria-live="polite"><p class="label">Окремий синтетичний результат після завершення</p><p><strong id="actual"></strong> хв · абсолютна помилка <strong id="error"></strong> хв</p><p id="error-note" class="muted"></p></div>
+        <p class="card-foot">Це не поточна тривога. Факт не входить до розрахунку прогнозу. Інтервал невизначеності не надається.</p>
+      </article>
+      <details class="selection"><summary>Прозоре правило створення прикладів</summary><p id="selection-rule"></p><p>Інтерактивність показує, як порівнювати оцінку з пізнішим фактом. Вона не є доказом якості на вигаданих подіях.</p></details>
+    </div>
+    <noscript><p>Для перемикання прикладів потрібен JavaScript. Справжні результати та обмеження доступні нижче й у GitHub.</p></noscript>
+  </section>
+  <section class="results-section" id="results" aria-labelledby="results-title">
+    <div class="wrap"><p class="eyebrow">02 / Справжні результати</p><h2 id="results-title">Типова оцінка має великі помилки</h2>
+      <p class="section-intro">Київ, UID 31. Ціль — повна тривалість зареєстрованих закритих інтервалів при їхньому початку. Джерело: окреме дзеркало alerts.in.ua. Метод після оцінювання не змінювали.</p>
+      <div class="metric-grid"><div><span class="metric">40,894 <small>хв</small></span><span>MAE · середня абсолютна помилка</span></div><div><span class="metric">84</span><span>оцінені події · primary84</span></div><div><span class="metric">54,8 <small>%</small></span><span>помилка в межах ±30 хв</span></div></div>
+      <div class="table-scroll"><table><caption>Зафіксована ретроспективна оцінка; жовтень уже переглянуто</caption><thead><tr><th scope="col">Період / статус</th><th scope="col">n</th><th scope="col">MAE, хв</th><th scope="col">RMSE, хв</th><th scope="col">Медіана AE, хв</th><th scope="col">p90 AE, хв</th></tr></thead><tbody id="metric-rows"><tr><th scope="row">01–11.10.2026 · неповний край</th><td>84</td><td>40,894</td><td>62,620</td><td>24,008</td><td>76,708</td></tr></tbody></table></div>
+      <p class="period-note">Межі primary84: [01.10.2026 00:00; 11.10.2026 13:07:59), Europe/Kyiv. Версія знімка: <code>7abc556</code>. Наявні записи закінчуються 11.10.2026 о 13:01:52. Пізнішу відсутність записів не перетворено на нулі. Оцінюваних виключень — 0.</p>
+      <div id="latest-note" hidden class="latest-note"></div>
+      <div class="tail-note"><strong>11 із 84</strong><p>інтервалів недооцінено більш ніж на 60 хв. Найбільша абсолютна помилка — <strong>248,829 хв</strong>. Сім подій ≥120 хв дали <strong>70,6%</strong> суми квадратів помилок; жодну не вилучили.</p></div>
+    </div>
+  </section>
+  <section class="wrap limits" aria-labelledby="limits-title"><div><p class="eyebrow">03 / Межі застосування</p><h2 id="limits-title">Що ці числа<br>не доводять</h2></div><div class="limit-list">
+    <article><h3>Це тривалість запису</h3><p>Зміна рівня тривоги може створити окремий запис. Завершення інтервалу не доводить остаточного відбою чи фактичного завершення перерви організації.</p></article>
+    <article><h3>Доступність версій невідома</h3><p>Використано лише попередні фактичні завершення за часом подій. Історичні часи публікації, отримання та виправлення рядків не збережені. Оперативну доступність не доведено.</p></article>
+    <article><h3>Вибірка має межі</h3><p>Оцінюються зареєстровані закриті події; пропущені й незавершені можуть відрізнятися. Добова повнота невідома. 84 події охоплюють лише два неповні тижневі блоки.</p></article>
+    <article><h3>Практична користь не виміряна</h3><p>MAE — симетрична дослідницька метрика. Ціну завищення та заниження не погоджено. Метод не доведено універсально кращим; прогнозних інтервалів немає.</p></article>
+  </div></section>
+  <section class="wrap sources" aria-labelledby="sources-title"><p class="eyebrow">04 / Код і походження</p><h2 id="sources-title">Відтворити, а не повірити</h2><p>Робочий Python-проєкт — основний результат. Сайт — додаткова демонстрація. Нові експерименти v3/v4 залишаються окремими локальними дослідженнями й не входять до основного Python-релізу.</p>
+    <div class="source-links"><a href="https://github.com/GirBP/kse-air-alert-forecasting">Код та інструкція ↗</a><a href="https://github.com/GirBP/kse-air-alert-forecasting/blob/main/docs/pages-demo.md">Походження демонстрації ↗</a><a href="https://github.com/GirBP/kse-air-alert-forecasting/blob/main/docs/latest-data-and-limits.md">Дані та обмеження ↗</a><a href="https://github.com/JustJimer/ukraine-air-alert-stats/tree/7abc556ba5a0ff47a9e33c6abc136b8da3a9feb8">Зафіксоване дзеркало ↗</a></div>
+  </section>
+</main>
+<footer class="wrap"><span>Київ · дослідницький пілот, 2026</span><span>Без live API · не рекомендація з безпеки</span></footer>
+</body>
+</html>
